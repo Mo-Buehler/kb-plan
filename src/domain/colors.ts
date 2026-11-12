@@ -62,7 +62,7 @@ export const SHORT_LABEL: Record<string, string> = {
   'ftp-test': 'FTP',
   'outdoor-ride': 'Rad',
   knee: 'Knie',
-  football: 'Fußball',
+  football: 'Kick',
   rest: 'Ruhe',
   measurement: 'Messung',
   'swing-test': 'Test',

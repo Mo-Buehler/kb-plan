@@ -7,7 +7,9 @@ import { itemsForDate, type ScheduledItem } from '../../domain/schedule'
 import { useSchedule, type ScheduleData } from '../../hooks/useSchedule'
 import { currentSuggestions, RuleHints } from '../progress/RuleHints'
 import { Reminders } from './Reminders'
-import { HeroTile, NextTile, sessionKeyOf, StatTiles, WeekStrip } from './Tiles'
+import { HeroTile, NextTile, sessionKeyOf, WeekStrip } from './Tiles'
+import { statusOf } from '../../hooks/useSchedule'
+import { BadgeCard, MotivationBanner, PlanCard, PreStart, StatGrid, VolumeCard } from './Widgets'
 
 /** Show a hint only on the day it matters: the matching workout, Wednesday for knee hints, Monday for Workout C. */
 function relevant(s: { kind: string; workout?: string }, today: ScheduledItem[], dow: string): boolean {
@@ -37,13 +39,12 @@ export function TodayPage({ name }: { name: string }) {
       <Reminders />
       <div className="stack">
         {pos.state === 'before' && (
-          <section className="card">
-            <h2>Der Plan startet bald</h2>
-            <p>
-              Noch {pos.daysUntilStart} Tage bis zur Vorbereitungswoche am {formatDate(seed.weeks[0].start)}.
-            </p>
-          </section>
+          <MotivationBanner ctx={{ date: iso, state: 'before', daysUntilStart: pos.daysUntilStart }} />
         )}
+        {pos.state === 'before' && <PreStart days={pos.daysUntilStart} />}
+        {pos.state === 'before' && <PlanCard week={seed.weeks[1]} today={iso} preview />}
+        {pos.state === 'before' && <BadgeCard data={data} today={iso} />}
+        {pos.state === 'after' && <MotivationBanner ctx={{ date: iso, state: 'after' }} />}
         {pos.state === 'after' && (
           <section className="card">
             <h2>Plan abgeschlossen</h2>
@@ -55,6 +56,17 @@ export function TodayPage({ name }: { name: string }) {
             {pos.week.deload && <p className="notice">Entlastungswoche: nur die angegebenen Sätze, kein Zusatztraining.</p>}
             {pos.phaseStart && <p className="notice">Erster Tag einer neuen Phase.</p>}
             <RuleHints suggestions={currentSuggestions(data, iso).filter((s) => relevant(s, visible, pos.day.dow))} />
+            <MotivationBanner
+              ctx={{
+                date: iso,
+                state: 'running',
+                deload: pos.week.deload,
+                test: pos.week.test,
+                phaseStart: pos.phaseStart,
+                rest: visible.every((i) => i.kind === 'rest'),
+                done: visible.some((i) => i.kind !== 'rest') && visible.filter((i) => i.kind !== 'rest').every((i) => statusOf(i, data.logs) === 'done'),
+              }}
+            />
             {visible.map((it, i) => (
               <Hero key={it.originDate + it.kind} item={it} week={pos.week} data={data} first={i === 0} />
             ))}
@@ -69,9 +81,12 @@ export function TodayPage({ name }: { name: string }) {
                 {sessionTitle(h.session)}: {h.hiddenReason}
               </p>
             ))}
-            <StatTiles data={data} today={iso} week={pos.week.week} />
+            <StatGrid data={data} today={iso} week={pos.week} />
             <WeekStrip week={pos.week} data={data} today={iso} />
             <NextTile data={data} today={iso} />
+            <PlanCard week={pos.week} today={iso} />
+            <VolumeCard data={data} week={pos.week} />
+            <BadgeCard data={data} today={iso} />
           </>
         )}
       </div>

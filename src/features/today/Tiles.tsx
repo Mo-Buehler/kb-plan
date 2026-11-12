@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '../../components/Icon'
+import { HeroArt } from '../../components/Visuals'
 import { SHORT_LABEL, TONE_ICON, toneOfKind } from '../../domain/colors'
 import { formatNumber, weekdayName } from '../../domain/format'
 import { sessionTitle } from '../../domain/labels'
@@ -46,8 +47,19 @@ export function HeroTile({ item, week, data, started, workoutCLink, label }: Her
         <span>{label}</span>
         <Icon name={TONE_ICON[tone]} large />
       </div>
+      <HeroArt icon={TONE_ICON[tone]} />
       <p className="big">{sessionTitle(item.session)}</p>
-      <p>{item.kind === 'rest' ? 'Heute ist Ruhetag.' : sessionMeta(item, week, data)}</p>
+      {item.kind === 'rest' ? (
+        <p>Heute ist Ruhetag.</p>
+      ) : (
+        <div className="chips">
+          {sessionMeta(item, week, data)
+            .split(' · ')
+            .map((c) => (
+              <span key={c}>{c}</span>
+            ))}
+        </div>
+      )}
       {item.moved && <p>Verschoben von {item.originDate.split('-').reverse().slice(0, 2).join('.')}.</p>}
       {item.hint && <p>{item.hint}</p>}
       {status === 'done' && <p className="big">✓ Erledigt</p>}
