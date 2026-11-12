@@ -25,3 +25,6 @@ dist-ssr
 
 # Personal master data - the site is public, never commit the source plan
 trainingsplan.md
+
+# local tooling
+.claude/

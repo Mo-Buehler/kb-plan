@@ -32,6 +32,9 @@ export interface SessionLog {
   rpe?: number
   kneePain?: number
   note?: string
+  durationMin?: number
+  avgHr?: number
+  rounds?: number
 }
 
 export interface SetLog {
@@ -60,6 +63,10 @@ export class KbDb extends Dexie {
       measurements: '++id, date, kind',
       sessionLogs: '++id, date, &sessionKey',
       setLogs: '++id, sessionKey, exerciseId',
+    })
+    // v2: one log per set, addressed by (session, exercise, set number)
+    this.version(2).stores({
+      setLogs: '++id, sessionKey, exerciseId, &[sessionKey+exerciseId+setIndex]',
     })
   }
 }
