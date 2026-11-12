@@ -22,7 +22,7 @@ export function SimpleLine({ data, unit, digits = 0, label }: { data: { date: st
           <CartesianGrid stroke={GRID} strokeDasharray="3 3" />
           <XAxis dataKey="date" tickFormatter={short} stroke={MUTED} fontSize={12} />
           <YAxis domain={['auto', 'auto']} tickFormatter={(v) => String(v).replace('.', ',')} stroke={MUTED} fontSize={12} width={44} />
-          <Tooltip labelFormatter={(d) => formatDate(String(d))} formatter={(v) => [formatNumber(Number(v), unit, digits), label]} />
+          <Tooltip contentStyle={TOOLTIP_STYLE} labelFormatter={(d) => formatDate(String(d))} formatter={(v) => [formatNumber(Number(v), unit, digits), label]} />
           <Line dataKey="value" stroke={ACCENT} strokeWidth={2} dot={{ r: 3 }} isAnimationActive={false} />
         </ComposedChart>
       </ResponsiveContainer>
@@ -54,7 +54,7 @@ export function KbChart({ history }: { history: Map<string, KbPoint[]> }) {
             <XAxis dataKey="label" stroke={MUTED} fontSize={12} />
             <YAxis yAxisId="v" stroke={MUTED} fontSize={12} width={48} />
             <YAxis yAxisId="w" orientation="right" stroke={MUTED} fontSize={12} width={40} />
-            <Tooltip formatter={(v, n) => [formatNumber(Number(v), 'kg', 0), n]} />
+            <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(v, n) => [formatNumber(Number(v), 'kg', 0), n]} />
             <Legend />
             <Bar yAxisId="v" dataKey="volume" name="Volumen (kg)" fill={ACCENT} fillOpacity={0.35} isAnimationActive={false} />
             <Line yAxisId="w" dataKey="maxWeight" name="Gewicht (kg)" stroke={ACCENT} strokeWidth={2} isAnimationActive={false} />
@@ -94,7 +94,7 @@ export function ComplianceChart({ data }: { data: WeekCompliance[] }) {
             <CartesianGrid stroke={GRID} strokeDasharray="3 3" />
             <XAxis dataKey="label" stroke={MUTED} fontSize={12} />
             <YAxis allowDecimals={false} stroke={MUTED} fontSize={12} width={28} />
-            <Tooltip />
+            <Tooltip contentStyle={TOOLTIP_STYLE} />
             <Legend />
             <Bar dataKey="planned" name="geplant" fill={MUTED} fillOpacity={0.4} isAnimationActive={false} />
             <Bar dataKey="done" name="erledigt" fill={ACCENT} isAnimationActive={false} />
@@ -124,3 +124,6 @@ export function ComplianceChart({ data }: { data: WeekCompliance[] }) {
     </div>
   )
 }
+
+/** Tooltip colours follow the theme (default is always white). */
+export const TOOLTIP_STYLE = { background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: 8 }

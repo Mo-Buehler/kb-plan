@@ -2,6 +2,7 @@ import { CartesianGrid, ComposedChart, Area, Line, ReferenceLine, ResponsiveCont
 import type { Measurement } from '../../db/db'
 import { formatDate, formatNumber } from '../../domain/format'
 import { seed } from '../../domain/plan'
+import { TOOLTIP_STYLE } from './charts'
 import { checkpointResults, twoAboveInARow, weightRows } from '../../domain/progress'
 
 const ts = (iso: string) => Date.parse(iso + 'T12:00:00Z')
@@ -43,6 +44,7 @@ export function WeightSection({ measurements }: { measurements: Measurement[] })
             />
             <YAxis domain={[lo, hi]} tickFormatter={(v) => String(v).replace(".", ",")} stroke="var(--muted)" fontSize={12} width={36} />
             <Tooltip
+              contentStyle={TOOLTIP_STYLE}
               labelFormatter={(t) => formatDate(new Date(Number(t)).toISOString().slice(0, 10))}
               formatter={(v, n) => [Array.isArray(v) ? `${formatNumber(Number(v[0]))} bis ${formatNumber(Number(v[1]), 'kg')}` : formatNumber(Number(v), 'kg'), n]}
             />

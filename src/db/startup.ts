@@ -1,5 +1,5 @@
 import { seed } from '../domain/plan'
-import { db } from './db'
+import { getMeta, setMeta } from './sessions'
 
 /**
  * First start: ask the browser to keep storage persistent and remember which plan
@@ -11,6 +11,6 @@ export async function initStorage(): Promise<void> {
   } catch {
     // not supported -> ignore silently
   }
-  const known = await db.meta.get('seedHash')
-  if (!known) await db.meta.put({ key: 'seedHash', value: seed.sourceHash })
+  const known = await getMeta<string>('seedHash')
+  if (!known) await setMeta('seedHash', seed.sourceHash)
 }

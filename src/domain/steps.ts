@@ -54,6 +54,8 @@ export interface Step {
   info?: string
 }
 
+const de = (n: number) => String(n).replace('.', ',')
+
 // Rest times in seconds (plan section 7: 30 s in a superset, 60-90 s after it, finisher 30/45 s).
 export const REST = { inSuperset: 30, afterSuperset: 75, finisherFirst: 30, finisherSecond: 45, ladder: 60, rounds: 90 }
 
@@ -131,7 +133,7 @@ export function kbExercises(week: number, workout: 'A' | 'B', overrides: PlanOve
 /** Short German summary of an amount; falls back to the plan text for special forms. */
 export function amountSummary(a: Amount, changed: boolean): string {
   if (!changed) return a.raw
-  const w = a.weights?.length ? ` @ ${a.weights.join(' + ')} kg` : ''
+  const w = a.weights?.length ? ` @ ${a.weights.map(de).join(' + ')} kg` : ''
   if (a.kind === 'emom') return `${a.minutes} min × ${a.reps}${w}`
   if (a.kind && a.kind !== 'sets') return a.raw
   const amount = a.repsMode ? 'max−2' : a.seconds !== undefined ? `${a.seconds} s` : `${a.reps}`
@@ -237,6 +239,6 @@ export function plannedText(p: Planned): string {
   else if (p.repsMode === 'max-2') parts.push('max − 2 Wdh.')
   if (p.seconds !== undefined) parts.push(`${p.seconds} s`)
   if (p.perSide) parts.push('pro Seite')
-  if (p.weights.length) parts.push(p.weights.length === 1 ? `${p.weights[0]} kg` : `${p.weights.join(' + ')} kg`)
+  if (p.weights.length) parts.push(p.weights.length === 1 ? `${de(p.weights[0])} kg` : `${p.weights.map(de).join(' + ')} kg`)
   return parts.join(' · ')
 }

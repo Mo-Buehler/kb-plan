@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import { HashRouter, NavLink, Route, Routes, useMatch } from 'react-router-dom'
 import { CalendarPage } from './features/calendar/CalendarPage'
 import { DayPage } from './features/calendar/DayPage'
@@ -57,13 +58,29 @@ function Shell({ name }: { name: string }) {
   )
 }
 
-export default function App() {
+function StorageUnavailable() {
+  return (
+    <main className="page errorscreen" role="alert">
+      <h1>Speicher nicht verfügbar</h1>
+      <p>
+        Die App kann auf diesem Gerät nichts speichern. Das passiert zum Beispiel im privaten Modus oder wenn Website-Daten blockiert sind. Öffne die App im normalen Modus oder vom Home-Bildschirm.
+      </p>
+    </main>
+  )
+}
+
+function Content() {
+  const [storageError, setStorageError] = useState(false)
   useEffect(() => {
-    void initStorage()
+    db.open().then(
+      () => void initStorage(),
+      () => setStorageError(true),
+    )
   }, [])
   // undefined = still loading; null = no profile yet
   const profile = useLiveQuery(async () => (await db.profile.get(1)) ?? null)
 
+  if (storageError) return <StorageUnavailable />
   if (profile === undefined) return null
   if (profile === null) return <SetupDialog />
 
@@ -72,5 +89,13 @@ export default function App() {
       <UpdateBanner />
       <Shell name={profile.name} />
     </HashRouter>
+  )
+}
+
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <Content />
+    </ErrorBoundary>
   )
 }

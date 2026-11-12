@@ -22,7 +22,7 @@ export function NumberField({ label, unit, value, onChange, step = 1 }: Props) {
         <input
           aria-label={label}
           inputMode="decimal"
-          value={value ?? ''}
+          value={value === undefined ? "" : String(value).replace(".", ",")}
           onChange={(e) => {
             const t = e.target.value.replace(',', '.')
             onChange(t === '' || Number.isNaN(Number(t)) ? undefined : Number(t))

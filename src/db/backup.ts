@@ -90,6 +90,25 @@ export async function deleteAllData(): Promise<void> {
   })
 }
 
+/** True when the bundled plan is a different version than the one the stored changes were made for. */
+export async function isNewPlanVersion(): Promise<boolean> {
+  const known = await getMeta<string>('seedHash')
+  return known !== undefined && known !== seed.sourceHash
+}
+
+/**
+ * New training cycle: results (measurements, sessions, sets, profile) stay.
+ * Edits, moves, week tiers, list ticks and rule answers refer to the old plan and are removed.
+ */
+export async function adoptNewPlan(): Promise<void> {
+  await db.transaction('rw', db.overrides, db.moves, db.weekTiers, db.checkStates, db.meta, async () => {
+    await Promise.all([db.overrides.clear(), db.moves.clear(), db.weekTiers.clear(), db.checkStates.clear()])
+    const stale = (await db.meta.toArray()).filter((m) => m.key.startsWith('rule-dismissed:') || m.key === 'mondayWorkoutC')
+    await db.meta.bulkDelete(stale.map((m) => m.key))
+    await setMeta('seedHash', seed.sourceHash)
+  })
+}
+
 /** True when no backup was made for `days` days (counted from setup if there never was one). */
 export function isBackupDue(lastBackup: string | undefined, createdAt: string | undefined, now = Date.now(), days = 7): boolean {
   const ref = lastBackup ?? createdAt

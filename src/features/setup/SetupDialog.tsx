@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react'
+import { InstallHint } from '../../components/InstallHint'
 import { db } from '../../db/db'
 
 /** One-time setup. All values stay on this device (IndexedDB). */
@@ -21,6 +22,7 @@ export function SetupDialog() {
   return (
     <main className="page narrow">
       <h1>Willkommen bei KB Plan</h1>
+      <InstallHint />
       <p>Diese Angaben bleiben ausschließlich auf diesem Gerät gespeichert. Sie werden nirgendwohin gesendet.</p>
       <form onSubmit={submit} className="stack">
         <label>

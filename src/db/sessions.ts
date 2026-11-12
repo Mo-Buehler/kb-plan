@@ -36,7 +36,13 @@ export async function setMeta(key: string, value: unknown): Promise<void> {
 
 export async function getMeta<T>(key: string): Promise<T | undefined> {
   const m = await db.meta.get(key)
-  return m ? (JSON.parse(m.value) as T) : undefined
+  if (!m) return undefined
+  try {
+    return JSON.parse(m.value) as T
+  } catch {
+    // value written by an earlier version as plain text
+    return m.value as unknown as T
+  }
 }
 
 export const deleteMeta = (key: string) => db.meta.delete(key)

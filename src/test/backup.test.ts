@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { backupFileName, buildBackup, deleteAllData, isBackupDue, parseBackup, restoreBackup, summarize } from '../db/backup'
+import { adoptNewPlan, backupFileName, buildBackup, deleteAllData, isBackupDue, parseBackup, restoreBackup, summarize } from '../db/backup'
 import { db } from '../db/db'
 import { setMeta } from '../db/sessions'
 import { checklistGroups, isOverdue, overdueCount, shoppingGroups } from '../domain/lists'
@@ -115,5 +115,63 @@ describe('checklists and shopping list', () => {
     expect(isOverdue(e, false, '2026-11-23')).toBe(false)
     expect(overdueCount(new Set(), '2026-11-12')).toBe(0)
     expect(overdueCount(new Set(), '2027-12-01')).toBeGreaterThan(10)
+  })
+})
+
+describe('new training cycle', () => {
+  it('keeps results but drops edits, moves, tiers, list ticks and rule answers', async () => {
+    await fill()
+    await setMeta('rule-dismissed:x', true)
+    await setMeta('seedHash', 'old')
+    await adoptNewPlan()
+    expect(await db.measurements.count()).toBe(2)
+    expect(await db.sessionLogs.count()).toBe(1)
+    expect(await db.setLogs.count()).toBe(1)
+    expect(await db.profile.count()).toBe(1)
+    expect(await db.overrides.count()).toBe(0)
+    expect(await db.moves.count()).toBe(0)
+    expect(await db.weekTiers.count()).toBe(0)
+    expect(await db.checkStates.count()).toBe(0)
+    const keys = (await db.meta.toArray()).map((m) => m.key)
+    expect(keys).not.toContain('rule-dismissed:x')
+    expect(keys).not.toContain('mondayWorkoutC')
+    expect(JSON.parse((await db.meta.get('seedHash'))!.value)).not.toBe('old')
+  })
+})
+
+describe('stored plan version', () => {
+  it('startup stores the hash readable by the new-plan check, also in the legacy plain-text form', async () => {
+    const { initStorage } = await import('../db/startup')
+    const { isNewPlanVersion } = await import('../db/backup')
+    await initStorage()
+    expect(await isNewPlanVersion()).toBe(false)
+    await db.meta.put({ key: 'seedHash', value: 'oldplainhash' }) // written as plain text by an earlier version
+    expect(await isNewPlanVersion()).toBe(true) // different from the current seed, but must not throw
+  })
+})
+
+describe('app update', () => {
+  it('keeps data written by the first release when the database schema is upgraded', async () => {
+    const { default: Dexie } = await import('dexie')
+    const { KbDb } = await import('../db/db')
+    const old = new Dexie('upgrade-test')
+    old.version(1).stores({
+      profile: 'id',
+      meta: 'key',
+      measurements: '++id, date, kind',
+      sessionLogs: '++id, date, &sessionKey',
+      setLogs: '++id, sessionKey, exerciseId',
+    })
+    await old.table('profile').put({ id: 1, name: 'Test', age: 30, heightCm: 180, startWeightKg: 80, createdAt: 'x' })
+    await old.table('measurements').add({ date: '2026-12-07', kind: 'weight', value: 98 })
+    await old.table('setLogs').add({ sessionKey: 'k', exerciseId: 'main:A1', setIndex: 0, reps: 10, done: true })
+    old.close()
+
+    const current = new KbDb('upgrade-test')
+    expect((await current.profile.get(1))?.name).toBe('Test')
+    expect(await current.measurements.count()).toBe(1)
+    expect(await current.setLogs.count()).toBe(1)
+    expect(await current.checkStates.count()).toBe(0) // new tables exist and are empty
+    current.close()
   })
 })

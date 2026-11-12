@@ -78,6 +78,7 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
           {title} · {doneCount}/{steps.length}
         </span>
       </header>
+      <h1 className="sr-only">{title}</h1>
       <progress max={steps.length} value={doneCount} aria-label="Fortschritt" />
 
       {activeRest && <RestTimer endsAt={activeRest.endsAt} onClose={() => void deleteMeta('rest')} />}
