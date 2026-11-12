@@ -6,6 +6,7 @@ import { formatDate, weekdayName } from '../../domain/format'
 import { sessionTitle } from '../../domain/labels'
 import { locate, seed, todayIso } from '../../domain/plan'
 import { itemsForDate, type ScheduledItem } from '../../domain/schedule'
+import { currentSuggestions, RuleHints } from '../progress/RuleHints'
 import { STATUS_LABEL, statusOf, useSchedule, type ScheduleData } from '../../hooks/useSchedule'
 
 const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
@@ -49,6 +50,7 @@ export function TodayPage({ name }: { name: string }) {
           </p>
           {pos.week.deload && <p className="notice">Entlastungswoche: nur die angegebenen Sätze, kein Zusatztraining.</p>}
           {pos.phaseStart && <p className="notice">Erster Tag einer neuen Phase.</p>}
+          <RuleHints suggestions={currentSuggestions(data, iso).filter((s) => relevant(s, visible, pos.day.dow))} />
           {visible.map((it) => (
             <SessionCard key={it.originDate + it.kind} item={it} data={data} />
           ))}
@@ -67,6 +69,14 @@ export function TodayPage({ name }: { name: string }) {
       )}
     </main>
   )
+}
+
+/** Show a hint only on the day it matters: the matching workout, Wednesday for knee hints, Monday for Workout C. */
+function relevant(s: { kind: string; workout?: string }, today: ScheduledItem[], dow: string): boolean {
+  const kinds = today.map((i) => i.kind)
+  if (s.kind === 'keep-weight') return kinds.includes(s.workout === 'A' ? 'kb-a' : 'kb-b')
+  if (s.kind === 'knee-legs') return kinds.includes('kb-a')
+  return dow === 'mo'
 }
 
 function SessionCard({ item, data }: { item: ScheduledItem; data: ScheduleData }) {
@@ -92,7 +102,7 @@ function SessionCard({ item, data }: { item: ScheduledItem; data: ScheduleData }
           </Link>
         )
       )}
-      {'alternative' in item.session && status === 'planned' && (
+      {('alternative' in item.session || (data.mondayWorkoutC && item.kind === 'football')) && status === 'planned' && (
         <Link className="btn" to={`/einheit/${item.originDate}/workout-c`}>
           Fußball fällt aus: Workout C
         </Link>

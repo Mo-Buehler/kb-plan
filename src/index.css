@@ -101,3 +101,12 @@ select { font: inherit; padding: .75rem; border-radius: .6rem; border: 1px solid
 .menuitem.disabled { opacity: .5; }
 .radio { display: flex; gap: .5rem; align-items: center; font-weight: 400; min-height: 2.75rem; }
 .radio input { width: 1.5rem; height: 1.5rem; }
+
+/* Progress */
+.datatable { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.datatable th, .datatable td { text-align: left; padding: .4rem .25rem; border-bottom: 1px solid var(--border); }
+.cp-above { color: var(--danger); font-weight: 700; }
+.cp-within { color: var(--accent); font-weight: 700; }
+.hint { border-color: var(--accent); }
+.btnrow { display: grid; gap: .5rem; }
+input[type=date] { min-height: 3rem; }

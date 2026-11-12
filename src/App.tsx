@@ -1,7 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { HashRouter, NavLink, Route, Routes, useMatch } from 'react-router-dom'
-import { Placeholder } from './components/Placeholder'
 import { CalendarPage } from './features/calendar/CalendarPage'
 import { DayPage } from './features/calendar/DayPage'
 import { MorePage } from './features/more/MorePage'
@@ -12,6 +11,9 @@ import { initStorage } from './db/startup'
 import { SessionPage } from './features/session/SessionPage'
 import { SetupDialog } from './features/setup/SetupDialog'
 import { TodayPage } from './features/today/TodayPage'
+
+// Charts are the heaviest part of the bundle; load them only when the tab is opened.
+const ProgressPage = lazy(() => import('./features/progress/ProgressPage').then((m) => ({ default: m.ProgressPage })))
 
 const TABS = [
   { to: '/', label: 'Heute' },
@@ -40,7 +42,7 @@ function Shell({ name }: { name: string }) {
         <Route path="/einheit/:date/:kind" element={<SessionPage />} />
         <Route path="/kalender" element={<CalendarPage />} />
         <Route path="/tag/:date" element={<DayPage />} />
-        <Route path="/fortschritt" element={<Placeholder title="Fortschritt" />} />
+        <Route path="/fortschritt" element={<Suspense fallback={null}><ProgressPage /></Suspense>} />
         <Route path="/mehr" element={<MorePage />} />
         <Route path="/mehr/plan" element={<PlanEditPage />} />
       </Routes>

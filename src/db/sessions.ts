@@ -1,6 +1,6 @@
 import { db, type Measurement, type SessionLog, type SetLog } from './db'
 
-export const makeSessionKey = (date: string, kind: string) => `${date}:${kind}`
+export { makeSessionKey } from '../domain/keys'
 
 export async function saveSetLog(log: Omit<SetLog, 'id'>): Promise<void> {
   const existing = await db.setLogs
