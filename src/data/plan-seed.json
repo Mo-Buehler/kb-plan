@@ -1,0 +1,5264 @@
+{
+ "schemaVersion": 1,
+ "sourceHash": "c69cc15d70942d58",
+ "planStart": "2026-12-07",
+ "prepStart": "2026-11-30",
+ "planEnd": "2027-03-28",
+ "phases": [
+  {
+   "id": "P1",
+   "name": "Basis",
+   "weekFrom": 1,
+   "weekTo": 4,
+   "start": "2026-12-07",
+   "end": "2027-01-03",
+   "kbFocus": "Technik, Grundübungen mit 12 und 16 kg",
+   "bikeFocus": "Zone 2, Trittfrequenz, FTP-Test"
+  },
+  {
+   "id": "P2",
+   "name": "Hypertrophie I",
+   "weekFrom": 5,
+   "weekTo": 8,
+   "start": null,
+   "end": "2027-01-31",
+   "kbFocus": "Mehr Volumen, Swing als Hauptübung, 24 kg kommt dazu",
+   "bikeFocus": "Sweet Spot"
+  },
+  {
+   "id": "P3",
+   "name": "Hypertrophie II",
+   "weekFrom": 9,
+   "weekTo": 12,
+   "start": null,
+   "end": "2027-02-28",
+   "kbFocus": "Doppel-Kettlebell-Übungen mit 2 × 16 kg",
+   "bikeFocus": "Schwelle, Sonntag 75 min"
+  },
+  {
+   "id": "P4",
+   "name": "Kraft und Saisonvorbereitung",
+   "weekFrom": 13,
+   "weekTo": 16,
+   "start": null,
+   "end": "2027-03-28",
+   "kbFocus": "Schwerer, weniger Volumen, Komplexe",
+   "bikeFocus": "Over-Unders, Tempo, erste Rennrad-Ausfahrten"
+  }
+ ],
+ "weeks": [
+  {
+   "week": 0,
+   "start": "2026-11-30",
+   "end": "2026-12-06",
+   "phase": null,
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2026-11-30",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2026-12-01",
+     "dow": "di",
+     "session": {
+      "label": "Ausgangsmessung",
+      "kind": "measurement"
+     }
+    },
+    {
+     "date": "2026-12-02",
+     "dow": "mi",
+     "session": {
+      "label": "Hinge-Drill 3 × 10",
+      "kind": "hinge-drill",
+      "sets": 3,
+      "reps": 10
+     }
+    },
+    {
+     "date": "2026-12-03",
+     "dow": "do",
+     "session": {
+      "label": "Sattel und Cleats messen",
+      "kind": "task"
+     }
+    },
+    {
+     "date": "2026-12-04",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2026-12-05",
+     "dow": "sa",
+     "session": {
+      "label": "Hinge-Drill, Kettlebell-Lieferung prüfen",
+      "kind": "hinge-drill",
+      "note": "Kettlebell-Lieferung prüfen"
+     }
+    },
+    {
+     "date": "2026-12-06",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-45",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
+     }
+    }
+   ]
+  },
+  {
+   "week": 1,
+   "start": "2026-12-07",
+   "end": "2026-12-13",
+   "phase": "P1",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2026-12-07",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2026-12-08",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2026-12-09",
+     "dow": "mi",
+     "session": {
+      "label": "KB A (P1)",
+      "kind": "kb-a",
+      "phaseStart": "P1"
+     }
+    },
+    {
+     "date": "2026-12-10",
+     "dow": "do",
+     "session": {
+      "label": "FTP-Test (Bibliothek)",
+      "kind": "ftp-test"
+     }
+    },
+    {
+     "date": "2026-12-11",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2026-12-12",
+     "dow": "sa",
+     "session": {
+      "label": "KB B (P1)",
+      "kind": "kb-b",
+      "phaseStart": "P1"
+     }
+    },
+    {
+     "date": "2026-12-13",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-60",
+      "kind": "bike",
+      "workout": "MB-Z2-60"
+     }
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "start": "2026-12-14",
+   "end": "2026-12-20",
+   "phase": "P1",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2026-12-14",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2026-12-15",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2026-12-16",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2026-12-17",
+     "dow": "do",
+     "session": {
+      "label": "MB-Z2-Kadenz-50",
+      "kind": "bike",
+      "workout": "MB-Z2-Kadenz-50"
+     }
+    },
+    {
+     "date": "2026-12-18",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2026-12-19",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2026-12-20",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-60",
+      "kind": "bike",
+      "workout": "MB-Z2-60"
+     }
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "start": "2026-12-21",
+   "end": "2026-12-27",
+   "phase": "P1",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2026-12-21",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball oder Workout C",
+      "kind": "football",
+      "alternative": "workout-c"
+     }
+    },
+    {
+     "date": "2026-12-22",
+     "dow": "di",
+     "session": {
+      "label": "MB-Z2-Kadenz-50 (statt Heiligabend)",
+      "note": "statt Heiligabend",
+      "kind": "bike",
+      "workout": "MB-Z2-Kadenz-50"
+     }
+    },
+    {
+     "date": "2026-12-23",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2026-12-24",
+     "dow": "do",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2026-12-25",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2026-12-26",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2026-12-27",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-60",
+      "kind": "bike",
+      "workout": "MB-Z2-60"
+     }
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "start": "2026-12-28",
+   "end": "2027-01-03",
+   "phase": "P1",
+   "deload": true,
+   "test": false,
+   "days": [
+    {
+     "date": "2026-12-28",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball oder Workout C (10 min)",
+      "kind": "football",
+      "alternative": "workout-c",
+      "amrapMinutes": 10
+     }
+    },
+    {
+     "date": "2026-12-29",
+     "dow": "di",
+     "session": {
+      "label": "MB-Z2-45 (statt Silvester)",
+      "note": "statt Silvester",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
+     }
+    },
+    {
+     "date": "2026-12-30",
+     "dow": "mi",
+     "session": {
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
+     }
+    },
+    {
+     "date": "2026-12-31",
+     "dow": "do",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-01-01",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-01-02",
+     "dow": "sa",
+     "session": {
+      "label": "KB B Deload",
+      "kind": "kb-b",
+      "deload": true
+     }
+    },
+    {
+     "date": "2027-01-03",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-45",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
+     }
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "start": "2027-01-04",
+   "end": "2027-01-10",
+   "phase": "P2",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-01-04",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-01-05",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-01-06",
+     "dow": "mi",
+     "session": {
+      "label": "KB A (P2)",
+      "kind": "kb-a",
+      "phaseStart": "P2"
+     }
+    },
+    {
+     "date": "2027-01-07",
+     "dow": "do",
+     "session": {
+      "label": "MB-SweetSpot V1",
+      "kind": "bike",
+      "workout": "MB-SweetSpot V1"
+     }
+    },
+    {
+     "date": "2027-01-08",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-01-09",
+     "dow": "sa",
+     "session": {
+      "label": "KB B (P2)",
+      "kind": "kb-b",
+      "phaseStart": "P2"
+     }
+    },
+    {
+     "date": "2027-01-10",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-60",
+      "kind": "bike",
+      "workout": "MB-Z2-60"
+     }
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "start": "2027-01-11",
+   "end": "2027-01-17",
+   "phase": "P2",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-01-11",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-01-12",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-01-13",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-01-14",
+     "dow": "do",
+     "session": {
+      "label": "MB-SweetSpot V2",
+      "kind": "bike",
+      "workout": "MB-SweetSpot V2"
+     }
+    },
+    {
+     "date": "2027-01-15",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-01-16",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-01-17",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-60",
+      "kind": "bike",
+      "workout": "MB-Z2-60"
+     }
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "start": "2027-01-18",
+   "end": "2027-01-24",
+   "phase": "P2",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-01-18",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-01-19",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-01-20",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-01-21",
+     "dow": "do",
+     "session": {
+      "label": "MB-SweetSpot V3",
+      "kind": "bike",
+      "workout": "MB-SweetSpot V3"
+     }
+    },
+    {
+     "date": "2027-01-22",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-01-23",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-01-24",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-60",
+      "kind": "bike",
+      "workout": "MB-Z2-60"
+     }
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "start": "2027-01-25",
+   "end": "2027-01-31",
+   "phase": "P2",
+   "deload": true,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-01-25",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-01-26",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-01-27",
+     "dow": "mi",
+     "session": {
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
+     }
+    },
+    {
+     "date": "2027-01-28",
+     "dow": "do",
+     "session": {
+      "label": "FTP-Test",
+      "kind": "ftp-test"
+     }
+    },
+    {
+     "date": "2027-01-29",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-01-30",
+     "dow": "sa",
+     "session": {
+      "label": "KB B Deload",
+      "kind": "kb-b",
+      "deload": true
+     }
+    },
+    {
+     "date": "2027-01-31",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-45",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
+     }
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "start": "2027-02-01",
+   "end": "2027-02-07",
+   "phase": "P3",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-02-01",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-02-02",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-02-03",
+     "dow": "mi",
+     "session": {
+      "label": "KB A (P3)",
+      "kind": "kb-a",
+      "phaseStart": "P3"
+     }
+    },
+    {
+     "date": "2027-02-04",
+     "dow": "do",
+     "session": {
+      "label": "MB-Schwelle V1",
+      "kind": "bike",
+      "workout": "MB-Schwelle V1"
+     }
+    },
+    {
+     "date": "2027-02-05",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-02-06",
+     "dow": "sa",
+     "session": {
+      "label": "KB B (P3)",
+      "kind": "kb-b",
+      "phaseStart": "P3"
+     }
+    },
+    {
+     "date": "2027-02-07",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-75",
+      "kind": "bike",
+      "workout": "MB-Z2-75"
+     }
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "start": "2027-02-08",
+   "end": "2027-02-14",
+   "phase": "P3",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-02-08",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-02-09",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-02-10",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-02-11",
+     "dow": "do",
+     "session": {
+      "label": "MB-Schwelle V2",
+      "kind": "bike",
+      "workout": "MB-Schwelle V2"
+     }
+    },
+    {
+     "date": "2027-02-12",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-02-13",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-02-14",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-75",
+      "kind": "bike",
+      "workout": "MB-Z2-75"
+     }
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "start": "2027-02-15",
+   "end": "2027-02-21",
+   "phase": "P3",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-02-15",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-02-16",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-02-17",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-02-18",
+     "dow": "do",
+     "session": {
+      "label": "MB-Schwelle V3",
+      "kind": "bike",
+      "workout": "MB-Schwelle V3"
+     }
+    },
+    {
+     "date": "2027-02-19",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-02-20",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-02-21",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-75",
+      "kind": "bike",
+      "workout": "MB-Z2-75"
+     }
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "start": "2027-02-22",
+   "end": "2027-02-28",
+   "phase": "P3",
+   "deload": true,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-02-22",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-02-23",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-02-24",
+     "dow": "mi",
+     "session": {
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
+     }
+    },
+    {
+     "date": "2027-02-25",
+     "dow": "do",
+     "session": {
+      "label": "MB-Z2-45",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
+     }
+    },
+    {
+     "date": "2027-02-26",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-02-27",
+     "dow": "sa",
+     "session": {
+      "label": "KB B Deload, Zwischenmessung",
+      "kind": "kb-b",
+      "deload": true,
+      "note": "Zwischenmessung"
+     }
+    },
+    {
+     "date": "2027-02-28",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-45",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
+     }
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "start": "2027-03-01",
+   "end": "2027-03-07",
+   "phase": "P4",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-03-01",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-03-02",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-03-03",
+     "dow": "mi",
+     "session": {
+      "label": "KB A (P4)",
+      "kind": "kb-a",
+      "phaseStart": "P4"
+     }
+    },
+    {
+     "date": "2027-03-04",
+     "dow": "do",
+     "session": {
+      "label": "MB-OverUnder V1",
+      "kind": "bike",
+      "workout": "MB-OverUnder V1"
+     }
+    },
+    {
+     "date": "2027-03-05",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-03-06",
+     "dow": "sa",
+     "session": {
+      "label": "KB B (P4)",
+      "kind": "kb-b",
+      "phaseStart": "P4"
+     }
+    },
+    {
+     "date": "2027-03-07",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-Tempo-75 V1",
+      "kind": "bike",
+      "workout": "MB-Z2-Tempo-75 V1"
+     }
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "start": "2027-03-08",
+   "end": "2027-03-14",
+   "phase": "P4",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-03-08",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-03-09",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-03-10",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-03-11",
+     "dow": "do",
+     "session": {
+      "label": "MB-Schwelle V4",
+      "kind": "bike",
+      "workout": "MB-Schwelle V4"
+     }
+    },
+    {
+     "date": "2027-03-12",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-03-13",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-03-14",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-Tempo-75 V2 oder Rennrad draußen 75 min",
+      "kind": "bike",
+      "workout": "MB-Z2-Tempo-75 V2",
+      "alternativeText": "Rennrad draußen 75 min"
+     }
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "start": "2027-03-15",
+   "end": "2027-03-21",
+   "phase": "P4",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-03-15",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-03-16",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-03-17",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-03-18",
+     "dow": "do",
+     "session": {
+      "label": "MB-OverUnder V2",
+      "kind": "bike",
+      "workout": "MB-OverUnder V2"
+     }
+    },
+    {
+     "date": "2027-03-19",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-03-20",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-03-21",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-Tempo-75 V3",
+      "kind": "bike",
+      "workout": "MB-Z2-Tempo-75 V3"
+     }
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "start": "2027-03-22",
+   "end": "2027-03-28",
+   "phase": "P4",
+   "deload": true,
+   "test": true,
+   "days": [
+    {
+     "date": "2027-03-22",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-03-23",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-03-24",
+     "dow": "mi",
+     "session": {
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
+     }
+    },
+    {
+     "date": "2027-03-25",
+     "dow": "do",
+     "session": {
+      "label": "FTP-Test",
+      "kind": "ftp-test"
+     }
+    },
+    {
+     "date": "2027-03-26",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-03-27",
+     "dow": "sa",
+     "session": {
+      "label": "Swing-Test (100 × 24 kg), Abschlussmessung",
+      "kind": "swing-test",
+      "reps": 100,
+      "weights": [
+       24
+      ],
+      "note": "Abschlussmessung"
+     }
+    },
+    {
+     "date": "2027-03-28",
+     "dow": "so",
+     "session": {
+      "label": "Rennrad draußen 60 min locker",
+      "kind": "outdoor-ride"
+     }
+    }
+   ]
+  }
+ ],
+ "library": [
+  {
+   "id": "kb-kreuzheben-auch-doppel",
+   "name": "KB-Kreuzheben (auch Doppel)",
+   "start": "Hüfte gebeugt, Glocke zwischen den Füßen",
+   "end": "Aufrecht stehend",
+   "hints": [
+    "Hüfte nach hinten schieben, Rücken gerade",
+    "Aufrichten durch Gesäß anspannen"
+   ]
+  },
+  {
+   "id": "swing-hike-pass",
+   "name": "Swing / Hike Pass",
+   "start": "Glocke zwischen den Beinen nach hinten geschwungen",
+   "end": "Stehend, Arme auf Brusthöhe",
+   "hints": [
+    "Hike Pass: Glocke zwischen die Beine schwingen",
+    "Explosiv aus der Hüfte, Arme führen nur"
+   ]
+  },
+  {
+   "id": "clean",
+   "name": "Clean",
+   "start": "Glocke zwischen den Füßen",
+   "end": "Rack: Glocke außen am Unterarm vor der Schulter",
+   "hints": [
+    "Glocke nah am Körper hoch, Ellbogen eng",
+    "Ende im Rack"
+   ]
+  },
+  {
+   "id": "einbeiniges-kb-kreuzheben",
+   "name": "Einbeiniges KB-Kreuzheben",
+   "start": "Auf einem Bein stehend",
+   "end": "Oberkörper waagerecht, hinteres Bein gestreckt",
+   "hints": [
+    "Standbein leicht gebeugt, Becken gerade",
+    "Hinteres Bein und Rücken bilden eine Linie"
+   ]
+  },
+  {
+   "id": "goblet-squat-auf-box",
+   "name": "Goblet Squat (auf Box)",
+   "start": "Stehend, Glocke an der Brust",
+   "end": "Sitzend auf Box",
+   "hints": [
+    "Ellbogen zwischen die Knie",
+    "Nur so tief wie schmerzfrei"
+   ]
+  },
+  {
+   "id": "doppel-front-squat",
+   "name": "Doppel-Front-Squat",
+   "start": "Stehend, beide Glocken im Rack",
+   "end": "Tiefe Kniebeuge",
+   "hints": [
+    "Ellbogen nah am Körper",
+    "Oberkörper aufrecht, Knie folgen den Zehen"
+   ]
+  },
+  {
+   "id": "split-squat-reverse-lunge",
+   "name": "Split Squat / Reverse Lunge",
+   "start": "Schrittstellung bzw. Stand",
+   "end": "Hinteres Knie knapp über dem Boden",
+   "hints": [
+    "Hinteres Knie Richtung Boden, nicht aufsetzen",
+    "Vorderes Knie stabil über dem Fuß"
+   ]
+  },
+  {
+   "id": "farmer-suitcase-carry",
+   "name": "Farmer / Suitcase Carry",
+   "start": "Aufrecht mit Glocke(n)",
+   "end": "Gehen",
+   "hints": [
+    "Schultern weg von den Ohren",
+    "Suitcase: nicht zur Seite kippen"
+   ]
+  },
+  {
+   "id": "einarmiges-rudern-auch-doppel-ausfallschritt",
+   "name": "Einarmiges Rudern (auch Doppel, Ausfallschritt)",
+   "start": "Vorgebeugt, Arm hängt",
+   "end": "Ellbogen nach hinten gezogen",
+   "hints": [
+    "Freie Hand auf dem Knie, Rücken gerade",
+    "Ellbogen ziehen, nicht die Schulter"
+   ]
+  },
+  {
+   "id": "floor-press-auch-doppel",
+   "name": "Floor Press (auch Doppel)",
+   "start": "Rückenlage, Oberarm am Boden",
+   "end": "Arm senkrecht gestreckt",
+   "hints": [
+    "Handgelenk gerade",
+    "Langsam absenken"
+   ]
+  },
+  {
+   "id": "druecken-ueber-kopf-halbkniend-stehend",
+   "name": "Drücken über Kopf (halbkniend/stehend)",
+   "start": "Glocke im Rack",
+   "end": "Arm senkrecht über dem Kopf",
+   "hints": [
+    "Senkrecht nach oben",
+    "Bauch fest, kein Hohlkreuz"
+   ]
+  },
+  {
+   "id": "liegestuetz",
+   "name": "Liegestütz",
+   "start": "Hohe Stützposition",
+   "end": "Brust knapp über dem Boden",
+   "hints": [
+    "Körper eine Linie",
+    "Ellbogen ca. 45°; Knie erlaubt"
+   ]
+  },
+  {
+   "id": "dead-bug",
+   "name": "Dead Bug",
+   "start": "Rückenlage, Arme oben, Beine 90/90",
+   "end": "Gegengleich Arm und Bein gestreckt",
+   "hints": [
+    "Lendenwirbelsäule bleibt am Boden",
+    "Rechter Arm mit linkem Bein"
+   ]
+  },
+  {
+   "id": "seitstuetz",
+   "name": "Seitstütz",
+   "start": "Unterarmstütz seitlich",
+   "end": "Halten (ab P3: oberes Bein heben)",
+   "hints": [
+    "Ellbogen unter der Schulter",
+    "Hüfte hoch, ruhig atmen"
+   ]
+  },
+  {
+   "id": "hammer-curl",
+   "name": "Hammer Curl",
+   "start": "Arm hängt, Daumen oben",
+   "end": "Unterarm gebeugt",
+   "hints": [
+    "Ellbogen bleibt am Körper",
+    "Nicht schwingen"
+   ]
+  },
+  {
+   "id": "horn-curl",
+   "name": "Horn Curl",
+   "start": "Glocke an den Hörnern vor den Oberschenkeln",
+   "end": "Glocke vor der Brust",
+   "hints": [
+    "Glocke zeigt nach unten",
+    "Oberarme ruhig"
+   ]
+  },
+  {
+   "id": "trizepsdruecken-ueber-kopf",
+   "name": "Trizepsdrücken über Kopf",
+   "start": "Arme gestreckt über dem Kopf",
+   "end": "Glocke hinter dem Kopf abgesenkt",
+   "hints": [
+    "Ellbogen zeigen nach vorn",
+    "Rumpf fest"
+   ]
+  },
+  {
+   "id": "trizepsstrecken-liegend",
+   "name": "Trizepsstrecken liegend",
+   "start": "Rückenlage, Arme senkrecht",
+   "end": "Glocke Richtung Stirn abgesenkt",
+   "hints": [
+    "Oberarme senkrecht",
+    "Kontrolliert"
+   ]
+  }
+ ],
+ "kb": {
+  "P1": {
+   "weeks": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "A": [
+    {
+     "id": "A1",
+     "order": 1,
+     "exerciseId": "kb-kreuzheben",
+     "name": "KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "kb-kreuzheben-auch-doppel",
+     "weeks": {
+      "1": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "2": {
+       "raw": "3 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "3": {
+       "raw": "3 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "4": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A2",
+     "order": 2,
+     "exerciseId": "goblet-squat-auf-box",
+     "name": "Goblet Squat auf Box",
+     "block": "main",
+     "libraryId": "goblet-squat-auf-box",
+     "weeks": {
+      "1": {
+       "raw": "2 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      },
+      "2": {
+       "raw": "3 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      },
+      "3": {
+       "raw": "3 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "4": {
+       "raw": "2 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A3",
+     "order": 3,
+     "exerciseId": "einarmiges-rudern",
+     "name": "Einarmiges Rudern",
+     "block": "main",
+     "libraryId": "einarmiges-rudern-auch-doppel-ausfallschritt",
+     "weeks": {
+      "1": {
+       "raw": "2 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "2": {
+       "raw": "3 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "3": {
+       "raw": "3 × 12/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "4": {
+       "raw": "2 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A4",
+     "order": 4,
+     "exerciseId": "floor-press",
+     "name": "Floor Press",
+     "block": "main",
+     "libraryId": "floor-press-auch-doppel",
+     "weeks": {
+      "1": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 10/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A5",
+     "order": 5,
+     "exerciseId": "farmer-carry",
+     "name": "Farmer Carry",
+     "block": "main",
+     "libraryId": "farmer-suitcase-carry",
+     "weeks": {
+      "1": {
+       "raw": "2 × 30 s @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "2": {
+       "raw": "3 × 40 s @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "3": {
+       "raw": "3 × 40 s @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "4": {
+       "raw": "2 × 30 s @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "weights": [
+        12,
+        16
+       ]
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "A6",
+     "order": 6,
+     "exerciseId": "dead-bug",
+     "name": "Dead Bug",
+     "block": "main",
+     "libraryId": "dead-bug",
+     "weeks": {
+      "1": {
+       "raw": "2 × 8/S",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true
+      },
+      "2": {
+       "raw": "2 × 8/S",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true
+      },
+      "3": {
+       "raw": "2 × 10/S",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "perSide": true
+      },
+      "4": {
+       "raw": "2 × 8/S",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true
+      }
+     },
+     "group": 4
+    },
+    {
+     "id": "A7",
+     "order": 7,
+     "exerciseId": "hammer-curl-einarmig",
+     "name": "Hammer Curl einarmig",
+     "block": "finisher",
+     "libraryId": "hammer-curl",
+     "weeks": {
+      "1": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 10/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "A8",
+     "order": 8,
+     "exerciseId": "trizepsdruecken-ueber-kopf-beidhaendig",
+     "name": "Trizepsdrücken über Kopf, beidhändig",
+     "block": "finisher",
+     "libraryId": "trizepsdruecken-ueber-kopf",
+     "weeks": {
+      "1": {
+       "raw": "2 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 12 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 99
+    }
+   ],
+   "B": [
+    {
+     "id": "B1",
+     "order": 1,
+     "exerciseId": "hike-pass-swing-aus-dem-stand",
+     "name": "Hike Pass → Swing aus dem Stand",
+     "block": "main",
+     "libraryId": "swing-hike-pass",
+     "weeks": {
+      "1": {
+       "raw": "5 × 5 Hike Pass @ 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 5,
+       "label": "Hike Pass",
+       "weights": [
+        16
+       ]
+      },
+      "2": {
+       "raw": "5 × 5 Swing @ 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 5,
+       "label": "Swing",
+       "weights": [
+        16
+       ]
+      },
+      "3": {
+       "raw": "6 × 5 Swing @ 16 kg",
+       "kind": "sets",
+       "sets": 6,
+       "reps": 5,
+       "label": "Swing",
+       "weights": [
+        16
+       ]
+      },
+      "4": {
+       "raw": "4 × 5 Swing @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 5,
+       "label": "Swing",
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "B2",
+     "order": 2,
+     "exerciseId": "split-squat-goblet",
+     "name": "Split Squat (Goblet)",
+     "block": "main",
+     "libraryId": "split-squat-reverse-lunge",
+     "weeks": {
+      "1": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 10/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "B3",
+     "order": 3,
+     "exerciseId": "rudern-im-ausfallschritt",
+     "name": "Rudern im Ausfallschritt",
+     "block": "main",
+     "libraryId": "einarmiges-rudern-auch-doppel-ausfallschritt",
+     "weeks": {
+      "1": {
+       "raw": "2 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "2": {
+       "raw": "3 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "3": {
+       "raw": "3 × 12/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "4": {
+       "raw": "2 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B4",
+     "order": 4,
+     "exerciseId": "druecken-ueber-kopf-im-halbknien",
+     "name": "Drücken über Kopf im Halbknien",
+     "block": "main",
+     "libraryId": "druecken-ueber-kopf-halbkniend-stehend",
+     "weeks": {
+      "1": {
+       "raw": "2 × 6/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 6/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 6/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B5",
+     "order": 5,
+     "exerciseId": "suitcase-carry",
+     "name": "Suitcase Carry",
+     "block": "main",
+     "libraryId": "farmer-suitcase-carry",
+     "weeks": {
+      "1": {
+       "raw": "2 × 30 s/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "2": {
+       "raw": "3 × 30 s/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 30,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "3": {
+       "raw": "3 × 40 s/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "4": {
+       "raw": "2 × 30 s/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "B6",
+     "order": 6,
+     "exerciseId": "seitstuetz",
+     "name": "Seitstütz",
+     "block": "main",
+     "libraryId": "seitstuetz",
+     "weeks": {
+      "1": {
+       "raw": "2 × 20 s/S",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 20,
+       "perSide": true
+      },
+      "2": {
+       "raw": "2 × 30 s/S",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "perSide": true
+      },
+      "3": {
+       "raw": "3 × 30 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 30,
+       "perSide": true
+      },
+      "4": {
+       "raw": "2 × 20 s/S",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 20,
+       "perSide": true
+      }
+     },
+     "group": 4
+    },
+    {
+     "id": "B7",
+     "order": 7,
+     "exerciseId": "horn-curl-beidhaendig",
+     "name": "Horn Curl beidhändig",
+     "block": "finisher",
+     "libraryId": "horn-curl",
+     "weeks": {
+      "1": {
+       "raw": "2 × 8 @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 8 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 8 @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "B8",
+     "order": 8,
+     "exerciseId": "trizepsstrecken-liegend-beidhaendig",
+     "name": "Trizepsstrecken liegend, beidhändig",
+     "block": "finisher",
+     "libraryId": "trizepsstrecken-liegend",
+     "weeks": {
+      "1": {
+       "raw": "2 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      },
+      "2": {
+       "raw": "3 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      },
+      "3": {
+       "raw": "3 × 12 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        12
+       ]
+      },
+      "4": {
+       "raw": "2 × 10 @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 99
+    }
+   ]
+  },
+  "P2": {
+   "weeks": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "A": [
+    {
+     "id": "A1",
+     "order": 1,
+     "exerciseId": "doppel-kb-kreuzheben",
+     "name": "Doppel-KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "kb-kreuzheben-auch-doppel",
+     "weeks": {
+      "5": {
+       "raw": "4 × 8 @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "6": {
+       "raw": "4 × 10 @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "7": {
+       "raw": "4 × 12 @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 10 @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        12,
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A2",
+     "order": 2,
+     "exerciseId": "goblet-squat-3-s-absenken",
+     "name": "Goblet Squat, 3 s absenken",
+     "block": "main",
+     "libraryId": "goblet-squat-auf-box",
+     "weeks": {
+      "5": {
+       "raw": "4 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      },
+      "6": {
+       "raw": "4 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "7": {
+       "raw": "4 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A3",
+     "order": 3,
+     "exerciseId": "einarmiges-rudern",
+     "name": "Einarmiges Rudern",
+     "block": "main",
+     "libraryId": "einarmiges-rudern-auch-doppel-ausfallschritt",
+     "weeks": {
+      "5": {
+       "raw": "4 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "6": {
+       "raw": "4 × 8/S @ 24 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      },
+      "7": {
+       "raw": "4 × 10/S @ 24 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      },
+      "8": {
+       "raw": "2 × 8/S @ 24 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A4",
+     "order": 4,
+     "exerciseId": "floor-press",
+     "name": "Floor Press",
+     "block": "main",
+     "libraryId": "floor-press-auch-doppel",
+     "weeks": {
+      "5": {
+       "raw": "4 × 6/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "6": {
+       "raw": "4 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "7": {
+       "raw": "4 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 6/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A5",
+     "order": 5,
+     "exerciseId": "farmer-carry",
+     "name": "Farmer Carry",
+     "block": "main",
+     "libraryId": "farmer-suitcase-carry",
+     "weeks": {
+      "5": {
+       "raw": "3 × 40 s @ 12 + 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "weights": [
+        12,
+        16
+       ]
+      },
+      "6": {
+       "raw": "3 × 40 s @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "7": {
+       "raw": "3 × 45 s @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 45,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "8": {
+       "raw": "2 × 30 s @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "weights": [
+        16,
+        24
+       ]
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "A6",
+     "order": 6,
+     "exerciseId": "dead-bug",
+     "name": "Dead Bug",
+     "block": "main",
+     "libraryId": "dead-bug",
+     "weeks": {
+      "5": {
+       "raw": "3 × 10/S",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true
+      },
+      "6": {
+       "raw": "3 × 10/S",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true
+      },
+      "7": {
+       "raw": "3 × 12/S",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true
+      },
+      "8": {
+       "raw": "2 × 8/S",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true
+      }
+     },
+     "group": 4
+    },
+    {
+     "id": "A7",
+     "order": 7,
+     "exerciseId": "hammer-curl-einarmig",
+     "name": "Hammer Curl einarmig",
+     "block": "finisher",
+     "libraryId": "hammer-curl",
+     "weeks": {
+      "5": {
+       "raw": "3 × 10/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "6": {
+       "raw": "3 × 12/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "7": {
+       "raw": "3 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "A8",
+     "order": 8,
+     "exerciseId": "trizepsdruecken-ueber-kopf-beidhaendig",
+     "name": "Trizepsdrücken über Kopf, beidhändig",
+     "block": "finisher",
+     "libraryId": "trizepsdruecken-ueber-kopf",
+     "weeks": {
+      "5": {
+       "raw": "3 × 12 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        12
+       ]
+      },
+      "6": {
+       "raw": "3 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      },
+      "7": {
+       "raw": "3 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    }
+   ],
+   "B": [
+    {
+     "id": "B1",
+     "order": 1,
+     "exerciseId": "swing-jede-minute-fuer-10-min-emom",
+     "name": "Swing, jede Minute für 10 min (EMOM)",
+     "block": "main",
+     "libraryId": "swing-hike-pass",
+     "weeks": {
+      "5": {
+       "raw": "10 × 10 @ 16 kg",
+       "kind": "emom",
+       "minutes": 10,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "6": {
+       "raw": "10 × 12 @ 16 kg",
+       "kind": "emom",
+       "minutes": 10,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "7": {
+       "raw": "10 × 8 @ 24 kg",
+       "kind": "emom",
+       "minutes": 10,
+       "reps": 8,
+       "weights": [
+        24
+       ]
+      },
+      "8": {
+       "raw": "6 × 8 @ 16 kg",
+       "kind": "emom",
+       "minutes": 6,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "B2",
+     "order": 2,
+     "exerciseId": "reverse-lunge-goblet-nur-schmerzfrei",
+     "name": "Reverse Lunge (Goblet), nur schmerzfrei",
+     "block": "main",
+     "libraryId": "split-squat-reverse-lunge",
+     "weeks": {
+      "5": {
+       "raw": "3 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "6": {
+       "raw": "3 × 10/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "7": {
+       "raw": "3 × 12/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "8": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "painFreeAlternative": "Split Squat",
+     "group": 1
+    },
+    {
+     "id": "B3",
+     "order": 3,
+     "exerciseId": "clean-und-press",
+     "name": "Clean und Press",
+     "block": "main",
+     "libraryId": "clean",
+     "weeks": {
+      "5": {
+       "raw": "4 × 3/S @ 12 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 3,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "6": {
+       "raw": "4 × 4/S @ 12 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 4,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "7": {
+       "raw": "4 × 5/S @ 12 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 5,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "8": {
+       "raw": "2 × 3/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 3,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B4",
+     "order": 4,
+     "exerciseId": "liegestuetz",
+     "name": "Liegestütz",
+     "block": "main",
+     "libraryId": "liegestuetz",
+     "weeks": {
+      "5": {
+       "raw": "3 × max−2",
+       "kind": "sets",
+       "sets": 3,
+       "repsMode": "max-2"
+      },
+      "6": {
+       "raw": "3 × max−2",
+       "kind": "sets",
+       "sets": 3,
+       "repsMode": "max-2"
+      },
+      "7": {
+       "raw": "3 × max−2",
+       "kind": "sets",
+       "sets": 3,
+       "repsMode": "max-2"
+      },
+      "8": {
+       "raw": "2 × max−2",
+       "kind": "sets",
+       "sets": 2,
+       "repsMode": "max-2"
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B5",
+     "order": 5,
+     "exerciseId": "einbeiniges-kb-kreuzheben",
+     "name": "Einbeiniges KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "einbeiniges-kb-kreuzheben",
+     "weeks": {
+      "5": {
+       "raw": "3 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "6": {
+       "raw": "3 × 10/S @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      },
+      "7": {
+       "raw": "3 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 8/S @ 12 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        12
+       ]
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "B6",
+     "order": 6,
+     "exerciseId": "seitstuetz",
+     "name": "Seitstütz",
+     "block": "main",
+     "libraryId": "seitstuetz",
+     "weeks": {
+      "5": {
+       "raw": "3 × 30 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 30,
+       "perSide": true
+      },
+      "6": {
+       "raw": "3 × 35 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 35,
+       "perSide": true
+      },
+      "7": {
+       "raw": "3 × 40 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "perSide": true
+      },
+      "8": {
+       "raw": "2 × 30 s/S",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "perSide": true
+      }
+     },
+     "group": 4
+    },
+    {
+     "id": "B7",
+     "order": 7,
+     "exerciseId": "horn-curl-beidhaendig",
+     "name": "Horn Curl beidhändig",
+     "block": "finisher",
+     "libraryId": "horn-curl",
+     "weeks": {
+      "5": {
+       "raw": "3 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      },
+      "6": {
+       "raw": "3 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "7": {
+       "raw": "3 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "B8",
+     "order": 8,
+     "exerciseId": "trizepsstrecken-liegend-beidhaendig",
+     "name": "Trizepsstrecken liegend, beidhändig",
+     "block": "finisher",
+     "libraryId": "trizepsstrecken-liegend",
+     "weeks": {
+      "5": {
+       "raw": "3 × 12 @ 12 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        12
+       ]
+      },
+      "6": {
+       "raw": "3 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      },
+      "7": {
+       "raw": "3 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "8": {
+       "raw": "2 × 8 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    }
+   ]
+  },
+  "P3": {
+   "weeks": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "A": [
+    {
+     "id": "A1",
+     "order": 1,
+     "exerciseId": "doppel-front-squat",
+     "name": "Doppel-Front-Squat",
+     "block": "main",
+     "libraryId": "doppel-front-squat",
+     "weeks": {
+      "9": {
+       "raw": "4 × 6 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 6,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 10 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 6 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A2",
+     "order": 2,
+     "exerciseId": "doppel-kb-kreuzheben",
+     "name": "Doppel-KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "kb-kreuzheben-auch-doppel",
+     "weeks": {
+      "9": {
+       "raw": "3 × 8 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "10": {
+       "raw": "3 × 10 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "11": {
+       "raw": "3 × 12 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "12": {
+       "raw": "2 × 8 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16,
+        24
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A3",
+     "order": 3,
+     "exerciseId": "doppel-rudern",
+     "name": "Doppel-Rudern",
+     "block": "main",
+     "libraryId": "einarmiges-rudern-auch-doppel-ausfallschritt",
+     "weeks": {
+      "9": {
+       "raw": "4 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 10 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 12 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A4",
+     "order": 4,
+     "exerciseId": "doppel-floor-press",
+     "name": "Doppel-Floor-Press",
+     "block": "main",
+     "libraryId": "floor-press-auch-doppel",
+     "weeks": {
+      "9": {
+       "raw": "4 × 6 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 6,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 10 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 6 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A5",
+     "order": 5,
+     "exerciseId": "farmer-carry",
+     "name": "Farmer Carry",
+     "block": "main",
+     "libraryId": "farmer-suitcase-carry",
+     "weeks": {
+      "9": {
+       "raw": "3 × 45 s @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 45,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "10": {
+       "raw": "3 × 45 s @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 45,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "11": {
+       "raw": "3 × 60 s @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 60,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "12": {
+       "raw": "2 × 30 s @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "A6",
+     "order": 6,
+     "exerciseId": "dead-bug",
+     "name": "Dead Bug",
+     "block": "main",
+     "libraryId": "dead-bug",
+     "weeks": {
+      "9": {
+       "raw": "3 × 10/S",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true
+      },
+      "10": {
+       "raw": "3 × 12/S",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true
+      },
+      "11": {
+       "raw": "3 × 12/S",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true
+      },
+      "12": {
+       "raw": "2 × 8/S",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true
+      }
+     },
+     "group": 4
+    },
+    {
+     "id": "A7",
+     "order": 7,
+     "exerciseId": "hammer-curl-einarmig",
+     "name": "Hammer Curl einarmig",
+     "block": "finisher",
+     "libraryId": "hammer-curl",
+     "weeks": {
+      "9": {
+       "raw": "3 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "3 × 12/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 12/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "A8",
+     "order": 8,
+     "exerciseId": "trizepsdruecken-ueber-kopf-beidhaendig",
+     "name": "Trizepsdrücken über Kopf, beidhändig",
+     "block": "finisher",
+     "libraryId": "trizepsdruecken-ueber-kopf",
+     "weeks": {
+      "9": {
+       "raw": "3 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    }
+   ],
+   "B": [
+    {
+     "id": "B1",
+     "order": 1,
+     "exerciseId": "swing-jede-minute-emom",
+     "name": "Swing, jede Minute (EMOM)",
+     "block": "main",
+     "libraryId": "swing-hike-pass",
+     "weeks": {
+      "9": {
+       "raw": "10 min × 8 @ 24 kg",
+       "kind": "emom",
+       "minutes": 10,
+       "reps": 8,
+       "weights": [
+        24
+       ]
+      },
+      "10": {
+       "raw": "10 min × 10 @ 24 kg",
+       "kind": "emom",
+       "minutes": 10,
+       "reps": 10,
+       "weights": [
+        24
+       ]
+      },
+      "11": {
+       "raw": "12 min × 10 @ 24 kg",
+       "kind": "emom",
+       "minutes": 12,
+       "reps": 10,
+       "weights": [
+        24
+       ]
+      },
+      "12": {
+       "raw": "6 min × 8 @ 24 kg",
+       "kind": "emom",
+       "minutes": 6,
+       "reps": 8,
+       "weights": [
+        24
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "B2",
+     "order": 2,
+     "exerciseId": "reverse-lunge-goblet",
+     "name": "Reverse Lunge (Goblet)",
+     "block": "main",
+     "libraryId": "split-squat-reverse-lunge",
+     "weeks": {
+      "9": {
+       "raw": "3 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "3 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "3 × 12/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "painFreeAlternative": "Split Squat",
+     "group": 1
+    },
+    {
+     "id": "B3",
+     "order": 3,
+     "exerciseId": "druecken-ueber-kopf-einarmig",
+     "name": "Drücken über Kopf einarmig",
+     "block": "main",
+     "libraryId": "druecken-ueber-kopf-halbkniend-stehend",
+     "weeks": {
+      "9": {
+       "raw": "4 × 4/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 4,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 5/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 5,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 6/S @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 4/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 4,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B4",
+     "order": 4,
+     "exerciseId": "einbeiniges-kb-kreuzheben",
+     "name": "Einbeiniges KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "einbeiniges-kb-kreuzheben",
+     "weeks": {
+      "9": {
+       "raw": "3 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "3 × 10/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "3 × 12/S @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 8/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B5",
+     "order": 5,
+     "exerciseId": "liegestuetz",
+     "name": "Liegestütz",
+     "block": "main",
+     "libraryId": "liegestuetz",
+     "weeks": {
+      "9": {
+       "raw": "4 × max−2",
+       "kind": "sets",
+       "sets": 4,
+       "repsMode": "max-2"
+      },
+      "10": {
+       "raw": "4 × max−2",
+       "kind": "sets",
+       "sets": 4,
+       "repsMode": "max-2"
+      },
+      "11": {
+       "raw": "4 × max−2",
+       "kind": "sets",
+       "sets": 4,
+       "repsMode": "max-2"
+      },
+      "12": {
+       "raw": "2 × max−2",
+       "kind": "sets",
+       "sets": 2,
+       "repsMode": "max-2"
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "B6",
+     "order": 6,
+     "exerciseId": "seitstuetz",
+     "name": "Seitstütz",
+     "block": "main",
+     "libraryId": "seitstuetz",
+     "weeks": {
+      "9": {
+       "raw": "3 × 40 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 40,
+       "perSide": true
+      },
+      "10": {
+       "raw": "3 × 45 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 45,
+       "perSide": true
+      },
+      "11": {
+       "raw": "3 × 45 s/S",
+       "kind": "sets",
+       "sets": 3,
+       "seconds": 45,
+       "perSide": true
+      },
+      "12": {
+       "raw": "2 × 30 s/S",
+       "kind": "sets",
+       "sets": 2,
+       "seconds": 30,
+       "perSide": true
+      }
+     },
+     "group": 4
+    },
+    {
+     "id": "B7",
+     "order": 7,
+     "exerciseId": "horn-curl-beidhaendig",
+     "name": "Horn Curl beidhändig",
+     "block": "finisher",
+     "libraryId": "horn-curl",
+     "weeks": {
+      "9": {
+       "raw": "3 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "B8",
+     "order": 8,
+     "exerciseId": "trizepsstrecken-liegend-beidhaendig",
+     "name": "Trizepsstrecken liegend, beidhändig",
+     "block": "finisher",
+     "libraryId": "trizepsstrecken-liegend",
+     "weeks": {
+      "9": {
+       "raw": "3 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "10": {
+       "raw": "4 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "11": {
+       "raw": "4 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "12": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    }
+   ]
+  },
+  "P4": {
+   "weeks": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "A": [
+    {
+     "id": "A1",
+     "order": 1,
+     "exerciseId": "doppel-front-squat-2-s-pause-unten",
+     "name": "Doppel-Front-Squat, 2 s Pause unten",
+     "block": "main",
+     "libraryId": "doppel-front-squat",
+     "weeks": {
+      "13": {
+       "raw": "5 × 6 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 6,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "14": {
+       "raw": "5 × 7 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 7,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "15": {
+       "raw": "5 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 5 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 5,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A2",
+     "order": 2,
+     "exerciseId": "doppel-kb-kreuzheben",
+     "name": "Doppel-KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "kb-kreuzheben-auch-doppel",
+     "weeks": {
+      "13": {
+       "raw": "4 × 8 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "14": {
+       "raw": "4 × 10 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "15": {
+       "raw": "4 × 12 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16,
+        24
+       ]
+      },
+      "16": {
+       "raw": "2 × 8 @ 16 + 24 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16,
+        24
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "A3",
+     "order": 3,
+     "exerciseId": "doppel-rudern-2-s-halten",
+     "name": "Doppel-Rudern, 2 s halten",
+     "block": "main",
+     "libraryId": "einarmiges-rudern-auch-doppel-ausfallschritt",
+     "weeks": {
+      "13": {
+       "raw": "4 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "14": {
+       "raw": "4 × 10 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "15": {
+       "raw": "4 × 12 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A4",
+     "order": 4,
+     "exerciseId": "druecken-ueber-kopf-einarmig",
+     "name": "Drücken über Kopf einarmig",
+     "block": "main",
+     "libraryId": "druecken-ueber-kopf-halbkniend-stehend",
+     "weeks": {
+      "13": {
+       "raw": "5 × 5/S @ 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 5,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "14": {
+       "raw": "5 × 5/S @ 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 5,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "15": {
+       "raw": "5 × 6/S @ 16 kg",
+       "kind": "sets",
+       "sets": 5,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 5/S @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 5,
+       "perSide": true,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "A5",
+     "order": 5,
+     "exerciseId": "swing-explosiv",
+     "name": "Swing explosiv",
+     "block": "main",
+     "libraryId": "swing-hike-pass",
+     "weeks": {
+      "13": {
+       "raw": "10 × 5 @ 24 kg",
+       "kind": "sets",
+       "sets": 10,
+       "reps": 5,
+       "weights": [
+        24
+       ]
+      },
+      "14": {
+       "raw": "12 × 5 @ 24 kg",
+       "kind": "sets",
+       "sets": 12,
+       "reps": 5,
+       "weights": [
+        24
+       ]
+      },
+      "15": {
+       "raw": "15 × 5 @ 24 kg",
+       "kind": "sets",
+       "sets": 15,
+       "reps": 5,
+       "weights": [
+        24
+       ]
+      },
+      "16": {
+       "raw": "6 × 5 @ 24 kg",
+       "kind": "sets",
+       "sets": 6,
+       "reps": 5,
+       "weights": [
+        24
+       ]
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "A6",
+     "order": 6,
+     "exerciseId": "doppel-hammer-curl",
+     "name": "Doppel-Hammer Curl",
+     "block": "finisher",
+     "libraryId": "hammer-curl",
+     "weeks": {
+      "13": {
+       "raw": "4 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "14": {
+       "raw": "4 × 10 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "15": {
+       "raw": "4 × 12 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 8 @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "A7",
+     "order": 7,
+     "exerciseId": "trizepsdruecken-ueber-kopf-3-s-absenken",
+     "name": "Trizepsdrücken über Kopf, 3 s absenken",
+     "block": "finisher",
+     "libraryId": "trizepsdruecken-ueber-kopf",
+     "weeks": {
+      "13": {
+       "raw": "4 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "14": {
+       "raw": "4 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "15": {
+       "raw": "4 × 15 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 15,
+       "weights": [
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    }
+   ],
+   "B": [
+    {
+     "id": "B1",
+     "order": 1,
+     "exerciseId": "komplex-pro-seite-5-clean-3-press-5-front-squat",
+     "name": "Komplex pro Seite: 5 Clean, 3 Press, 5 Front Squat",
+     "block": "main",
+     "libraryId": "clean",
+     "weeks": {
+      "13": {
+       "raw": "3 Runden @ 16 kg",
+       "kind": "rounds",
+       "sets": 3,
+       "weights": [
+        16
+       ]
+      },
+      "14": {
+       "raw": "4 Runden @ 16 kg",
+       "kind": "rounds",
+       "sets": 4,
+       "weights": [
+        16
+       ]
+      },
+      "15": {
+       "raw": "4 Runden @ 16 kg, kürzere Pausen",
+       "kind": "rounds",
+       "sets": 4,
+       "weights": [
+        16
+       ],
+       "note": "kürzere Pausen"
+      },
+      "16": {
+       "raw": "2 Runden @ 16 kg",
+       "kind": "rounds",
+       "sets": 2,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "B2",
+     "order": 2,
+     "exerciseId": "swing-leiter",
+     "name": "Swing-Leiter",
+     "block": "main",
+     "libraryId": "swing-hike-pass",
+     "weeks": {
+      "13": {
+       "raw": "5-10-15-10-5 @ 24 kg",
+       "kind": "ladder",
+       "ladder": [
+        5,
+        10,
+        15,
+        10,
+        5
+       ],
+       "weights": [
+        24
+       ]
+      },
+      "14": {
+       "raw": "5-10-15-20-15-10-5 @ 24 kg",
+       "kind": "ladder",
+       "ladder": [
+        5,
+        10,
+        15,
+        20,
+        15,
+        10,
+        5
+       ],
+       "weights": [
+        24
+       ]
+      },
+      "15": {
+       "raw": "wie W14, kürzere Pausen",
+       "kind": "ladder",
+       "ladder": [
+        5,
+        10,
+        15,
+        20,
+        15,
+        10,
+        5
+       ],
+       "weights": [
+        24
+       ],
+       "note": "kürzere Pausen"
+      },
+      "16": {
+       "raw": "Test: 100 Swings @ 24 kg auf Zeit",
+       "kind": "test",
+       "reps": 100,
+       "timed": true,
+       "weights": [
+        24
+       ]
+      }
+     },
+     "group": 1
+    },
+    {
+     "id": "B3",
+     "order": 3,
+     "exerciseId": "reverse-lunge-kettlebells-vor-der-brust",
+     "name": "Reverse Lunge, Kettlebells vor der Brust",
+     "block": "main",
+     "libraryId": "split-squat-reverse-lunge",
+     "weeks": {
+      "13": {
+       "raw": "3 × 6/S @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "14": {
+       "raw": "3 × 8/S @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "15": {
+       "raw": "3 × 8/S @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        16,
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 6/S @ 2 × 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        16,
+        16
+       ]
+      }
+     },
+     "painFreeAlternative": "Split Squat",
+     "group": 2
+    },
+    {
+     "id": "B4",
+     "order": 4,
+     "exerciseId": "einbeiniges-kb-kreuzheben",
+     "name": "Einbeiniges KB-Kreuzheben",
+     "block": "main",
+     "libraryId": "einbeiniges-kb-kreuzheben",
+     "weeks": {
+      "13": {
+       "raw": "3 × 6/S @ 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      },
+      "14": {
+       "raw": "3 × 8/S @ 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      },
+      "15": {
+       "raw": "3 × 8/S @ 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      },
+      "16": {
+       "raw": "2 × 6/S @ 24 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "perSide": true,
+       "weights": [
+        24
+       ]
+      }
+     },
+     "group": 2
+    },
+    {
+     "id": "B5",
+     "order": 5,
+     "exerciseId": "liegestuetz-mit-pause-unten",
+     "name": "Liegestütz mit Pause unten",
+     "block": "main",
+     "libraryId": "liegestuetz",
+     "weeks": {
+      "13": {
+       "raw": "3 × 8",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8
+      },
+      "14": {
+       "raw": "3 × 10",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10
+      },
+      "15": {
+       "raw": "3 × 10",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10
+      },
+      "16": {
+       "raw": "2 × 8",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 8
+      }
+     },
+     "group": 3
+    },
+    {
+     "id": "B6",
+     "order": 6,
+     "exerciseId": "horn-curl-beidhaendig",
+     "name": "Horn Curl beidhändig",
+     "block": "finisher",
+     "libraryId": "horn-curl",
+     "weeks": {
+      "13": {
+       "raw": "3 × 6 @ 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 6,
+       "weights": [
+        24
+       ]
+      },
+      "14": {
+       "raw": "3 × 8 @ 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 8,
+       "weights": [
+        24
+       ]
+      },
+      "15": {
+       "raw": "3 × 10 @ 24 kg",
+       "kind": "sets",
+       "sets": 3,
+       "reps": 10,
+       "weights": [
+        24
+       ]
+      },
+      "16": {
+       "raw": "2 × 6 @ 24 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 6,
+       "weights": [
+        24
+       ]
+      }
+     },
+     "group": 99
+    },
+    {
+     "id": "B7",
+     "order": 7,
+     "exerciseId": "trizepsstrecken-liegend-3-s-absenken",
+     "name": "Trizepsstrecken liegend, 3 s absenken",
+     "block": "finisher",
+     "libraryId": "trizepsstrecken-liegend",
+     "weeks": {
+      "13": {
+       "raw": "4 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      },
+      "14": {
+       "raw": "4 × 12 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 12,
+       "weights": [
+        16
+       ]
+      },
+      "15": {
+       "raw": "4 × 15 @ 16 kg",
+       "kind": "sets",
+       "sets": 4,
+       "reps": 15,
+       "weights": [
+        16
+       ]
+      },
+      "16": {
+       "raw": "2 × 10 @ 16 kg",
+       "kind": "sets",
+       "sets": 2,
+       "reps": 10,
+       "weights": [
+        16
+       ]
+      }
+     },
+     "group": 99
+    }
+   ]
+  }
+ },
+ "workoutC": {
+  "rows": [
+   {
+    "exercise": "Swing (W1–3: KB-Kreuzheben statt Swing)",
+    "reps": "10",
+    "phase1": "16 kg",
+    "phase2": "16 kg",
+    "phase34": "24 kg"
+   },
+   {
+    "exercise": "Goblet Squat",
+    "reps": "8",
+    "phase1": "16 kg",
+    "phase2": "16 kg",
+    "phase34": "16 kg, ab W13 24 kg"
+   },
+   {
+    "exercise": "Liegestütz",
+    "reps": "6",
+    "phase1": "Körpergewicht",
+    "phase2": "Körpergewicht",
+    "phase34": "Körpergewicht"
+   },
+   {
+    "exercise": "Einarmiges Rudern",
+    "reps": "5/S",
+    "phase1": "16 kg",
+    "phase2": "24 kg",
+    "phase34": "24 kg"
+   }
+  ],
+  "notes": [
+   "Dauer 30 min: 6 min Warm-up, 20 min so viele Runden wie möglich (AMRAP), 3 min Cool-down. Rundenzahl notieren. Deload-Wochen (4, 8, 12, 16): nur 10 min AMRAP. Alternative auf dem Rad: MB-VO2-30."
+  ],
+  "columns": [
+   "Übung (eine Runde)",
+   "Wdh.",
+   "Phase 1 (W1–4)",
+   "Phase 2 (W5–8)",
+   "Phase 3–4 (W9–16)"
+  ]
+ },
+ "sessionFlow": {
+  "parts": [
+   {
+    "part": "Warm-up",
+    "content": "2 min locker auf dem Rad, Halos 2 × 5 pro Richtung, 10 Hip Hinges mit Stab am Rücken, 10 Glute Bridges",
+    "duration": "6 min"
+   },
+   {
+    "part": "Knie-Block",
+    "content": "Mittwoch Übungen 1–3 des Knie-Programms, Samstag Übungen 4–6",
+    "duration": "10 min"
+   },
+   {
+    "part": "Hauptteil",
+    "content": "Übungen 1 + 2 und 3 + 4 als Supersatz, danach 5 und 6",
+    "duration": "30 min"
+   },
+   {
+    "part": "Arm-Finisher",
+    "content": "Die beiden Arm-Finisher-Übungen als Supersatz: Bizeps, 30 s Pause, Trizeps, 45 s Pause",
+    "duration": "6–8 min"
+   },
+   {
+    "part": "Cool-down",
+    "content": "Hüftbeuger dehnen, Gesäß und seitliche Hüfte mit der Faszienrolle",
+    "duration": "3 min"
+   }
+  ],
+  "notes": [
+   "**Supersatz:** Satz Übung 1, 30 s Pause, Satz Übung 2, 60–90 s Pause, wiederholen.",
+   "**Anstrengung:** RPE 7–8 (1–3 Wiederholungen im Tank).",
+   "**Gewicht wechseln:** Steht ein höheres Gewicht im Plan, wird es erst genutzt, wenn die Vorgabe der Vorwoche in allen Sätzen sauber geschafft wurde. Fühlt sich eine Woche zu leicht an (RPE unter 6), dürfen die Wiederholungen um 2 erhöht werden, nicht das Gewicht.",
+   "**Deload:** Nur die angegebenen Sätze, kein Zusatztraining."
+  ]
+ },
+ "knee": {
+  "phases": [
+   "P1",
+   "P2",
+   "P3",
+   "P4"
+  ],
+  "exercises": [
+   {
+    "id": "K1",
+    "day": "wed",
+    "name": "Clamshell mit Miniband (P3–4: Seitstütz mit Abheben des oberen Beins)",
+    "goal": "Hüft-Außenrotatoren, seitlicher Gesäßmuskel",
+    "libraryId": null,
+    "phases": {
+     "P1": {
+      "raw": "3 × 15/S, leichtes Band",
+      "sets": 3,
+      "reps": 15,
+      "perSide": true
+     },
+     "P2": {
+      "raw": "3 × 20/S, leichtes Band",
+      "sets": 3,
+      "reps": 20,
+      "perSide": true
+     },
+     "P3": {
+      "raw": "3 × 10/S Seitstütz-Variante",
+      "sets": 3,
+      "reps": 10,
+      "perSide": true
+     },
+     "P4": {
+      "raw": "3 × 12/S Seitstütz-Variante",
+      "sets": 3,
+      "reps": 12,
+      "perSide": true
+     }
+    }
+   },
+   {
+    "id": "K2",
+    "day": "wed",
+    "name": "Seitliches Gehen mit Miniband",
+    "goal": "Seitlicher Gesäßmuskel",
+    "libraryId": null,
+    "phases": {
+     "P1": {
+      "raw": "3 × 10 Schritte/Richtung, leicht",
+      "sets": 3,
+      "reps": 10,
+      "perSide": false
+     },
+     "P2": {
+      "raw": "3 × 15, leicht",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false
+     },
+     "P3": {
+      "raw": "3 × 15, mittel",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false
+     },
+     "P4": {
+      "raw": "3 × 20, mittel",
+      "sets": 3,
+      "reps": 20,
+      "perSide": false
+     }
+    }
+   },
+   {
+    "id": "K3",
+    "day": "wed",
+    "name": "Hamstring Curl am Boden (Füße auf Handtuch)",
+    "goal": "Äußere Oberschenkel-Rückseite",
+    "libraryId": null,
+    "phases": {
+     "P1": {
+      "raw": "3 × 8",
+      "sets": 3,
+      "reps": 8,
+      "perSide": false
+     },
+     "P2": {
+      "raw": "3 × 12",
+      "sets": 3,
+      "reps": 12,
+      "perSide": false
+     },
+     "P3": {
+      "raw": "3 × 8/S einbeinig",
+      "sets": 3,
+      "reps": 8,
+      "perSide": true
+     },
+     "P4": {
+      "raw": "3 × 10/S einbeinig",
+      "sets": 3,
+      "reps": 10,
+      "perSide": true
+     }
+    }
+   },
+   {
+    "id": "K4",
+    "day": "sat",
+    "name": "Einbeinige Glute Bridge",
+    "goal": "Gesäß",
+    "libraryId": null,
+    "phases": {
+     "P1": {
+      "raw": "3 × 12/S",
+      "sets": 3,
+      "reps": 12,
+      "perSide": true
+     },
+     "P2": {
+      "raw": "3 × 15/S, 2 s halten",
+      "sets": 3,
+      "reps": 15,
+      "perSide": true
+     },
+     "P3": {
+      "raw": "3 × 12/S @ 12 kg auf der Hüfte",
+      "sets": 3,
+      "reps": 12,
+      "perSide": true,
+      "weights": [
+       12
+      ]
+     },
+     "P4": {
+      "raw": "3 × 15/S @ 16 kg auf der Hüfte",
+      "sets": 3,
+      "reps": 15,
+      "perSide": true,
+      "weights": [
+       16
+      ]
+     }
+    }
+   },
+   {
+    "id": "K5",
+    "day": "sat",
+    "name": "Wandsitzen",
+    "goal": "Oberschenkel-Vorderseite",
+    "libraryId": null,
+    "phases": {
+     "P1": {
+      "raw": "3 × 45 s",
+      "sets": 3,
+      "seconds": 45,
+      "perSide": false
+     },
+     "P2": {
+      "raw": "3 × 60 s",
+      "sets": 3,
+      "seconds": 60,
+      "perSide": false
+     },
+     "P3": {
+      "raw": "3 × 75 s",
+      "sets": 3,
+      "seconds": 75,
+      "perSide": false
+     },
+     "P4": {
+      "raw": "3 × 90 s",
+      "sets": 3,
+      "seconds": 90,
+      "perSide": false
+     }
+    }
+   },
+   {
+    "id": "K6",
+    "day": "sat",
+    "name": "Step-down von einer Stufe, 3 s absenken",
+    "goal": "Kniekontrolle",
+    "libraryId": null,
+    "phases": {
+     "P1": null,
+     "P2": {
+      "raw": "3 × 10/S",
+      "sets": 3,
+      "reps": 10,
+      "perSide": true
+     },
+     "P3": {
+      "raw": "3 × 12/S",
+      "sets": 3,
+      "reps": 12,
+      "perSide": true
+     },
+     "P4": {
+      "raw": "3 × 12/S, höhere Stufe",
+      "sets": 3,
+      "reps": 12,
+      "perSide": true
+     }
+    }
+   }
+  ],
+  "notes": [
+   "Mittwoch Übungen 1–3, Samstag 4–6 (je im Knie-Block). Dienstag alle Übungen mit je einem Satz weniger.",
+   "**Schmerz-Ampel:** 0–3 von 10 während der Übung = grün. Bis 5 von 10 kurzzeitig = gelb. Am nächsten Morgen muss der Schmerz wieder auf Ausgangsniveau sein, sonst Belastung reduzieren (rot). Knieschmerz am Dienstag ab 4 von 10 → Beinübungen am Mittwoch mit dem Gewicht der Vorwoche.",
+   "**Knieschonende Anpassungen:** Goblet Squat nur so tief wie schmerzfrei (auf Box). Reverse Lunge nur schmerzfrei, sonst Split Squat. Faszienrolle auf Gesäß und seitliche Hüfte, nicht auf die Außenseite des Oberschenkels."
+  ]
+ },
+ "bike": {
+  "workouts": [
+   {
+    "id": "mb-z2-45",
+    "name": "MB-Z2-45",
+    "base": "MB-Z2-45",
+    "versions": [],
+    "content": "35 min @ 65 %",
+    "duration": "45 min",
+    "weeks": "0, 4, 8, 12"
+   },
+   {
+    "id": "mb-z2-60",
+    "name": "MB-Z2-60",
+    "base": "MB-Z2-60",
+    "versions": [],
+    "content": "25 min @ 65 % + 25 min @ 70 %",
+    "duration": "60 min",
+    "weeks": "1–3, 5–7"
+   },
+   {
+    "id": "mb-z2-75",
+    "name": "MB-Z2-75",
+    "base": "MB-Z2-75",
+    "versions": [],
+    "content": "30 min @ 65 % + 30 min @ 70 % + 5 min @ 65 %",
+    "duration": "75 min",
+    "weeks": "9–11"
+   },
+   {
+    "id": "mb-z2-kadenz-50",
+    "name": "MB-Z2-Kadenz-50",
+    "base": "MB-Z2-Kadenz-50",
+    "versions": [],
+    "content": "Zone 2 mit 5 × 1 min bei 100–105 U/min",
+    "duration": "50 min",
+    "weeks": "2–3"
+   },
+   {
+    "id": "mb-sweetspot-v1-v2-v3",
+    "name": "MB-SweetSpot V1/V2/V3",
+    "base": "MB-SweetSpot",
+    "versions": [
+     "V1",
+     "V2",
+     "V3"
+    ],
+    "content": "3 × 8 / 3 × 10 / 2 × 15 min @ 90 %, Pausen @ 55 %",
+    "duration": "51–57 min",
+    "weeks": "5 / 6 / 7"
+   },
+   {
+    "id": "mb-schwelle-v1-v2-v3-v4",
+    "name": "MB-Schwelle V1/V2/V3/V4",
+    "base": "MB-Schwelle",
+    "versions": [
+     "V1",
+     "V2",
+     "V3",
+     "V4"
+    ],
+    "content": "3 × 8 / 3 × 10 / 2 × 15 min @ 97 %; V4: 2 × 20 min @ 95 %",
+    "duration": "54–60 min",
+    "weeks": "9 / 10 / 11 / 14"
+   },
+   {
+    "id": "mb-overunder-v1-v2",
+    "name": "MB-OverUnder V1/V2",
+    "base": "MB-OverUnder",
+    "versions": [
+     "V1",
+     "V2"
+    ],
+    "content": "3 bzw. 4 Blöcke aus 3 × (2 min @ 95 % + 1 min @ 105 %)",
+    "duration": "57–60 min",
+    "weeks": "13 / 15"
+   },
+   {
+    "id": "mb-z2-tempo-75-v1-v2-v3",
+    "name": "MB-Z2-Tempo-75 V1/V2/V3",
+    "base": "MB-Z2-Tempo-75",
+    "versions": [
+     "V1",
+     "V2",
+     "V3"
+    ],
+    "content": "Zone 2 mit 2 × 10 / 3 × 10 / 2 × 15 min @ 82 %",
+    "duration": "75 min",
+    "weeks": "13 / 14 / 15"
+   },
+   {
+    "id": "mb-vo2-30",
+    "name": "MB-VO2-30",
+    "base": "MB-VO2-30",
+    "versions": [],
+    "content": "5 × 2 min @ 112 % (nur bei Fußball-Pause ab 3 Wochen)",
+    "duration": "30 min",
+    "weeks": "optional"
+   },
+   {
+    "id": "ftp-test",
+    "name": "FTP-Test",
+    "base": "FTP-Test",
+    "versions": [],
+    "content": "Rampentest aus der MyWhoosh-Bibliothek",
+    "duration": "ca. 20–30 min",
+    "weeks": "1, 8, 16"
+   }
+  ],
+  "notes": [
+   "Alle Werte in Prozent der FTP. Zone 2 ≈ 56–75 % FTP bzw. ca. 120–138 bpm (Schätzung, nach FTP-Test anpassen). Trittfrequenz Zone 2: 85–90, Intervalle: 85–95, nie unter 80 (Knie). ERG-Modus, kleines Kettenblatt, mittleres Ritzel.",
+   "**Bearbeitungstermine in MyWhoosh** (kostenlose Version, Slots begrenzt): vor 14.01. SweetSpot → V2, vor 21.01. → V3, vor 12.02. Schwelle → V2, vor 19.02. → V3, vor 12.03. Schwelle → V4 und Tempo-75 → V2, vor 19.03. OverUnder → V2 und vor 21.03. Tempo-75 → V3.",
+   "**Regel:** Schwere Beine nach dem Fußball → Intervalle 3 % niedriger statt ausfallen lassen."
+  ]
+ },
+ "weightTargets": [
+  {
+   "week": 0,
+   "sunday": "2026-12-06",
+   "target": 98,
+   "min": 97.4,
+   "max": 98.6,
+   "checkpoint": false
+  },
+  {
+   "week": 1,
+   "sunday": "2026-12-13",
+   "target": 97.5,
+   "min": 96.9,
+   "max": 98.1,
+   "checkpoint": false
+  },
+  {
+   "week": 2,
+   "sunday": "2026-12-20",
+   "target": 97,
+   "min": 96.4,
+   "max": 97.6,
+   "checkpoint": false
+  },
+  {
+   "week": 3,
+   "sunday": "2026-12-27",
+   "target": 96.7,
+   "min": 96.1,
+   "max": 97.3,
+   "checkpoint": false
+  },
+  {
+   "week": 4,
+   "sunday": "2027-01-03",
+   "target": 96.4,
+   "min": 95.8,
+   "max": 97,
+   "checkpoint": true
+  },
+  {
+   "week": 5,
+   "sunday": "2027-01-10",
+   "target": 95.8,
+   "min": 95.2,
+   "max": 96.4,
+   "checkpoint": false
+  },
+  {
+   "week": 6,
+   "sunday": "2027-01-17",
+   "target": 95.2,
+   "min": 94.6,
+   "max": 95.8,
+   "checkpoint": false
+  },
+  {
+   "week": 7,
+   "sunday": "2027-01-24",
+   "target": 94.6,
+   "min": 94,
+   "max": 95.2,
+   "checkpoint": false
+  },
+  {
+   "week": 8,
+   "sunday": "2027-01-31",
+   "target": 94.1,
+   "min": 93.5,
+   "max": 94.7,
+   "checkpoint": true
+  },
+  {
+   "week": 9,
+   "sunday": "2027-02-07",
+   "target": 93.5,
+   "min": 92.9,
+   "max": 94.1,
+   "checkpoint": false
+  },
+  {
+   "week": 10,
+   "sunday": "2027-02-14",
+   "target": 93,
+   "min": 92.4,
+   "max": 93.6,
+   "checkpoint": false
+  },
+  {
+   "week": 11,
+   "sunday": "2027-02-21",
+   "target": 92.4,
+   "min": 91.8,
+   "max": 93,
+   "checkpoint": false
+  },
+  {
+   "week": 12,
+   "sunday": "2027-02-28",
+   "target": 91.9,
+   "min": 91.3,
+   "max": 92.5,
+   "checkpoint": true
+  },
+  {
+   "week": 13,
+   "sunday": "2027-03-07",
+   "target": 91.3,
+   "min": 90.7,
+   "max": 91.9,
+   "checkpoint": false
+  },
+  {
+   "week": 14,
+   "sunday": "2027-03-14",
+   "target": 90.8,
+   "min": 90.2,
+   "max": 91.4,
+   "checkpoint": false
+  },
+  {
+   "week": 15,
+   "sunday": "2027-03-21",
+   "target": 90.3,
+   "min": 89.7,
+   "max": 90.9,
+   "checkpoint": false
+  },
+  {
+   "week": 16,
+   "sunday": "2027-03-28",
+   "target": 89.8,
+   "min": 89.2,
+   "max": 90.4,
+   "checkpoint": true
+  }
+ ],
+ "weightNotes": [
+  "Gemessen als 7-Tage-Durchschnitt, jeweils sonntags. Korridor = Zielwert ± 0,6 kg. Kontrollpunkte: Woche 4, 8, 12, 16. Liegt der Wert an zwei Kontrollpunkten hintereinander über dem Korridor, ist die Ernährung der Hebel, nicht mehr Training.",
+  "Zusätzlich erfasst: Taillenumfang (cm), Fotos (optional)."
+ ],
+ "rules": {
+  "tiers": [
+   {
+    "name": "Voll",
+    "when": "Normale Woche",
+    "content": "Alle Einheiten laut Kalender",
+    "hoursPerWeek": "ca. 4,3 h"
+   },
+   {
+    "name": "Kompakt",
+    "when": "Volle Familienwoche",
+    "content": "Knie-Programm am Dienstag entfällt, Donnerstag 45 min",
+    "hoursPerWeek": "ca. 3,5 h"
+   },
+   {
+    "name": "Minimum",
+    "when": "Ausnahmewoche, max. 2 am Stück",
+    "content": "Nur KB A, KB B und Sonntag; Donnerstag-Intervalle in die Sonntagsfahrt",
+    "hoursPerWeek": "ca. 2,5 h"
+   }
+  ],
+  "notes": [
+   "**Streichreihenfolge:** 1. Knie-Programm Dienstag, 2. Rad Donnerstag, 3. Sonntag auf 45 min kürzen, 4. niemals beide Kettlebell-Einheiten einer Woche.",
+   "**Nachholen:** Ausgefallene KB-Einheit am nächsten freien Tag, wenn ≥ 24 h Abstand zur nächsten KB-Einheit bleiben. Zwischen Fußball und Workout A immer ≥ 48 h.",
+   "**Krankheit:** Nur Symptome oberhalb des Halses → lockeres Zone 2 erlaubt. Fieber oder Brustbereich → Pause, danach 2 Tage locker.",
+   "**Überlastung:** Ruhepuls 2 Tage hintereinander ≥ 7 Schläge erhöht oder deutlich schlechterer Schlaf → Donnerstag auslassen."
+  ]
+ },
+ "shopping": [
+  {
+   "id": "kettlebell-12-kg-gusseisen-w1-07-12",
+   "item": "Kettlebell 12 kg (Gusseisen)",
+   "quantity": "1",
+   "priority": "Pflicht",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 1
+  },
+  {
+   "id": "kettlebell-16-kg-gusseisen-w1-07-12",
+   "item": "Kettlebell 16 kg (Gusseisen)",
+   "quantity": "1",
+   "priority": "Pflicht",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 1
+  },
+  {
+   "id": "minibaender-leicht-und-mittel-w1-07-12",
+   "item": "Minibänder leicht und mittel",
+   "quantity": "1 Set",
+   "priority": "Pflicht",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 1
+  },
+  {
+   "id": "trainingsmatte-gummi-bodenmatten-w1-07-12",
+   "item": "Trainingsmatte / Gummi-Bodenmatten",
+   "quantity": "1",
+   "priority": "Pflicht",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 1
+  },
+  {
+   "id": "box-oder-hocker-ca-kniehoehe-w1-07-12",
+   "item": "Box oder Hocker, ca. Kniehöhe",
+   "quantity": "1",
+   "priority": "Pflicht (Stuhl reicht)",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 1
+  },
+  {
+   "id": "personenwaage-und-massband-w0-30-11",
+   "item": "Personenwaage und Maßband",
+   "quantity": "je 1",
+   "priority": "Pflicht, falls nicht vorhanden",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 0
+  },
+  {
+   "id": "faszienrolle-w1-07-12",
+   "item": "Faszienrolle",
+   "quantity": "1",
+   "priority": "Empfohlen",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 1
+  },
+  {
+   "id": "ventilator-fuer-den-rollentrainer-w0-06-12",
+   "item": "Ventilator für den Rollentrainer",
+   "quantity": "1",
+   "priority": "Empfohlen",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 0
+  },
+  {
+   "id": "schweissschutz-fuer-das-rad-w0-06-12",
+   "item": "Schweißschutz für das Rad",
+   "quantity": "1",
+   "priority": "Optional",
+   "orderBy": "2026-11-23",
+   "neededFromWeek": 0
+  },
+  {
+   "id": "stepper-oder-stufe-15-25-cm-w5-04-01",
+   "item": "Stepper oder Stufe, 15–25 cm",
+   "quantity": "1",
+   "priority": "Pflicht (Treppenstufe reicht)",
+   "orderBy": "2026-12-28",
+   "neededFromWeek": 5
+  },
+  {
+   "id": "kettlebell-24-kg-gusseisen-w6-11-01",
+   "item": "Kettlebell 24 kg (Gusseisen)",
+   "quantity": "1",
+   "priority": "Pflicht",
+   "orderBy": "2027-01-04",
+   "neededFromWeek": 6
+  },
+  {
+   "id": "kettlebell-16-kg-zweite-w9-01-02",
+   "item": "Kettlebell 16 kg (zweite)",
+   "quantity": "1",
+   "priority": "Pflicht",
+   "orderBy": "2027-01-18",
+   "neededFromWeek": 9
+  },
+  {
+   "id": "bike-fitting-termin-rennrad-w13-01-03",
+   "item": "Bike-Fitting-Termin Rennrad",
+   "quantity": "1",
+   "priority": "Empfohlen",
+   "orderBy": "2027-02-08",
+   "orderByNote": "buchen",
+   "neededFromWeek": 13
+  },
+  {
+   "id": "rennrad-cleats-mit-spiel-shimano-spd-sl-gelb-ca-6-w13-01-03",
+   "item": "Rennrad-Cleats mit Spiel (Shimano SPD-SL gelb, ca. 6°)",
+   "quantity": "1 Paar",
+   "priority": "Empfohlen",
+   "orderBy": "2027-02-15",
+   "neededFromWeek": 13
+  }
+ ],
+ "checklists": [
+  {
+   "id": "vor-dem-start-bis-06-12",
+   "title": "Vor dem Start",
+   "dueDate": "2026-12-06",
+   "items": [
+    {
+     "id": "vor-dem-start-bis-06-12-1",
+     "text": "Kettlebells 12 kg und 16 kg bestellen"
+    },
+    {
+     "id": "vor-dem-start-bis-06-12-2",
+     "text": "Minibänder, Matte und Stufe besorgen"
+    },
+    {
+     "id": "vor-dem-start-bis-06-12-3",
+     "text": "MB-Z2-45 als Testfahrt: ERG-Modus, Gangwahl, Pulsgurt prüfen"
+    },
+    {
+     "id": "vor-dem-start-bis-06-12-4",
+     "text": "Ausgangsmessung: 7-Tage-Durchschnittsgewicht, Taillenumfang, Fotos"
+    },
+    {
+     "id": "vor-dem-start-bis-06-12-5",
+     "text": "Sattelhöhe an Gravel-Bike und Rennrad messen und notieren"
+    },
+    {
+     "id": "vor-dem-start-bis-06-12-6",
+     "text": "Cleat-Position beider Schuhpaare fotografieren"
+    },
+    {
+     "id": "vor-dem-start-bis-06-12-7",
+     "text": "Hip-Hinge-Drill ohne Gewicht üben, 3 × 10 täglich"
+    }
+   ]
+  },
+  {
+   "id": "waehrend-des-plans",
+   "title": "Während des Plans",
+   "items": [
+    {
+     "id": "waehrend-des-plans-1",
+     "text": "Woche 6: Kettlebell 24 kg kaufen; beim Bearbeiten von MB-SweetSpot freie Slots prüfen",
+     "week": 6
+    },
+    {
+     "id": "waehrend-des-plans-2",
+     "text": "Woche 8: zweite Kettlebell 16 kg kaufen; FTP-Test",
+     "week": 8
+    },
+    {
+     "id": "waehrend-des-plans-3",
+     "text": "Woche 12: Zwischenmessung von Gewicht und Taillenumfang",
+     "week": 12
+    }
+   ]
+  },
+  {
+   "id": "saisonstart-rennrad",
+   "title": "Saisonstart Rennrad",
+   "items": [
+    {
+     "id": "saisonstart-rennrad-1",
+     "text": "Woche 13: Bike-Fitting am Rennrad mit Rennradschuhen; unterschiedliche Pedal-Bauhöhe über Sattelhöhe ausgleichen",
+     "week": 13
+    },
+    {
+     "id": "saisonstart-rennrad-2",
+     "text": "Rennrad-Cleats mit Bewegungsspielraum wählen"
+    },
+    {
+     "id": "saisonstart-rennrad-3",
+     "text": "Erste Ausfahrten draußen höchstens 60–75 min und flach"
+    },
+    {
+     "id": "saisonstart-rennrad-4",
+     "text": "Ab April Distanz und Höhenmeter um höchstens 10 % pro Woche steigern"
+    },
+    {
+     "id": "saisonstart-rennrad-5",
+     "text": "Woche 16: Abschlussmessung, FTP-Test, Swing-Test, Fotos",
+     "week": 16
+    }
+   ]
+  }
+ ],
+ "metrics": [
+  {
+   "name": "Körpergewicht (7-Tage-Schnitt)",
+   "when": "täglich wiegen, sonntags auswerten",
+   "unit": "kg"
+  },
+  {
+   "name": "Taillenumfang",
+   "when": "W0, W4, W8, W12, W16",
+   "unit": "cm"
+  },
+  {
+   "name": "FTP",
+   "when": "W1, W8, W16",
+   "unit": "Watt"
+  },
+  {
+   "name": "Swing-Test (100 Swings @ 24 kg)",
+   "when": "W16",
+   "unit": "Sekunden"
+  },
+  {
+   "name": "Workout-C-Runden",
+   "when": "jede Durchführung",
+   "unit": "Runden"
+  },
+  {
+   "name": "Knieschmerz (Ampel 0–10)",
+   "when": "nach jeder Einheit, Dienstag morgens",
+   "unit": "Skala 0–10"
+  },
+  {
+   "name": "Ruhepuls",
+   "when": "morgens (optional)",
+   "unit": "bpm"
+  }
+ ]
+}
