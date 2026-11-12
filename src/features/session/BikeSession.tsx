@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { finishSession } from '../../db/sessions'
+import { bikeDetails } from '../../domain/dashboard'
 import { seed, type SessionItem } from '../../domain/plan'
 import { FinishForm, type FinishData } from './FinishForm'
 import { NumberField } from './NumberField'
@@ -19,7 +20,8 @@ export function BikeSession({ sessionKey, date, session, onClose }: Props) {
   const isFtp = session.kind === 'ftp-test'
   const workoutName = isFtp ? 'FTP-Test' : String(item.workout ?? '')
   const base = workoutName.replace(/ V\d$/, '')
-  const plan = seed.bike.workouts.find((w) => w.base === base || w.name === workoutName)
+  const family = seed.bike.workouts.find((w) => w.base === base || w.name === workoutName)
+  const plan = family && { ...family, ...bikeDetails(workoutName) }
   const plannedMin = Number(plan?.duration.match(/\d+/)?.[0]) || undefined
 
   const [duration, setDuration] = useState<number | undefined>(plannedMin)

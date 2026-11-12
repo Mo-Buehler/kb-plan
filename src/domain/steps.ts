@@ -43,6 +43,8 @@ export interface Step {
   setIndex: number
   setCount: number
   block: 'warmup' | 'knee' | 'main' | 'finisher' | 'cooldown'
+  /** Superset number inside the main block (1, 2, then single exercises 3 and up). */
+  group?: number
   kind: 'check' | 'set' | 'emom' | 'test'
   title: string
   libraryId?: string | null
@@ -150,6 +152,7 @@ function exerciseSteps(ex: KbEx, week: number, block: 'main' | 'finisher', overr
     setIndex: i,
     setCount: sets.length,
     block,
+    group: ex.group,
     kind: s.kind,
     title: amount.label && block === 'main' && /Hike/.test(amount.label) ? amount.label : name,
     libraryId: ex.libraryId,
@@ -190,6 +193,13 @@ function checkStep(block: 'warmup' | 'cooldown', title: string, partName: string
   }
 }
 
+/** "Clamshell (P3–4: Seitstütz ...)" shows the phase-appropriate variant only. */
+function kneeTitle(name: string, raw: string): string {
+  const m = name.match(/^(.*?) \(P3–4: (.*)\)$/)
+  if (!m) return name
+  return /Seitstütz/.test(raw) ? m[2].charAt(0).toUpperCase() + m[2].slice(1) : m[1]
+}
+
 export function buildKneeSteps(phase: string, part: 'wed' | 'sat' | 'tue'): Step[] {
   const out: Step[] = []
   for (const ex of KNEE) {
@@ -206,7 +216,7 @@ export function buildKneeSteps(phase: string, part: 'wed' | 'sat' | 'tue'): Step
         setCount: count,
         block: 'knee',
         kind: 'set',
-        title: ex.name,
+        title: kneeTitle(ex.name, p.raw),
         planned: { reps: p.reps, seconds: p.seconds, perSide: p.perSide, weights: p.weights ?? [], note: p.raw },
         restAfter: null,
       })

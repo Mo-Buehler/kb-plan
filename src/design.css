@@ -1,0 +1,92 @@
+/* Dashboard design: one strong colour per kind of session. Same colours in light and dark;
+   the text colour on each fill (--on-*) is chosen for contrast. Ampel colours stay reserved for knee pain. */
+:root {
+  --c-kb: #ff6b1a; --on-kb: #1f0a00;
+  --c-bike: #1e6bff; --on-bike: #ffffff;
+  --c-knee: #7c3aed; --on-knee: #ffffff;
+  --c-ball: #b6f23c; --on-ball: #142300;
+  --c-weight: #ffd60a; --on-weight: #2a2200;
+  --c-fin: #e11d74; --on-fin: #ffffff;
+  --c-warm: #ffb020; --on-warm: #2a1800;
+  --c-cool: #14b8a6; --on-cool: #02211e;
+  --c-solo: #06b6d4; --on-solo: #00262b;
+  --c-rest: #a8a29e; --on-rest: #1c1917;
+  /* readable line/text colour of each hue on the page background */
+  --ink-kb: #c2410c; --ink-bike: #1d4ed8; --ink-knee: #6d28d9; --ink-ball: #4d7c0f;
+  --ink-weight: #a16207; --ink-fin: #be185d; --ink-warm: #b45309; --ink-cool: #0f766e; --ink-solo: #0e7490; --ink-rest: #57534e;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink-kb: #ff8a4c; --ink-bike: #6ea0ff; --ink-knee: #a78bfa; --ink-ball: #b6f23c;
+    --ink-weight: #ffd60a; --ink-fin: #f472b6; --ink-warm: #ffb020; --ink-cool: #2dd4bf; --ink-solo: #22d3ee; --ink-rest: #a8a29e;
+  }
+}
+
+.tone-kb { --tone: var(--c-kb); --on-tone: var(--on-kb); --ink: var(--ink-kb); }
+.tone-bike { --tone: var(--c-bike); --on-tone: var(--on-bike); --ink: var(--ink-bike); }
+.tone-knee { --tone: var(--c-knee); --on-tone: var(--on-knee); --ink: var(--ink-knee); }
+.tone-ball { --tone: var(--c-ball); --on-tone: var(--on-ball); --ink: var(--ink-ball); }
+.tone-weight { --tone: var(--c-weight); --on-tone: var(--on-weight); --ink: var(--ink-weight); }
+.tone-fin { --tone: var(--c-fin); --on-tone: var(--on-fin); --ink: var(--ink-fin); }
+.tone-warm { --tone: var(--c-warm); --on-tone: var(--on-warm); --ink: var(--ink-warm); }
+.tone-cool { --tone: var(--c-cool); --on-tone: var(--on-cool); --ink: var(--ink-cool); }
+.tone-solo { --tone: var(--c-solo); --on-tone: var(--on-solo); --ink: var(--ink-solo); }
+.tone-rest { --tone: var(--c-rest); --on-tone: var(--on-rest); --ink: var(--ink-rest); }
+
+/* soft tint of the tone over the card colour, readable in both modes with the normal text colour */
+.soft { background: color-mix(in srgb, var(--tone) 16%, var(--card)); color: var(--text); }
+.solid { background: var(--tone); color: var(--on-tone); }
+.icon { width: 1.5rem; height: 1.5rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.icon.lg { width: 1.75rem; height: 1.75rem; }
+
+/* tiles on "Heute" */
+.tile { border-radius: 1.1rem; padding: 1rem; display: grid; gap: .25rem; color: var(--on-tone); background: var(--tone); text-decoration: none; }
+.tile .kicker { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+.tile .big { font-size: 1.4rem; font-weight: 700; line-height: 1.2; margin: 0; }
+.tile .num { font-size: 1.5rem; font-weight: 700; margin: 0; }
+.tile p { margin: 0; font-size: .85rem; }
+.tile.hero .big { font-size: 1.6rem; }
+.tilebtn { display: flex; align-items: center; justify-content: center; min-height: 3.5rem; margin-top: .6rem; border-radius: .9rem; background: var(--on-tone); color: var(--tone); font-weight: 700; font-size: 1.05rem; text-decoration: none; border: 0; }
+.tiles2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.tile.next { display: flex; align-items: center; gap: .9rem; }
+
+/* week strip */
+.strip { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: .3rem; }
+.chipday { border-radius: .7rem; padding: .5rem .1rem; text-align: center; font-size: .72rem; font-weight: 600; line-height: 1.2; background: var(--tone); color: var(--on-tone); text-decoration: none; min-height: 3.2rem; display: grid; align-content: center; overflow-wrap: anywhere; }
+.chipday.today { outline: 3px solid var(--text); outline-offset: 1px; }
+.chipday.donechip::after { content: '✓'; }
+.chipday.restchip { background: var(--card); color: var(--muted); border: 1px solid var(--border); }
+
+/* session overview and runner */
+.band { display: flex; justify-content: space-between; align-items: center; gap: .5rem; padding: .6rem .85rem; border-radius: .9rem .9rem 0 0; background: var(--tone); color: var(--on-tone); font-weight: 700; font-size: .95rem; }
+.band .bmeta { font-weight: 600; font-size: .8rem; text-align: right; }
+.bandbody { padding: .2rem .85rem .35rem; border-radius: 0 0 .9rem .9rem; margin-bottom: .7rem; }
+.orow { display: flex; justify-content: space-between; gap: .75rem; padding: .55rem 0; border-top: 1px solid color-mix(in srgb, var(--tone) 28%, transparent); font-size: .95rem; }
+.orow:first-child { border-top: 0; }
+.orow .sum { text-align: right; font-weight: 600; white-space: nowrap; }
+.blockchip { display: inline-flex; align-items: center; gap: .4rem; padding: .25rem .7rem; border-radius: 2rem; background: var(--tone); color: var(--on-tone); font-weight: 700; font-size: .8rem; }
+.toned progress { accent-color: var(--tone); }
+.toned .runcard { border: 2px solid var(--tone); }
+.toned button.primary { background: var(--tone); color: var(--on-tone); }
+.toned .rest.rest-over { background: var(--tone); color: var(--on-tone); }
+.toned .rest.rest-over .muted { color: var(--on-tone); }
+
+/* calendar and day */
+.pill { display: inline-flex; align-items: center; gap: .35rem; padding: .2rem .65rem; border-radius: 2rem; background: var(--tone); color: var(--on-tone); font-weight: 600; font-size: .85rem; }
+.pill.restpill { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+.minis { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: .4rem; }
+.minis i { width: .65rem; height: .65rem; border-radius: 3px; background: var(--tone); display: inline-block; }
+.minis i.off { background: var(--border); }
+.dayhead { display: flex; align-items: center; gap: .6rem; padding: .7rem .9rem; border-radius: .9rem; background: var(--tone); color: var(--on-tone); }
+.dayhead h2 { margin: 0; color: inherit; }
+
+/* progress */
+.sechead { display: flex; align-items: center; gap: .6rem; }
+.sechead .badgeicon { width: 2.25rem; height: 2.25rem; border-radius: .7rem; display: grid; place-items: center; background: var(--tone); color: var(--on-tone); flex: none; }
+.sechead h2 { margin: 0; }
+p.orow { margin: 0; }
+
+/* number inputs must never push the page wider than the screen */
+.numgrid { grid-template-columns: minmax(0, 1fr); }
+.numfield { min-width: 0; }
+.numrow input { width: 100%; min-width: 0; }

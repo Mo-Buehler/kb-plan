@@ -4,7 +4,7 @@ import { formatDate, formatNumber } from '../../domain/format'
 import type { KbPoint, WeekCompliance } from '../../domain/progress'
 
 const GRID = 'var(--border)'
-const ACCENT = 'var(--accent)'
+const ACCENT = 'var(--ink, var(--accent))'
 const MUTED = 'var(--muted)'
 const short = (iso: string) => formatDate(iso).slice(0, 6)
 

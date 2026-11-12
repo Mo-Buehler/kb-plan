@@ -51,10 +51,10 @@ export function WeightSection({ measurements }: { measurements: Measurement[] })
             {cps.map((c) => (
               <ReferenceLine key={c.week} x={ts(c.sunday)} stroke="var(--muted)" strokeDasharray="2 4" label={{ value: `W${c.week}`, fontSize: 11, fill: 'var(--muted)', position: 'insideTop' }} />
             ))}
-            <Area dataKey="band" name="Zielkorridor" stroke="none" fill="var(--accent)" fillOpacity={0.15} connectNulls isAnimationActive={false} />
+            <Area dataKey="band" name="Zielkorridor" stroke="none" fill="var(--ink, var(--accent))" fillOpacity={0.15} connectNulls isAnimationActive={false} />
             <Line dataKey="target" name="Ziel" stroke="var(--muted)" strokeDasharray="5 4" dot={false} connectNulls isAnimationActive={false} />
-            <Line dataKey="avg" name="7-Tage-Schnitt" stroke="var(--accent)" strokeWidth={2.5} dot={false} connectNulls isAnimationActive={false} />
-            <Line dataKey="raw" name="Tageswert" stroke="none" dot={{ r: 2, fill: 'var(--accent)' }} isAnimationActive={false} />
+            <Line dataKey="avg" name="7-Tage-Schnitt" stroke="var(--ink, var(--accent))" strokeWidth={2.5} dot={false} connectNulls isAnimationActive={false} />
+            <Line dataKey="raw" name="Tageswert" stroke="none" dot={{ r: 2, fill: 'var(--ink, var(--accent))' }} isAnimationActive={false} />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

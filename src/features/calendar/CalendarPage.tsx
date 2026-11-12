@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { Icon } from '../../components/Icon'
+import { TONE_ICON, toneOfKind } from '../../domain/colors'
 import { setTier } from '../../db/planEdit'
 import { formatDate } from '../../domain/format'
 import { sessionTitle } from '../../domain/labels'
@@ -42,6 +44,12 @@ function WeekBlock({ week, data, today, open }: { week: Week; data: ScheduleData
         {week.deload && ' · Deload'}
         {tier !== 'full' && <span className="badge"> {TIER_LABEL[tier]}</span>}
         <span className="muted"> · {done}/{all.length} erledigt</span>
+        <span className="minis" aria-hidden="true">
+          {days.map(({ d, items }) => {
+            const it = items.find((i) => i.kind !== 'rest')
+            return <i key={d.date} className={`tone-${toneOfKind(it?.kind ?? 'rest')} ${it && !it.hiddenReason ? '' : 'off'}`} />
+          })}
+        </span>
       </summary>
       <ul className="daylist">
         {days.map(({ d, items, movedAway }) => (
@@ -53,8 +61,11 @@ function WeekBlock({ week, data, today, open }: { week: Week; data: ScheduleData
               <span className="daytitles">
                 {items.map((it) => (
                   <span key={it.originDate + it.kind} className={it.hiddenReason ? 'struck' : ''}>
-                    {it.hiddenReason ? 'entfällt: ' : ''}
-                    {sessionTitle(it.session)}
+                    <span className={`pill tone-${toneOfKind(it.kind)} ${it.kind === 'rest' ? 'restpill' : ''}`}>
+                      <Icon name={TONE_ICON[toneOfKind(it.kind)]} />
+                      {it.hiddenReason ? 'entfällt: ' : ''}
+                      {sessionTitle(it.session)}
+                    </span>
                     {it.moved && ` (von ${short(it.originDate)})`}{' '}
                     {it.kind !== 'rest' && (
                       <span className={`status st-${statusOf(it, data.logs)}`}>{STATUS_LABEL[statusOf(it, data.logs)]}</span>

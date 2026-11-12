@@ -3,7 +3,7 @@
   --card: #ffffff;
   --text: #1c1917;
   --muted: #6b6560;
-  --accent: #0f766e;
+  --accent: #c2410c;
   --on-accent: #ffffff;
   --on-danger: #ffffff;
   --border: #e7e5e4;
@@ -18,8 +18,8 @@
     --card: #1c1917;
     --text: #fafaf9;
     --muted: #a8a29e;
-    --accent: #2dd4bf;
-    --on-accent: #042f2e;
+    --accent: #ff8a4c;
+    --on-accent: #1f0a00;
     --on-danger: #2a0a0a;
     --border: #292524;
     --danger: #f87171;

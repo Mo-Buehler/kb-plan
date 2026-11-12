@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Icon } from '../../components/Icon'
+import { TONE_ICON, toneOfKind } from '../../domain/colors'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { moveSession, setSkipped } from '../../db/planEdit'
 import { formatDate, weekdayName } from '../../domain/format'
@@ -51,12 +53,15 @@ function ItemCard({ item, data, date }: { item: ScheduledItem; data: ScheduleDat
   const open = RUNNABLE.has(item.kind) && !item.hiddenReason
 
   return (
-    <section className="card stack">
+    <section className={`card stack tone-${toneOfKind(item.kind)}`}>
+      <div className="dayhead">
+        <Icon name={TONE_ICON[toneOfKind(item.kind)]} large />
+        <h2>{sessionTitle(item.session)}</h2>
+      </div>
       <p className="muted">
         {STATUS_LABEL[status]}
         {item.moved && ` · verschoben von ${formatDate(item.originDate)}`}
       </p>
-      <h2>{sessionTitle(item.session)}</h2>
       {item.session.label !== sessionTitle(item.session) && <p>{item.session.label}</p>}
       {item.hiddenReason && <p className="notice">{item.hiddenReason}</p>}
       {item.hint && <p className="notice">{item.hint}</p>}

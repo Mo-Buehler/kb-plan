@@ -2,6 +2,8 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { useState } from 'react'
 import { db, type SetLog } from '../../db/db'
 import { deleteMeta, deleteSetLog, finishSession, getMeta, saveSetLog, setMeta } from '../../db/sessions'
+import { Icon } from '../../components/Icon'
+import { stepTone, TONE_ICON } from '../../domain/colors'
 import { plannedText, type Step } from '../../domain/steps'
 import { unlockAudio } from '../../hooks/audio'
 import { Stopwatch } from './Stopwatch'
@@ -60,7 +62,7 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
 
   if (!current)
     return (
-      <main className="page">
+      <main className="page toned tone-kb">
         <FinishForm title={`${title} geschafft`} onSave={finish} />
       </main>
     )
@@ -69,7 +71,7 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
   const lib = current.libraryId ? seed.library.find((l) => l.id === current.libraryId) : undefined
 
   return (
-    <main className="page">
+    <main className={`page toned tone-${stepTone(current)}`}>
       <header className="runhead">
         <button onClick={onClose} aria-label="Einheit verlassen">
           ‹ Zurück
@@ -84,9 +86,12 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
       {activeRest && <RestTimer endsAt={activeRest.endsAt} onClose={() => void deleteMeta('rest')} />}
 
       <section className="card runcard">
-        <p className="muted">
-          {BLOCK_LABEL[current.block]}
-          {current.kind !== 'check' && ` · Satz ${current.setIndex + 1} von ${current.setCount}`}
+        <p className="muted" style={{ display: 'flex', gap: '.6rem', alignItems: 'center', flexWrap: 'wrap' }}>
+          <span className="blockchip">
+            <Icon name={TONE_ICON[stepTone(current)]} />
+            {BLOCK_LABEL[current.block]}
+          </span>
+          {current.kind !== 'check' && `Satz ${current.setIndex + 1} von ${current.setCount}`}
         </p>
         <h2>{current.title}</h2>
         {current.kind === 'check' ? (

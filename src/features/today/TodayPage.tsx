@@ -1,16 +1,21 @@
 import { useLiveQuery } from 'dexie-react-hooks'
-import { Link } from 'react-router-dom'
 import { db } from '../../db/db'
-import { makeSessionKey } from '../../db/sessions'
 import { formatDate, weekdayName } from '../../domain/format'
 import { sessionTitle } from '../../domain/labels'
 import { locate, seed, todayIso } from '../../domain/plan'
 import { itemsForDate, type ScheduledItem } from '../../domain/schedule'
+import { useSchedule, type ScheduleData } from '../../hooks/useSchedule'
 import { currentSuggestions, RuleHints } from '../progress/RuleHints'
 import { Reminders } from './Reminders'
-import { STATUS_LABEL, statusOf, useSchedule, type ScheduleData } from '../../hooks/useSchedule'
+import { HeroTile, NextTile, sessionKeyOf, StatTiles, WeekStrip } from './Tiles'
 
-const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
+/** Show a hint only on the day it matters: the matching workout, Wednesday for knee hints, Monday for Workout C. */
+function relevant(s: { kind: string; workout?: string }, today: ScheduledItem[], dow: string): boolean {
+  const kinds = today.map((i) => i.kind)
+  if (s.kind === 'keep-weight') return kinds.includes(s.workout === 'A' ? 'kb-a' : 'kb-b')
+  if (s.kind === 'knee-legs') return kinds.includes('kb-a')
+  return dow === 'mo'
+}
 
 export function TodayPage({ name }: { name: string }) {
   const iso = todayIso()
@@ -26,90 +31,57 @@ export function TodayPage({ name }: { name: string }) {
       <h1>Hallo {name}</h1>
       <p className="muted">
         {weekdayName(iso)}, {formatDate(iso)}
+        {pos.state === 'running' &&
+          ` · Woche ${pos.week.week}${pos.week.phase ? ` · Phase ${pos.week.phase}` : ''}${pos.week.deload ? ' · Deload' : ''}${data.tiers[pos.week.week] ? ` · ${data.tiers[pos.week.week] === 'compact' ? 'Kompakt' : 'Minimum'}` : ''}`}
       </p>
       <Reminders />
-      {pos.state === 'before' && (
-        <section className="card">
-          <h2>Der Plan startet bald</h2>
-          <p>
-            Noch {pos.daysUntilStart} Tage bis zur Vorbereitungswoche am {formatDate(seed.weeks[0].start)}.
-          </p>
-        </section>
-      )}
-      {pos.state === 'after' && (
-        <section className="card">
-          <h2>Plan abgeschlossen</h2>
-          <p>Das Planende war am {formatDate(seed.planEnd)}.</p>
-        </section>
-      )}
-      {pos.state === 'running' && (
-        <div className="stack">
-          <p className="muted">
-            Woche {pos.week.week}
-            {pos.week.deload ? ' · Deload-Woche' : ''}
-            {pos.week.phase ? ` · Phase ${pos.week.phase}` : ''}
-            {data.tiers[pos.week.week] ? ` · Stufe ${data.tiers[pos.week.week] === 'compact' ? 'Kompakt' : 'Minimum'}` : ''}
-          </p>
-          {pos.week.deload && <p className="notice">Entlastungswoche: nur die angegebenen Sätze, kein Zusatztraining.</p>}
-          {pos.phaseStart && <p className="notice">Erster Tag einer neuen Phase.</p>}
-          <RuleHints suggestions={currentSuggestions(data, iso).filter((s) => relevant(s, visible, pos.day.dow))} />
-          {visible.map((it) => (
-            <SessionCard key={it.originDate + it.kind} item={it} data={data} />
-          ))}
-          {visible.length === 0 && <p className="card">Heute steht nichts an.</p>}
-          {movedAway.map((m) => (
-            <p key={m.kind} className="muted">
-              {sessionTitle(m.session)} wurde auf {formatDate(m.toDate)} verschoben.
+      <div className="stack">
+        {pos.state === 'before' && (
+          <section className="card">
+            <h2>Der Plan startet bald</h2>
+            <p>
+              Noch {pos.daysUntilStart} Tage bis zur Vorbereitungswoche am {formatDate(seed.weeks[0].start)}.
             </p>
-          ))}
-          {hidden.map((h) => (
-            <p key={h.kind} className="muted">
-              {sessionTitle(h.session)}: {h.hiddenReason}
-            </p>
-          ))}
-        </div>
-      )}
+          </section>
+        )}
+        {pos.state === 'after' && (
+          <section className="card">
+            <h2>Plan abgeschlossen</h2>
+            <p>Das Planende war am {formatDate(seed.planEnd)}.</p>
+          </section>
+        )}
+        {pos.state === 'running' && (
+          <>
+            {pos.week.deload && <p className="notice">Entlastungswoche: nur die angegebenen Sätze, kein Zusatztraining.</p>}
+            {pos.phaseStart && <p className="notice">Erster Tag einer neuen Phase.</p>}
+            <RuleHints suggestions={currentSuggestions(data, iso).filter((s) => relevant(s, visible, pos.day.dow))} />
+            {visible.map((it, i) => (
+              <Hero key={it.originDate + it.kind} item={it} week={pos.week} data={data} first={i === 0} />
+            ))}
+            {visible.length === 0 && <p className="card">Heute steht nichts an.</p>}
+            {movedAway.map((m) => (
+              <p key={m.kind} className="muted">
+                {sessionTitle(m.session)} wurde auf {formatDate(m.toDate)} verschoben.
+              </p>
+            ))}
+            {hidden.map((h) => (
+              <p key={h.kind} className="muted">
+                {sessionTitle(h.session)}: {h.hiddenReason}
+              </p>
+            ))}
+            <StatTiles data={data} today={iso} week={pos.week.week} />
+            <WeekStrip week={pos.week} data={data} today={iso} />
+            <NextTile data={data} today={iso} />
+          </>
+        )}
+      </div>
     </main>
   )
 }
 
-/** Show a hint only on the day it matters: the matching workout, Wednesday for knee hints, Monday for Workout C. */
-function relevant(s: { kind: string; workout?: string }, today: ScheduledItem[], dow: string): boolean {
-  const kinds = today.map((i) => i.kind)
-  if (s.kind === 'keep-weight') return kinds.includes(s.workout === 'A' ? 'kb-a' : 'kb-b')
-  if (s.kind === 'knee-legs') return kinds.includes('kb-a')
-  return dow === 'mo'
-}
-
-function SessionCard({ item, data }: { item: ScheduledItem; data: ScheduleData }) {
-  const key = makeSessionKey(item.originDate, item.kind)
+function Hero({ item, week, data, first }: { item: ScheduledItem; week: (typeof seed.weeks)[number]; data: ScheduleData; first: boolean }) {
+  const key = sessionKeyOf(item)
   const started = useLiveQuery(() => db.setLogs.where('sessionKey').equals(key).count(), [key])
-  const status = statusOf(item, data.logs)
-  const url = `/einheit/${item.originDate}/${item.kind}`
-  return (
-    <section className="card stack">
-      <h2>{sessionTitle(item.session)}</h2>
-      {item.moved && <p className="muted">Verschoben von {formatDate(item.originDate)}</p>}
-      {item.hint && <p className="notice">{item.hint}</p>}
-      {item.kind === 'rest' ? (
-        <p>Heute ist Ruhetag.</p>
-      ) : status === 'done' ? (
-        <p className="done">✓ Erledigt</p>
-      ) : status === 'skipped' ? (
-        <p className="muted">Ausgelassen</p>
-      ) : (
-        RUNNABLE.has(item.kind) && (
-          <Link className="btn primary" to={url}>
-            {started ? 'Einheit fortsetzen' : 'Einheit starten'}
-          </Link>
-        )
-      )}
-      {('alternative' in item.session || (data.mondayWorkoutC && item.kind === 'football')) && status === 'planned' && (
-        <Link className="btn" to={`/einheit/${item.originDate}/workout-c`}>
-          Fußball fällt aus: Workout C
-        </Link>
-      )}
-      {status === 'skipped' && <span className={`status st-${status}`}>{STATUS_LABEL[status]}</span>}
-    </section>
-  )
+  const workoutCLink = 'alternative' in item.session || (data.mondayWorkoutC && item.kind === 'football')
+  return <HeroTile item={item} week={week} data={data} started={!!started} workoutCLink={workoutCLink} label={first ? 'Heute' : 'Außerdem heute'} />
 }
