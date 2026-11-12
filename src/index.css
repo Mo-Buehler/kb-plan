@@ -81,3 +81,23 @@ legend { font-weight: 600; margin-bottom: .5rem; }
 .pain-green { background: #bbf7d0; color: #14532d; }
 .pain-yellow { background: #fde68a; color: #713f12; }
 .pain-red { background: #fecaca; color: #7f1d1d; }
+
+/* Calendar, day and plan editor */
+.weekblock summary { cursor: pointer; min-height: 2.75rem; display: block; padding: .25rem 0; }
+.daylist { list-style: none; margin: .5rem 0; padding: 0; display: grid; gap: .25rem; }
+.daylist a { display: grid; grid-template-columns: 5rem 1fr; gap: .5rem; padding: .75rem .25rem; color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); min-height: 3rem; }
+.daylist li.today a { background: color-mix(in srgb, var(--accent) 12%, transparent); border-radius: .5rem; }
+.dow { font-weight: 700; }
+.daytitles { display: grid; gap: .25rem; }
+.struck { text-decoration: line-through; color: var(--muted); }
+.status { font-size: .8rem; padding: .1rem .5rem; border-radius: 1rem; border: 1px solid var(--border); white-space: nowrap; }
+.st-done { background: var(--accent); color: #fff; border-color: transparent; }
+.st-skipped { color: var(--danger); }
+.st-moved { color: var(--muted); }
+.badge { background: color-mix(in srgb, var(--accent) 20%, transparent); padding: .1rem .5rem; border-radius: 1rem; font-size: .8rem; }
+.tierpick { margin-top: .75rem; }
+select { font: inherit; padding: .75rem; border-radius: .6rem; border: 1px solid var(--border); background: var(--card); color: var(--text); min-height: 3rem; }
+.menuitem { display: grid; gap: .25rem; color: inherit; text-decoration: none; }
+.menuitem.disabled { opacity: .5; }
+.radio { display: flex; gap: .5rem; align-items: center; font-weight: 400; min-height: 2.75rem; }
+.radio input { width: 1.5rem; height: 1.5rem; }

@@ -4,6 +4,7 @@ import { makeSessionKey } from '../../db/sessions'
 import { sessionTitle } from '../../domain/labels'
 import { locate } from '../../domain/plan'
 import { buildKbSteps, buildKneeSteps } from '../../domain/steps'
+import { useSchedule } from '../../hooks/useSchedule'
 import { AmrapSession } from './AmrapSession'
 import { BikeSession } from './BikeSession'
 import { OtherSession } from './OtherSession'
@@ -16,6 +17,8 @@ export function SessionPage() {
   const pos = useMemo(() => locate(date), [date])
   const close = () => navigate('/')
 
+  const schedule = useSchedule()
+  if (!schedule) return null
   if (pos.state !== 'running') return <p className="page">Für dieses Datum gibt es keine Einheit.</p>
   const { week, day } = pos
   const session = day.session
@@ -23,7 +26,7 @@ export function SessionPage() {
   const sessionKey = makeSessionKey(date, kind)
 
   if (kind === 'kb-a' || kind === 'kb-b') {
-    const steps = buildKbSteps(week.week, kind === 'kb-a' ? 'A' : 'B')
+    const steps = buildKbSteps(week.week, kind === 'kb-a' ? 'A' : 'B', schedule.overrides)
     return <StepRunner sessionKey={sessionKey} date={date} title={sessionTitle(session)} steps={steps} onClose={close} />
   }
   if (kind === 'knee')

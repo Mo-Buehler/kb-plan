@@ -2,6 +2,10 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { useEffect } from 'react'
 import { HashRouter, NavLink, Route, Routes, useMatch } from 'react-router-dom'
 import { Placeholder } from './components/Placeholder'
+import { CalendarPage } from './features/calendar/CalendarPage'
+import { DayPage } from './features/calendar/DayPage'
+import { MorePage } from './features/more/MorePage'
+import { PlanEditPage } from './features/plan/PlanEditPage'
 import { UpdateBanner } from './components/UpdateBanner'
 import { db } from './db/db'
 import { initStorage } from './db/startup'
@@ -34,9 +38,11 @@ function Shell({ name }: { name: string }) {
         <Route path="/" element={<TodayPage name={name} />} />
         <Route path="/einheit/:date" element={<SessionPage />} />
         <Route path="/einheit/:date/:kind" element={<SessionPage />} />
-        <Route path="/kalender" element={<Placeholder title="Kalender" />} />
+        <Route path="/kalender" element={<CalendarPage />} />
+        <Route path="/tag/:date" element={<DayPage />} />
         <Route path="/fortschritt" element={<Placeholder title="Fortschritt" />} />
-        <Route path="/mehr" element={<Placeholder title="Mehr" />} />
+        <Route path="/mehr" element={<MorePage />} />
+        <Route path="/mehr/plan" element={<PlanEditPage />} />
       </Routes>
     </div>
   )

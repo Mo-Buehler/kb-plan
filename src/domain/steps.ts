@@ -1,3 +1,4 @@
+import type { PlanOverride } from '../db/db'
 import { seed } from './plan'
 
 /** Plan amount as produced by scripts/build-seed.mjs. */
@@ -16,7 +17,7 @@ export interface Amount {
   note?: string
 }
 
-interface KbEx {
+export interface KbEx {
   id: string
   exerciseId: string
   name: string
@@ -86,9 +87,59 @@ function expand(a: Amount): { planned: Planned; kind: Step['kind']; rest?: numbe
   }
 }
 
-function exerciseSteps(ex: KbEx, week: number, block: 'main' | 'finisher'): Step[] {
-  const amount = ex.weeks[String(week)]
-  if (!amount) throw new Error(`No plan amount for ${ex.name} in week ${week}`)
+export interface Resolved {
+  amount: Amount
+  name: string
+  changed: boolean
+  replaced: boolean
+}
+
+/** Plan amount for a week with the user's overrides layered on top (later edits win). */
+export function resolveExercise(ex: KbEx, week: number, overrides: PlanOverride[]): Resolved {
+  const base = ex.weeks[String(week)]
+  if (!base) throw new Error(`No plan amount for ${ex.name} in week ${week}`)
+  const applicable = overrides
+    .filter((o) => o.exerciseId === ex.exerciseId && (o.scope === 'week' ? o.fromWeek === week : o.fromWeek <= week))
+    .sort((a, b) => (a.id ?? 0) - (b.id ?? 0))
+  const amount: Amount = { ...base }
+  let name = ex.name
+  for (const o of applicable) {
+    const p = o.patch
+    if (p?.sets !== undefined) {
+      if (amount.kind === 'emom') amount.minutes = p.sets
+      else amount.sets = p.sets
+    }
+    if (p?.reps !== undefined) amount.reps = p.reps
+    if (p?.seconds !== undefined) amount.seconds = p.seconds
+    if (p?.weights) amount.weights = p.weights
+    if (o.replaceWith) name = o.replaceWith
+  }
+  return { amount, name, changed: applicable.length > 0, replaced: name !== ex.name }
+}
+
+export interface ExerciseView extends Resolved {
+  ex: KbEx
+}
+
+/** All exercises of one workout in one week, for the plan editor. */
+export function kbExercises(week: number, workout: 'A' | 'B', overrides: PlanOverride[]): ExerciseView[] {
+  const w = seed.weeks.find((x) => x.week === week)
+  if (!w?.phase) return []
+  return KB[w.phase][workout].map((ex) => ({ ex, ...resolveExercise(ex, week, overrides) }))
+}
+
+/** Short German summary of an amount; falls back to the plan text for special forms. */
+export function amountSummary(a: Amount, changed: boolean): string {
+  if (!changed) return a.raw
+  const w = a.weights?.length ? ` @ ${a.weights.join(' + ')} kg` : ''
+  if (a.kind === 'emom') return `${a.minutes} min × ${a.reps}${w}`
+  if (a.kind && a.kind !== 'sets') return a.raw
+  const amount = a.repsMode ? 'max−2' : a.seconds !== undefined ? `${a.seconds} s` : `${a.reps}`
+  return `${a.sets} × ${amount}${a.perSide ? '/S' : ''}${w}`
+}
+
+function exerciseSteps(ex: KbEx, week: number, block: 'main' | 'finisher', overrides: PlanOverride[]): Step[] {
+  const { amount, name, replaced } = resolveExercise(ex, week, overrides)
   const sets = expand(amount)
   const key = `${block}:${ex.id}`
   return sets.map((s, i) => ({
@@ -98,9 +149,9 @@ function exerciseSteps(ex: KbEx, week: number, block: 'main' | 'finisher'): Step
     setCount: sets.length,
     block,
     kind: s.kind,
-    title: amount.label && block === 'main' && /Hike/.test(amount.label) ? amount.label : ex.name,
+    title: amount.label && block === 'main' && /Hike/.test(amount.label) ? amount.label : name,
     libraryId: ex.libraryId,
-    alternative: ex.painFreeAlternative,
+    alternative: replaced ? undefined : ex.painFreeAlternative,
     planned: s.planned,
     restAfter: s.kind === 'emom' || s.kind === 'test' ? null : (s.rest ?? null),
   }))
@@ -161,7 +212,7 @@ export function buildKneeSteps(phase: string, part: 'wed' | 'sat' | 'tue'): Step
   return out
 }
 
-export function buildKbSteps(week: number, workout: 'A' | 'B'): Step[] {
+export function buildKbSteps(week: number, workout: 'A' | 'B', overrides: PlanOverride[] = []): Step[] {
   const w = seed.weeks.find((x) => x.week === week)
   if (!w?.phase) throw new Error(`Week ${week} has no kettlebell phase`)
   const exercises = KB[w.phase][workout]
@@ -171,10 +222,10 @@ export function buildKbSteps(week: number, workout: 'A' | 'B'): Step[] {
   const groups = new Map<number, KbEx[]>()
   for (const ex of exercises.filter((e) => e.block === 'main')) groups.set(ex.group, [...(groups.get(ex.group) ?? []), ex])
   for (const g of [...groups.keys()].sort((a, b) => a - b))
-    steps.push(...interleave(groups.get(g)!.map((ex) => exerciseSteps(ex, week, 'main')), REST.inSuperset, REST.afterSuperset))
+    steps.push(...interleave(groups.get(g)!.map((ex) => exerciseSteps(ex, week, 'main', overrides)), REST.inSuperset, REST.afterSuperset))
 
   const fin = exercises.filter((e) => e.block === 'finisher')
-  if (fin.length) steps.push(...interleave(fin.map((ex) => exerciseSteps(ex, week, 'finisher')), REST.finisherFirst, REST.finisherSecond))
+  if (fin.length) steps.push(...interleave(fin.map((ex) => exerciseSteps(ex, week, 'finisher', overrides)), REST.finisherFirst, REST.finisherSecond))
 
   steps.push(checkStep('cooldown', 'Cool-down', 'Cool-down'))
   return steps

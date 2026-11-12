@@ -48,7 +48,36 @@ export interface SetLog {
   done: boolean
 }
 
+/**
+ * Change to a planned exercise. The seed is never modified; overrides are layered on top.
+ * `forward` applies from `fromWeek` until the end of the plan wherever the same exercise appears.
+ */
+export interface PlanOverride {
+  id?: number
+  exerciseId: string
+  fromWeek: number
+  scope: 'week' | 'forward'
+  patch?: { sets?: number; reps?: number; seconds?: number; weights?: number[] }
+  replaceWith?: string
+  createdAt: string
+}
+
+export interface MoveEntry {
+  id?: number
+  fromDate: string
+  kind: string
+  toDate: string
+}
+
+export interface WeekTierEntry {
+  week: number
+  tier: 'full' | 'compact' | 'minimum'
+}
+
 export class KbDb extends Dexie {
+  overrides!: EntityTable<PlanOverride, 'id'>
+  moves!: EntityTable<MoveEntry, 'id'>
+  weekTiers!: EntityTable<WeekTierEntry, 'week'>
   profile!: EntityTable<Profile, 'id'>
   meta!: EntityTable<MetaEntry, 'key'>
   measurements!: EntityTable<Measurement, 'id'>
@@ -67,6 +96,12 @@ export class KbDb extends Dexie {
     // v2: one log per set, addressed by (session, exercise, set number)
     this.version(2).stores({
       setLogs: '++id, sessionKey, exerciseId, &[sessionKey+exerciseId+setIndex]',
+    })
+    // v3: plan edits, moved sessions and week tiers
+    this.version(3).stores({
+      overrides: '++id, exerciseId, fromWeek',
+      moves: '++id, &[fromDate+kind], toDate',
+      weekTiers: 'week',
     })
   }
 }
