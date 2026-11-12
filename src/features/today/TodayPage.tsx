@@ -7,6 +7,7 @@ import { sessionTitle } from '../../domain/labels'
 import { locate, seed, todayIso } from '../../domain/plan'
 import { itemsForDate, type ScheduledItem } from '../../domain/schedule'
 import { currentSuggestions, RuleHints } from '../progress/RuleHints'
+import { Reminders } from './Reminders'
 import { STATUS_LABEL, statusOf, useSchedule, type ScheduleData } from '../../hooks/useSchedule'
 
 const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
@@ -26,6 +27,7 @@ export function TodayPage({ name }: { name: string }) {
       <p className="muted">
         {weekdayName(iso)}, {formatDate(iso)}
       </p>
+      <Reminders />
       {pos.state === 'before' && (
         <section className="card">
           <h2>Der Plan startet bald</h2>

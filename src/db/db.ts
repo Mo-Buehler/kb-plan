@@ -74,7 +74,15 @@ export interface WeekTierEntry {
   tier: 'full' | 'compact' | 'minimum'
 }
 
+/** Checked state of checklist and shopping-list entries, keyed by their id in the seed. */
+export interface CheckState {
+  key: string
+  done: boolean
+  at: string
+}
+
 export class KbDb extends Dexie {
+  checkStates!: EntityTable<CheckState, 'key'>
   overrides!: EntityTable<PlanOverride, 'id'>
   moves!: EntityTable<MoveEntry, 'id'>
   weekTiers!: EntityTable<WeekTierEntry, 'week'>
@@ -102,6 +110,10 @@ export class KbDb extends Dexie {
       overrides: '++id, exerciseId, fromWeek',
       moves: '++id, &[fromDate+kind], toDate',
       weekTiers: 'week',
+    })
+    // v4: checklist and shopping list state
+    this.version(4).stores({
+      checkStates: 'key',
     })
   }
 }

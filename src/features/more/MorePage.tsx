@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 const ITEMS = [
   { to: '/mehr/plan', label: 'Plan bearbeiten', note: 'Sätze, Wiederholungen, Gewichte, Ersatzübungen' },
   { to: '/kalender', label: 'Wochenstufe und Verschieben', note: 'Im Kalender: Woche öffnen oder Tag antippen' },
+  { to: '/mehr/checklisten', label: 'Checklisten', note: 'Vor dem Start, während des Plans, Saisonstart' },
+  { to: '/mehr/einkauf', label: 'Einkaufsliste', note: 'Mit Bestellterminen' },
+  { to: '/mehr/backup', label: 'Backup und Import', note: 'Daten sichern und auf ein anderes Gerät übertragen' },
+  { to: '/mehr/einstellungen', label: 'Einstellungen', note: 'Persönliche Angaben, Daten löschen' },
 ]
-const LATER = ['Checklisten und Einkaufsliste', 'Backup und Import', 'Einstellungen']
 
 export function MorePage() {
   return (
@@ -16,12 +19,6 @@ export function MorePage() {
             <strong>{i.label}</strong>
             <span className="muted">{i.note}</span>
           </Link>
-        ))}
-        {LATER.map((l) => (
-          <div key={l} className="card menuitem disabled">
-            <strong>{l}</strong>
-            <span className="muted">folgt in einem späteren Schritt</span>
-          </div>
         ))}
       </div>
     </main>

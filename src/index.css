@@ -110,3 +110,13 @@ select { font: inherit; padding: .75rem; border-radius: .6rem; border: 1px solid
 .hint { border-color: var(--accent); }
 .btnrow { display: grid; gap: .5rem; }
 input[type=date] { min-height: 3rem; }
+
+/* Lists, backup, settings */
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checkrow { display: flex; gap: .75rem; align-items: flex-start; min-height: 3.5rem; padding: .6rem 0; border-bottom: 1px solid var(--border); font-weight: 400; }
+.checkrow input { width: 1.75rem; height: 1.75rem; flex: none; margin-top: .1rem; accent-color: var(--accent); }
+.checked { text-decoration: line-through; color: var(--muted); }
+.block { display: block; font-size: .85rem; }
+.late { color: var(--danger); font-weight: 600; }
+button.danger { background: var(--danger); color: #fff; border: 0; font-weight: 700; }
+input[type=file] { padding: .6rem; }
