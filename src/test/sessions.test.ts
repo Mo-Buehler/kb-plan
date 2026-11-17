@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { db } from '../db/db'
 import { deleteSetLog, finishSession, saveSetLog } from '../db/sessions'
 
-const base = { sessionKey: '2026-12-09:kb-a', exerciseId: 'main:A1', setIndex: 0, done: true }
+const base = { sessionKey: '2026-12-23:kb-a', exerciseId: 'main:A1', setIndex: 0, done: true }
 
 beforeEach(async () => {
   await Promise.all([db.setLogs.clear(), db.sessionLogs.clear(), db.measurements.clear(), db.meta.clear()])
@@ -25,8 +25,8 @@ describe('session storage', () => {
   })
 
   it('finishing stores the session and one measurement per day and kind', async () => {
-    await finishSession({ date: '2026-12-10', sessionKey: 'k1', kneePain: 2 }, [{ date: '2026-12-10', kind: 'ftp', value: 200 }])
-    await finishSession({ date: '2026-12-10', sessionKey: 'k1', kneePain: 3 }, [{ date: '2026-12-10', kind: 'ftp', value: 210 }])
+    await finishSession({ date: '2026-12-24', sessionKey: 'k1', kneePain: 2 }, [{ date: '2026-12-24', kind: 'ftp', value: 200 }])
+    await finishSession({ date: '2026-12-24', sessionKey: 'k1', kneePain: 3 }, [{ date: '2026-12-24', kind: 'ftp', value: 210 }])
     expect(await db.sessionLogs.count()).toBe(1)
     expect((await db.sessionLogs.toArray())[0]).toMatchObject({ status: 'done', kneePain: 3 })
     const m = await db.measurements.toArray()

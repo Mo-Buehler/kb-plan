@@ -73,10 +73,10 @@ Die Plan-Datei `trainingsplan.md` ist die einzige Quelle für Übungen, Sätze, 
    ```
    Das Skript bricht mit einer Fehlermeldung ab, wenn es eine Zelle nicht eindeutig lesen kann, und prüft, dass keine persönlichen Angaben aus Abschnitt 1 in der Seed-Datei landen.
 3. Prüfe die Stichproben in `src/test/seed.test.ts` und passe sie an die neuen Werte an, dann `npm test`.
-4. Prüfe die Terminangaben in `scripts/build-seed.mjs`: Planstart (`PLAN_START`) und Beginn der Vorbereitungswoche (`prepStart`) sind dort fest eingetragen und müssen zum neuen Zyklus passen.
+4. Den Planstart liest das Skript aus Abschnitt 1 („Planstart (Woche 1)", muss ein Montag sein). Alle Datumsangaben in der Datei (Kalender, Phasen, Zielgewichte, Einkaufsliste, MyWhoosh-Termine) müssen zu diesem Start passen. Den Start zu verschieben heißt also: alle Daten in `trainingsplan.md` um dieselbe Zahl Tage verschieben und `npm run seed` ausführen.
 5. Committen und pushen (siehe oben).
 
-**Was mit deinen Daten passiert:** Beim nächsten Öffnen erkennt die App den neuen Plan und zeigt „Neuer Trainingsplan erkannt". Nach deiner Bestätigung bleiben Messwerte, Einheiten, Sätze und Profil erhalten. Plan-Änderungen, Verschiebungen, Wochenstufen, Haken in Listen und beantwortete Hinweise gehören zum alten Plan und werden zurückgesetzt. Sichere vorher deine Daten.
+**Was mit deinen Daten passiert:** Beim nächsten Öffnen erkennt die App den neuen Plan und zeigt „Neuer Trainingsplan erkannt". Nach deiner Bestätigung bleiben Messwerte, Einheiten, Sätze und Profil erhalten. Haken in Checklisten und Einkaufsliste bleiben, solange es den Eintrag im neuen Plan noch gibt. Plan-Änderungen, Verschiebungen, Wochenstufen und beantwortete Hinweise gehören zum alten Plan und werden zurückgesetzt. Ergebnisse, die du unter einem Datum des alten Plans erfasst hast, bleiben gespeichert, passen aber nicht mehr zu den Einheiten des neuen Kalenders. Sichere vorher deine Daten.
 
 ## Projektstruktur
 

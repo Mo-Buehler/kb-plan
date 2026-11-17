@@ -1,17 +1,17 @@
 {
  "schemaVersion": 1,
- "sourceHash": "c69cc15d70942d58",
- "planStart": "2026-12-07",
- "prepStart": "2026-11-30",
- "planEnd": "2027-03-28",
+ "sourceHash": "7ce7bd92406f6b54",
+ "planStart": "2026-12-21",
+ "prepStart": "2026-12-14",
+ "planEnd": "2027-04-11",
  "phases": [
   {
    "id": "P1",
    "name": "Basis",
    "weekFrom": 1,
    "weekTo": 4,
-   "start": "2026-12-07",
-   "end": "2027-01-03",
+   "start": "2026-12-21",
+   "end": "2027-01-17",
    "kbFocus": "Technik, Grundübungen mit 12 und 16 kg",
    "bikeFocus": "Zone 2, Trittfrequenz, FTP-Test"
   },
@@ -20,8 +20,8 @@
    "name": "Hypertrophie I",
    "weekFrom": 5,
    "weekTo": 8,
-   "start": null,
-   "end": "2027-01-31",
+   "start": "2027-01-18",
+   "end": "2027-02-14",
    "kbFocus": "Mehr Volumen, Swing als Hauptübung, 24 kg kommt dazu",
    "bikeFocus": "Sweet Spot"
   },
@@ -30,8 +30,8 @@
    "name": "Hypertrophie II",
    "weekFrom": 9,
    "weekTo": 12,
-   "start": null,
-   "end": "2027-02-28",
+   "start": "2027-02-15",
+   "end": "2027-03-14",
    "kbFocus": "Doppel-Kettlebell-Übungen mit 2 × 16 kg",
    "bikeFocus": "Schwelle, Sonntag 75 min"
   },
@@ -40,8 +40,8 @@
    "name": "Kraft und Saisonvorbereitung",
    "weekFrom": 13,
    "weekTo": 16,
-   "start": null,
-   "end": "2027-03-28",
+   "start": "2027-03-15",
+   "end": "2027-04-11",
    "kbFocus": "Schwerer, weniger Volumen, Komplexe",
    "bikeFocus": "Over-Unders, Tempo, erste Rennrad-Ausfahrten"
   }
@@ -49,148 +49,9 @@
  "weeks": [
   {
    "week": 0,
-   "start": "2026-11-30",
-   "end": "2026-12-06",
-   "phase": null,
-   "deload": false,
-   "test": false,
-   "days": [
-    {
-     "date": "2026-11-30",
-     "dow": "mo",
-     "session": {
-      "label": "Fußball",
-      "kind": "football"
-     }
-    },
-    {
-     "date": "2026-12-01",
-     "dow": "di",
-     "session": {
-      "label": "Ausgangsmessung",
-      "kind": "measurement"
-     }
-    },
-    {
-     "date": "2026-12-02",
-     "dow": "mi",
-     "session": {
-      "label": "Hinge-Drill 3 × 10",
-      "kind": "hinge-drill",
-      "sets": 3,
-      "reps": 10
-     }
-    },
-    {
-     "date": "2026-12-03",
-     "dow": "do",
-     "session": {
-      "label": "Sattel und Cleats messen",
-      "kind": "task"
-     }
-    },
-    {
-     "date": "2026-12-04",
-     "dow": "fr",
-     "session": {
-      "label": "Ruhe",
-      "kind": "rest"
-     }
-    },
-    {
-     "date": "2026-12-05",
-     "dow": "sa",
-     "session": {
-      "label": "Hinge-Drill, Kettlebell-Lieferung prüfen",
-      "kind": "hinge-drill",
-      "note": "Kettlebell-Lieferung prüfen"
-     }
-    },
-    {
-     "date": "2026-12-06",
-     "dow": "so",
-     "session": {
-      "label": "MB-Z2-45",
-      "kind": "bike",
-      "workout": "MB-Z2-45"
-     }
-    }
-   ]
-  },
-  {
-   "week": 1,
-   "start": "2026-12-07",
-   "end": "2026-12-13",
-   "phase": "P1",
-   "deload": false,
-   "test": false,
-   "days": [
-    {
-     "date": "2026-12-07",
-     "dow": "mo",
-     "session": {
-      "label": "Fußball",
-      "kind": "football"
-     }
-    },
-    {
-     "date": "2026-12-08",
-     "dow": "di",
-     "session": {
-      "label": "Knie",
-      "kind": "knee"
-     }
-    },
-    {
-     "date": "2026-12-09",
-     "dow": "mi",
-     "session": {
-      "label": "KB A (P1)",
-      "kind": "kb-a",
-      "phaseStart": "P1"
-     }
-    },
-    {
-     "date": "2026-12-10",
-     "dow": "do",
-     "session": {
-      "label": "FTP-Test (Bibliothek)",
-      "kind": "ftp-test"
-     }
-    },
-    {
-     "date": "2026-12-11",
-     "dow": "fr",
-     "session": {
-      "label": "Ruhe",
-      "kind": "rest"
-     }
-    },
-    {
-     "date": "2026-12-12",
-     "dow": "sa",
-     "session": {
-      "label": "KB B (P1)",
-      "kind": "kb-b",
-      "phaseStart": "P1"
-     }
-    },
-    {
-     "date": "2026-12-13",
-     "dow": "so",
-     "session": {
-      "label": "MB-Z2-60",
-      "kind": "bike",
-      "workout": "MB-Z2-60"
-     }
-    }
-   ]
-  },
-  {
-   "week": 2,
    "start": "2026-12-14",
    "end": "2026-12-20",
-   "phase": "P1",
+   "phase": null,
    "deload": false,
    "test": false,
    "days": [
@@ -206,25 +67,26 @@
      "date": "2026-12-15",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Ausgangsmessung",
+      "kind": "measurement"
      }
     },
     {
      "date": "2026-12-16",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "Hinge-Drill 3 × 10",
+      "kind": "hinge-drill",
+      "sets": 3,
+      "reps": 10
      }
     },
     {
      "date": "2026-12-17",
      "dow": "do",
      "session": {
-      "label": "MB-Z2-Kadenz-50",
-      "kind": "bike",
-      "workout": "MB-Z2-Kadenz-50"
+      "label": "Sattel und Cleats messen",
+      "kind": "task"
      }
     },
     {
@@ -239,23 +101,24 @@
      "date": "2026-12-19",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "Hinge-Drill, Kettlebell-Lieferung prüfen",
+      "kind": "hinge-drill",
+      "note": "Kettlebell-Lieferung prüfen"
      }
     },
     {
      "date": "2026-12-20",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-60",
+      "label": "MB-Z2-45",
       "kind": "bike",
-      "workout": "MB-Z2-60"
+      "workout": "MB-Z2-45"
      }
     }
    ]
   },
   {
-   "week": 3,
+   "week": 1,
    "start": "2026-12-21",
    "end": "2026-12-27",
    "phase": "P1",
@@ -266,35 +129,33 @@
      "date": "2026-12-21",
      "dow": "mo",
      "session": {
-      "label": "Fußball oder Workout C",
-      "kind": "football",
-      "alternative": "workout-c"
+      "label": "Fußball",
+      "kind": "football"
      }
     },
     {
      "date": "2026-12-22",
      "dow": "di",
      "session": {
-      "label": "MB-Z2-Kadenz-50 (statt Heiligabend)",
-      "note": "statt Heiligabend",
-      "kind": "bike",
-      "workout": "MB-Z2-Kadenz-50"
+      "label": "Knie",
+      "kind": "knee"
      }
     },
     {
      "date": "2026-12-23",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A (P1)",
+      "kind": "kb-a",
+      "phaseStart": "P1"
      }
     },
     {
      "date": "2026-12-24",
      "dow": "do",
      "session": {
-      "label": "Ruhe",
-      "kind": "rest"
+      "label": "FTP-Test (Bibliothek)",
+      "kind": "ftp-test"
      }
     },
     {
@@ -309,8 +170,9 @@
      "date": "2026-12-26",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B (P1)",
+      "kind": "kb-b",
+      "phaseStart": "P1"
      }
     },
     {
@@ -325,48 +187,44 @@
    ]
   },
   {
-   "week": 4,
+   "week": 2,
    "start": "2026-12-28",
    "end": "2027-01-03",
    "phase": "P1",
-   "deload": true,
+   "deload": false,
    "test": false,
    "days": [
     {
      "date": "2026-12-28",
      "dow": "mo",
      "session": {
-      "label": "Fußball oder Workout C (10 min)",
-      "kind": "football",
-      "alternative": "workout-c",
-      "amrapMinutes": 10
+      "label": "Fußball",
+      "kind": "football"
      }
     },
     {
      "date": "2026-12-29",
      "dow": "di",
      "session": {
-      "label": "MB-Z2-45 (statt Silvester)",
-      "note": "statt Silvester",
-      "kind": "bike",
-      "workout": "MB-Z2-45"
+      "label": "Knie",
+      "kind": "knee"
      }
     },
     {
      "date": "2026-12-30",
      "dow": "mi",
      "session": {
-      "label": "KB A Deload",
-      "kind": "kb-a",
-      "deload": true
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2026-12-31",
      "dow": "do",
      "session": {
-      "label": "Ruhe",
-      "kind": "rest"
+      "label": "MB-Z2-Kadenz-50",
+      "kind": "bike",
+      "workout": "MB-Z2-Kadenz-50"
      }
     },
     {
@@ -381,27 +239,26 @@
      "date": "2027-01-02",
      "dow": "sa",
      "session": {
-      "label": "KB B Deload",
-      "kind": "kb-b",
-      "deload": true
+      "label": "KB B",
+      "kind": "kb-b"
      }
     },
     {
      "date": "2027-01-03",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-45",
+      "label": "MB-Z2-60",
       "kind": "bike",
-      "workout": "MB-Z2-45"
+      "workout": "MB-Z2-60"
      }
     }
    ]
   },
   {
-   "week": 5,
+   "week": 3,
    "start": "2027-01-04",
    "end": "2027-01-10",
-   "phase": "P2",
+   "phase": "P1",
    "deload": false,
    "test": false,
    "days": [
@@ -409,34 +266,34 @@
      "date": "2027-01-04",
      "dow": "mo",
      "session": {
-      "label": "Fußball",
-      "kind": "football"
+      "label": "Fußball oder Workout C",
+      "kind": "football",
+      "alternative": "workout-c"
      }
     },
     {
      "date": "2027-01-05",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "MB-Z2-Kadenz-50",
+      "kind": "bike",
+      "workout": "MB-Z2-Kadenz-50"
      }
     },
     {
      "date": "2027-01-06",
      "dow": "mi",
      "session": {
-      "label": "KB A (P2)",
-      "kind": "kb-a",
-      "phaseStart": "P2"
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2027-01-07",
      "dow": "do",
      "session": {
-      "label": "MB-SweetSpot V1",
-      "kind": "bike",
-      "workout": "MB-SweetSpot V1"
+      "label": "Ruhe",
+      "kind": "rest"
      }
     },
     {
@@ -451,9 +308,8 @@
      "date": "2027-01-09",
      "dow": "sa",
      "session": {
-      "label": "KB B (P2)",
-      "kind": "kb-b",
-      "phaseStart": "P2"
+      "label": "KB B",
+      "kind": "kb-b"
      }
     },
     {
@@ -468,44 +324,47 @@
    ]
   },
   {
-   "week": 6,
+   "week": 4,
    "start": "2027-01-11",
    "end": "2027-01-17",
-   "phase": "P2",
-   "deload": false,
+   "phase": "P1",
+   "deload": true,
    "test": false,
    "days": [
     {
      "date": "2027-01-11",
      "dow": "mo",
      "session": {
-      "label": "Fußball",
-      "kind": "football"
+      "label": "Fußball oder Workout C (10 min)",
+      "kind": "football",
+      "alternative": "workout-c",
+      "amrapMinutes": 10
      }
     },
     {
      "date": "2027-01-12",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "MB-Z2-45",
+      "kind": "bike",
+      "workout": "MB-Z2-45"
      }
     },
     {
      "date": "2027-01-13",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
      }
     },
     {
      "date": "2027-01-14",
      "dow": "do",
      "session": {
-      "label": "MB-SweetSpot V2",
-      "kind": "bike",
-      "workout": "MB-SweetSpot V2"
+      "label": "Ruhe",
+      "kind": "rest"
      }
     },
     {
@@ -520,23 +379,24 @@
      "date": "2027-01-16",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B Deload",
+      "kind": "kb-b",
+      "deload": true
      }
     },
     {
      "date": "2027-01-17",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-60",
+      "label": "MB-Z2-45",
       "kind": "bike",
-      "workout": "MB-Z2-60"
+      "workout": "MB-Z2-45"
      }
     }
    ]
   },
   {
-   "week": 7,
+   "week": 5,
    "start": "2027-01-18",
    "end": "2027-01-24",
    "phase": "P2",
@@ -563,17 +423,18 @@
      "date": "2027-01-20",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A (P2)",
+      "kind": "kb-a",
+      "phaseStart": "P2"
      }
     },
     {
      "date": "2027-01-21",
      "dow": "do",
      "session": {
-      "label": "MB-SweetSpot V3",
+      "label": "MB-SweetSpot V1",
       "kind": "bike",
-      "workout": "MB-SweetSpot V3"
+      "workout": "MB-SweetSpot V1"
      }
     },
     {
@@ -588,8 +449,9 @@
      "date": "2027-01-23",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B (P2)",
+      "kind": "kb-b",
+      "phaseStart": "P2"
      }
     },
     {
@@ -604,11 +466,11 @@
    ]
   },
   {
-   "week": 8,
+   "week": 6,
    "start": "2027-01-25",
    "end": "2027-01-31",
    "phase": "P2",
-   "deload": true,
+   "deload": false,
    "test": false,
    "days": [
     {
@@ -631,17 +493,17 @@
      "date": "2027-01-27",
      "dow": "mi",
      "session": {
-      "label": "KB A Deload",
-      "kind": "kb-a",
-      "deload": true
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2027-01-28",
      "dow": "do",
      "session": {
-      "label": "FTP-Test",
-      "kind": "ftp-test"
+      "label": "MB-SweetSpot V2",
+      "kind": "bike",
+      "workout": "MB-SweetSpot V2"
      }
     },
     {
@@ -656,27 +518,26 @@
      "date": "2027-01-30",
      "dow": "sa",
      "session": {
-      "label": "KB B Deload",
-      "kind": "kb-b",
-      "deload": true
+      "label": "KB B",
+      "kind": "kb-b"
      }
     },
     {
      "date": "2027-01-31",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-45",
+      "label": "MB-Z2-60",
       "kind": "bike",
-      "workout": "MB-Z2-45"
+      "workout": "MB-Z2-60"
      }
     }
    ]
   },
   {
-   "week": 9,
+   "week": 7,
    "start": "2027-02-01",
    "end": "2027-02-07",
-   "phase": "P3",
+   "phase": "P2",
    "deload": false,
    "test": false,
    "days": [
@@ -700,18 +561,17 @@
      "date": "2027-02-03",
      "dow": "mi",
      "session": {
-      "label": "KB A (P3)",
-      "kind": "kb-a",
-      "phaseStart": "P3"
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2027-02-04",
      "dow": "do",
      "session": {
-      "label": "MB-Schwelle V1",
+      "label": "MB-SweetSpot V3",
       "kind": "bike",
-      "workout": "MB-Schwelle V1"
+      "workout": "MB-SweetSpot V3"
      }
     },
     {
@@ -726,28 +586,27 @@
      "date": "2027-02-06",
      "dow": "sa",
      "session": {
-      "label": "KB B (P3)",
-      "kind": "kb-b",
-      "phaseStart": "P3"
+      "label": "KB B",
+      "kind": "kb-b"
      }
     },
     {
      "date": "2027-02-07",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-75",
+      "label": "MB-Z2-60",
       "kind": "bike",
-      "workout": "MB-Z2-75"
+      "workout": "MB-Z2-60"
      }
     }
    ]
   },
   {
-   "week": 10,
+   "week": 8,
    "start": "2027-02-08",
    "end": "2027-02-14",
-   "phase": "P3",
-   "deload": false,
+   "phase": "P2",
+   "deload": true,
    "test": false,
    "days": [
     {
@@ -770,17 +629,17 @@
      "date": "2027-02-10",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
      }
     },
     {
      "date": "2027-02-11",
      "dow": "do",
      "session": {
-      "label": "MB-Schwelle V2",
-      "kind": "bike",
-      "workout": "MB-Schwelle V2"
+      "label": "FTP-Test",
+      "kind": "ftp-test"
      }
     },
     {
@@ -795,23 +654,24 @@
      "date": "2027-02-13",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B Deload",
+      "kind": "kb-b",
+      "deload": true
      }
     },
     {
      "date": "2027-02-14",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-75",
+      "label": "MB-Z2-45",
       "kind": "bike",
-      "workout": "MB-Z2-75"
+      "workout": "MB-Z2-45"
      }
     }
    ]
   },
   {
-   "week": 11,
+   "week": 9,
    "start": "2027-02-15",
    "end": "2027-02-21",
    "phase": "P3",
@@ -838,17 +698,18 @@
      "date": "2027-02-17",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A (P3)",
+      "kind": "kb-a",
+      "phaseStart": "P3"
      }
     },
     {
      "date": "2027-02-18",
      "dow": "do",
      "session": {
-      "label": "MB-Schwelle V3",
+      "label": "MB-Schwelle V1",
       "kind": "bike",
-      "workout": "MB-Schwelle V3"
+      "workout": "MB-Schwelle V1"
      }
     },
     {
@@ -863,8 +724,9 @@
      "date": "2027-02-20",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B (P3)",
+      "kind": "kb-b",
+      "phaseStart": "P3"
      }
     },
     {
@@ -879,11 +741,11 @@
    ]
   },
   {
-   "week": 12,
+   "week": 10,
    "start": "2027-02-22",
    "end": "2027-02-28",
    "phase": "P3",
-   "deload": true,
+   "deload": false,
    "test": false,
    "days": [
     {
@@ -906,18 +768,17 @@
      "date": "2027-02-24",
      "dow": "mi",
      "session": {
-      "label": "KB A Deload",
-      "kind": "kb-a",
-      "deload": true
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2027-02-25",
      "dow": "do",
      "session": {
-      "label": "MB-Z2-45",
+      "label": "MB-Schwelle V2",
       "kind": "bike",
-      "workout": "MB-Z2-45"
+      "workout": "MB-Schwelle V2"
      }
     },
     {
@@ -932,28 +793,26 @@
      "date": "2027-02-27",
      "dow": "sa",
      "session": {
-      "label": "KB B Deload, Zwischenmessung",
-      "kind": "kb-b",
-      "deload": true,
-      "note": "Zwischenmessung"
+      "label": "KB B",
+      "kind": "kb-b"
      }
     },
     {
      "date": "2027-02-28",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-45",
+      "label": "MB-Z2-75",
       "kind": "bike",
-      "workout": "MB-Z2-45"
+      "workout": "MB-Z2-75"
      }
     }
    ]
   },
   {
-   "week": 13,
+   "week": 11,
    "start": "2027-03-01",
    "end": "2027-03-07",
-   "phase": "P4",
+   "phase": "P3",
    "deload": false,
    "test": false,
    "days": [
@@ -977,18 +836,17 @@
      "date": "2027-03-03",
      "dow": "mi",
      "session": {
-      "label": "KB A (P4)",
-      "kind": "kb-a",
-      "phaseStart": "P4"
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2027-03-04",
      "dow": "do",
      "session": {
-      "label": "MB-OverUnder V1",
+      "label": "MB-Schwelle V3",
       "kind": "bike",
-      "workout": "MB-OverUnder V1"
+      "workout": "MB-Schwelle V3"
      }
     },
     {
@@ -1003,28 +861,27 @@
      "date": "2027-03-06",
      "dow": "sa",
      "session": {
-      "label": "KB B (P4)",
-      "kind": "kb-b",
-      "phaseStart": "P4"
+      "label": "KB B",
+      "kind": "kb-b"
      }
     },
     {
      "date": "2027-03-07",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-Tempo-75 V1",
+      "label": "MB-Z2-75",
       "kind": "bike",
-      "workout": "MB-Z2-Tempo-75 V1"
+      "workout": "MB-Z2-75"
      }
     }
    ]
   },
   {
-   "week": 14,
+   "week": 12,
    "start": "2027-03-08",
    "end": "2027-03-14",
-   "phase": "P4",
-   "deload": false,
+   "phase": "P3",
+   "deload": true,
    "test": false,
    "days": [
     {
@@ -1047,17 +904,18 @@
      "date": "2027-03-10",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
      }
     },
     {
      "date": "2027-03-11",
      "dow": "do",
      "session": {
-      "label": "MB-Schwelle V4",
+      "label": "MB-Z2-45",
       "kind": "bike",
-      "workout": "MB-Schwelle V4"
+      "workout": "MB-Z2-45"
      }
     },
     {
@@ -1072,24 +930,25 @@
      "date": "2027-03-13",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B Deload, Zwischenmessung",
+      "kind": "kb-b",
+      "deload": true,
+      "note": "Zwischenmessung"
      }
     },
     {
      "date": "2027-03-14",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-Tempo-75 V2 oder Rennrad draußen 75 min",
+      "label": "MB-Z2-45",
       "kind": "bike",
-      "workout": "MB-Z2-Tempo-75 V2",
-      "alternativeText": "Rennrad draußen 75 min"
+      "workout": "MB-Z2-45"
      }
     }
    ]
   },
   {
-   "week": 15,
+   "week": 13,
    "start": "2027-03-15",
    "end": "2027-03-21",
    "phase": "P4",
@@ -1116,17 +975,18 @@
      "date": "2027-03-17",
      "dow": "mi",
      "session": {
-      "label": "KB A",
-      "kind": "kb-a"
+      "label": "KB A (P4)",
+      "kind": "kb-a",
+      "phaseStart": "P4"
      }
     },
     {
      "date": "2027-03-18",
      "dow": "do",
      "session": {
-      "label": "MB-OverUnder V2",
+      "label": "MB-OverUnder V1",
       "kind": "bike",
-      "workout": "MB-OverUnder V2"
+      "workout": "MB-OverUnder V1"
      }
     },
     {
@@ -1141,28 +1001,29 @@
      "date": "2027-03-20",
      "dow": "sa",
      "session": {
-      "label": "KB B",
-      "kind": "kb-b"
+      "label": "KB B (P4)",
+      "kind": "kb-b",
+      "phaseStart": "P4"
      }
     },
     {
      "date": "2027-03-21",
      "dow": "so",
      "session": {
-      "label": "MB-Z2-Tempo-75 V3",
+      "label": "MB-Z2-Tempo-75 V1",
       "kind": "bike",
-      "workout": "MB-Z2-Tempo-75 V3"
+      "workout": "MB-Z2-Tempo-75 V1"
      }
     }
    ]
   },
   {
-   "week": 16,
+   "week": 14,
    "start": "2027-03-22",
    "end": "2027-03-28",
    "phase": "P4",
-   "deload": true,
-   "test": true,
+   "deload": false,
+   "test": false,
    "days": [
     {
      "date": "2027-03-22",
@@ -1184,17 +1045,17 @@
      "date": "2027-03-24",
      "dow": "mi",
      "session": {
-      "label": "KB A Deload",
-      "kind": "kb-a",
-      "deload": true
+      "label": "KB A",
+      "kind": "kb-a"
      }
     },
     {
      "date": "2027-03-25",
      "dow": "do",
      "session": {
-      "label": "FTP-Test",
-      "kind": "ftp-test"
+      "label": "MB-Schwelle V4",
+      "kind": "bike",
+      "workout": "MB-Schwelle V4"
      }
     },
     {
@@ -1209,6 +1070,143 @@
      "date": "2027-03-27",
      "dow": "sa",
      "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-03-28",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-Tempo-75 V2 oder Rennrad draußen 75 min",
+      "kind": "bike",
+      "workout": "MB-Z2-Tempo-75 V2",
+      "alternativeText": "Rennrad draußen 75 min"
+     }
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "start": "2027-03-29",
+   "end": "2027-04-04",
+   "phase": "P4",
+   "deload": false,
+   "test": false,
+   "days": [
+    {
+     "date": "2027-03-29",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-03-30",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-03-31",
+     "dow": "mi",
+     "session": {
+      "label": "KB A",
+      "kind": "kb-a"
+     }
+    },
+    {
+     "date": "2027-04-01",
+     "dow": "do",
+     "session": {
+      "label": "MB-OverUnder V2",
+      "kind": "bike",
+      "workout": "MB-OverUnder V2"
+     }
+    },
+    {
+     "date": "2027-04-02",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-04-03",
+     "dow": "sa",
+     "session": {
+      "label": "KB B",
+      "kind": "kb-b"
+     }
+    },
+    {
+     "date": "2027-04-04",
+     "dow": "so",
+     "session": {
+      "label": "MB-Z2-Tempo-75 V3",
+      "kind": "bike",
+      "workout": "MB-Z2-Tempo-75 V3"
+     }
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "start": "2027-04-05",
+   "end": "2027-04-11",
+   "phase": "P4",
+   "deload": true,
+   "test": true,
+   "days": [
+    {
+     "date": "2027-04-05",
+     "dow": "mo",
+     "session": {
+      "label": "Fußball",
+      "kind": "football"
+     }
+    },
+    {
+     "date": "2027-04-06",
+     "dow": "di",
+     "session": {
+      "label": "Knie",
+      "kind": "knee"
+     }
+    },
+    {
+     "date": "2027-04-07",
+     "dow": "mi",
+     "session": {
+      "label": "KB A Deload",
+      "kind": "kb-a",
+      "deload": true
+     }
+    },
+    {
+     "date": "2027-04-08",
+     "dow": "do",
+     "session": {
+      "label": "FTP-Test",
+      "kind": "ftp-test"
+     }
+    },
+    {
+     "date": "2027-04-09",
+     "dow": "fr",
+     "session": {
+      "label": "Ruhe",
+      "kind": "rest"
+     }
+    },
+    {
+     "date": "2027-04-10",
+     "dow": "sa",
+     "session": {
       "label": "Swing-Test (100 × 24 kg), Abschlussmessung",
       "kind": "swing-test",
       "reps": 100,
@@ -1219,7 +1217,7 @@
      }
     },
     {
-     "date": "2027-03-28",
+     "date": "2027-04-11",
      "dow": "so",
      "session": {
       "label": "Rennrad draußen 60 min locker",
@@ -4849,14 +4847,14 @@
   ],
   "notes": [
    "Alle Werte in Prozent der FTP. Zone 2 ≈ 56–75 % FTP bzw. ca. 120–138 bpm (Schätzung, nach FTP-Test anpassen). Trittfrequenz Zone 2: 85–90, Intervalle: 85–95, nie unter 80 (Knie). ERG-Modus, kleines Kettenblatt, mittleres Ritzel.",
-   "**Bearbeitungstermine in MyWhoosh** (kostenlose Version, Slots begrenzt): vor 14.01. SweetSpot → V2, vor 21.01. → V3, vor 12.02. Schwelle → V2, vor 19.02. → V3, vor 12.03. Schwelle → V4 und Tempo-75 → V2, vor 19.03. OverUnder → V2 und vor 21.03. Tempo-75 → V3.",
+   "**Bearbeitungstermine in MyWhoosh** (kostenlose Version, Slots begrenzt): vor 28.01. SweetSpot → V2, vor 04.02. → V3, vor 26.02. Schwelle → V2, vor 05.03. → V3, vor 26.03. Schwelle → V4 und Tempo-75 → V2, vor 02.04. OverUnder → V2 und vor 04.04. Tempo-75 → V3.",
    "**Regel:** Schwere Beine nach dem Fußball → Intervalle 3 % niedriger statt ausfallen lassen."
   ]
  },
  "weightTargets": [
   {
    "week": 0,
-   "sunday": "2026-12-06",
+   "sunday": "2026-12-20",
    "target": 98,
    "min": 97.4,
    "max": 98.6,
@@ -4864,7 +4862,7 @@
   },
   {
    "week": 1,
-   "sunday": "2026-12-13",
+   "sunday": "2026-12-27",
    "target": 97.5,
    "min": 96.9,
    "max": 98.1,
@@ -4872,7 +4870,7 @@
   },
   {
    "week": 2,
-   "sunday": "2026-12-20",
+   "sunday": "2027-01-03",
    "target": 97,
    "min": 96.4,
    "max": 97.6,
@@ -4880,7 +4878,7 @@
   },
   {
    "week": 3,
-   "sunday": "2026-12-27",
+   "sunday": "2027-01-10",
    "target": 96.7,
    "min": 96.1,
    "max": 97.3,
@@ -4888,7 +4886,7 @@
   },
   {
    "week": 4,
-   "sunday": "2027-01-03",
+   "sunday": "2027-01-17",
    "target": 96.4,
    "min": 95.8,
    "max": 97,
@@ -4896,7 +4894,7 @@
   },
   {
    "week": 5,
-   "sunday": "2027-01-10",
+   "sunday": "2027-01-24",
    "target": 95.8,
    "min": 95.2,
    "max": 96.4,
@@ -4904,7 +4902,7 @@
   },
   {
    "week": 6,
-   "sunday": "2027-01-17",
+   "sunday": "2027-01-31",
    "target": 95.2,
    "min": 94.6,
    "max": 95.8,
@@ -4912,7 +4910,7 @@
   },
   {
    "week": 7,
-   "sunday": "2027-01-24",
+   "sunday": "2027-02-07",
    "target": 94.6,
    "min": 94,
    "max": 95.2,
@@ -4920,7 +4918,7 @@
   },
   {
    "week": 8,
-   "sunday": "2027-01-31",
+   "sunday": "2027-02-14",
    "target": 94.1,
    "min": 93.5,
    "max": 94.7,
@@ -4928,7 +4926,7 @@
   },
   {
    "week": 9,
-   "sunday": "2027-02-07",
+   "sunday": "2027-02-21",
    "target": 93.5,
    "min": 92.9,
    "max": 94.1,
@@ -4936,7 +4934,7 @@
   },
   {
    "week": 10,
-   "sunday": "2027-02-14",
+   "sunday": "2027-02-28",
    "target": 93,
    "min": 92.4,
    "max": 93.6,
@@ -4944,7 +4942,7 @@
   },
   {
    "week": 11,
-   "sunday": "2027-02-21",
+   "sunday": "2027-03-07",
    "target": 92.4,
    "min": 91.8,
    "max": 93,
@@ -4952,7 +4950,7 @@
   },
   {
    "week": 12,
-   "sunday": "2027-02-28",
+   "sunday": "2027-03-14",
    "target": 91.9,
    "min": 91.3,
    "max": 92.5,
@@ -4960,7 +4958,7 @@
   },
   {
    "week": 13,
-   "sunday": "2027-03-07",
+   "sunday": "2027-03-21",
    "target": 91.3,
    "min": 90.7,
    "max": 91.9,
@@ -4968,7 +4966,7 @@
   },
   {
    "week": 14,
-   "sunday": "2027-03-14",
+   "sunday": "2027-03-28",
    "target": 90.8,
    "min": 90.2,
    "max": 91.4,
@@ -4976,7 +4974,7 @@
   },
   {
    "week": 15,
-   "sunday": "2027-03-21",
+   "sunday": "2027-04-04",
    "target": 90.3,
    "min": 89.7,
    "max": 90.9,
@@ -4984,7 +4982,7 @@
   },
   {
    "week": 16,
-   "sunday": "2027-03-28",
+   "sunday": "2027-04-11",
    "target": 89.8,
    "min": 89.2,
    "max": 90.4,
@@ -5025,151 +5023,151 @@
  },
  "shopping": [
   {
-   "id": "kettlebell-12-kg-gusseisen-w1-07-12",
+   "id": "kettlebell-12-kg-gusseisen-w1",
    "item": "Kettlebell 12 kg (Gusseisen)",
    "quantity": "1",
    "priority": "Pflicht",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 1
   },
   {
-   "id": "kettlebell-16-kg-gusseisen-w1-07-12",
+   "id": "kettlebell-16-kg-gusseisen-w1",
    "item": "Kettlebell 16 kg (Gusseisen)",
    "quantity": "1",
    "priority": "Pflicht",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 1
   },
   {
-   "id": "minibaender-leicht-und-mittel-w1-07-12",
+   "id": "minibaender-leicht-und-mittel-w1",
    "item": "Minibänder leicht und mittel",
    "quantity": "1 Set",
    "priority": "Pflicht",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 1
   },
   {
-   "id": "trainingsmatte-gummi-bodenmatten-w1-07-12",
+   "id": "trainingsmatte-gummi-bodenmatten-w1",
    "item": "Trainingsmatte / Gummi-Bodenmatten",
    "quantity": "1",
    "priority": "Pflicht",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 1
   },
   {
-   "id": "box-oder-hocker-ca-kniehoehe-w1-07-12",
+   "id": "box-oder-hocker-ca-kniehoehe-w1",
    "item": "Box oder Hocker, ca. Kniehöhe",
    "quantity": "1",
    "priority": "Pflicht (Stuhl reicht)",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 1
   },
   {
-   "id": "personenwaage-und-massband-w0-30-11",
+   "id": "personenwaage-und-massband-w0",
    "item": "Personenwaage und Maßband",
    "quantity": "je 1",
    "priority": "Pflicht, falls nicht vorhanden",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 0
   },
   {
-   "id": "faszienrolle-w1-07-12",
+   "id": "faszienrolle-w1",
    "item": "Faszienrolle",
    "quantity": "1",
    "priority": "Empfohlen",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 1
   },
   {
-   "id": "ventilator-fuer-den-rollentrainer-w0-06-12",
+   "id": "ventilator-fuer-den-rollentrainer-w0",
    "item": "Ventilator für den Rollentrainer",
    "quantity": "1",
    "priority": "Empfohlen",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 0
   },
   {
-   "id": "schweissschutz-fuer-das-rad-w0-06-12",
+   "id": "schweissschutz-fuer-das-rad-w0",
    "item": "Schweißschutz für das Rad",
    "quantity": "1",
    "priority": "Optional",
-   "orderBy": "2026-11-23",
+   "orderBy": "2026-12-07",
    "neededFromWeek": 0
   },
   {
-   "id": "stepper-oder-stufe-15-25-cm-w5-04-01",
+   "id": "stepper-oder-stufe-15-25-cm-w5",
    "item": "Stepper oder Stufe, 15–25 cm",
    "quantity": "1",
    "priority": "Pflicht (Treppenstufe reicht)",
-   "orderBy": "2026-12-28",
+   "orderBy": "2027-01-11",
    "neededFromWeek": 5
   },
   {
-   "id": "kettlebell-24-kg-gusseisen-w6-11-01",
+   "id": "kettlebell-24-kg-gusseisen-w6",
    "item": "Kettlebell 24 kg (Gusseisen)",
    "quantity": "1",
    "priority": "Pflicht",
-   "orderBy": "2027-01-04",
+   "orderBy": "2027-01-18",
    "neededFromWeek": 6
   },
   {
-   "id": "kettlebell-16-kg-zweite-w9-01-02",
+   "id": "kettlebell-16-kg-zweite-w9",
    "item": "Kettlebell 16 kg (zweite)",
    "quantity": "1",
    "priority": "Pflicht",
-   "orderBy": "2027-01-18",
+   "orderBy": "2027-02-01",
    "neededFromWeek": 9
   },
   {
-   "id": "bike-fitting-termin-rennrad-w13-01-03",
+   "id": "bike-fitting-termin-rennrad-w13",
    "item": "Bike-Fitting-Termin Rennrad",
    "quantity": "1",
    "priority": "Empfohlen",
-   "orderBy": "2027-02-08",
+   "orderBy": "2027-02-22",
    "orderByNote": "buchen",
    "neededFromWeek": 13
   },
   {
-   "id": "rennrad-cleats-mit-spiel-shimano-spd-sl-gelb-ca-6-w13-01-03",
+   "id": "rennrad-cleats-mit-spiel-shimano-spd-sl-gelb-ca-6-w13",
    "item": "Rennrad-Cleats mit Spiel (Shimano SPD-SL gelb, ca. 6°)",
    "quantity": "1 Paar",
    "priority": "Empfohlen",
-   "orderBy": "2027-02-15",
+   "orderBy": "2027-03-01",
    "neededFromWeek": 13
   }
  ],
  "checklists": [
   {
-   "id": "vor-dem-start-bis-06-12",
+   "id": "vor-dem-start",
    "title": "Vor dem Start",
-   "dueDate": "2026-12-06",
+   "dueDate": "2026-12-20",
    "items": [
     {
-     "id": "vor-dem-start-bis-06-12-1",
+     "id": "vor-dem-start-1",
      "text": "Kettlebells 12 kg und 16 kg bestellen"
     },
     {
-     "id": "vor-dem-start-bis-06-12-2",
+     "id": "vor-dem-start-2",
      "text": "Minibänder, Matte und Stufe besorgen"
     },
     {
-     "id": "vor-dem-start-bis-06-12-3",
+     "id": "vor-dem-start-3",
      "text": "MB-Z2-45 als Testfahrt: ERG-Modus, Gangwahl, Pulsgurt prüfen"
     },
     {
-     "id": "vor-dem-start-bis-06-12-4",
+     "id": "vor-dem-start-4",
      "text": "Ausgangsmessung: 7-Tage-Durchschnittsgewicht, Taillenumfang, Fotos"
     },
     {
-     "id": "vor-dem-start-bis-06-12-5",
+     "id": "vor-dem-start-5",
      "text": "Sattelhöhe an Gravel-Bike und Rennrad messen und notieren"
     },
     {
-     "id": "vor-dem-start-bis-06-12-6",
+     "id": "vor-dem-start-6",
      "text": "Cleat-Position beider Schuhpaare fotografieren"
     },
     {
-     "id": "vor-dem-start-bis-06-12-7",
+     "id": "vor-dem-start-7",
      "text": "Hip-Hinge-Drill ohne Gewicht üben, 3 × 10 täglich"
     }
    ]

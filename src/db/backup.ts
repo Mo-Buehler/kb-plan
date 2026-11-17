@@ -1,3 +1,4 @@
+import { checklistGroups, shoppingGroups } from '../domain/lists'
 import { seed } from '../domain/plan'
 import { db } from './db'
 import { getMeta, setMeta } from './sessions'
@@ -96,13 +97,24 @@ export async function isNewPlanVersion(): Promise<boolean> {
   return known !== undefined && known !== seed.sourceHash
 }
 
+/** "vor-dem-start-bis-06-12-1" and "kettlebell-12-kg-w1-07-12" (first release) -> "vor-dem-start-1", "kettlebell-12-kg-w1". */
+export const legacyListKey = (k: string) => k.replace(/-bis-\d{2}-\d{2}(?=-\d+$)/, '').replace(/(-w\d+)-\d{2}-\d{2}$/, '$1')
+
 /**
- * New training cycle: results (measurements, sessions, sets, profile) stay.
- * Edits, moves, week tiers, list ticks and rule answers refer to the old plan and are removed.
+ * New training cycle or moved start: results (measurements, sessions, sets, profile) and list ticks stay.
+ * Edits, moves, week tiers and rule answers refer to the old plan and are removed.
  */
 export async function adoptNewPlan(): Promise<void> {
   await db.transaction('rw', db.overrides, db.moves, db.weekTiers, db.checkStates, db.meta, async () => {
-    await Promise.all([db.overrides.clear(), db.moves.clear(), db.weekTiers.clear(), db.checkStates.clear()])
+    await Promise.all([db.overrides.clear(), db.moves.clear(), db.weekTiers.clear()])
+    // Ticks stay for entries that still exist; ids written with a date by earlier versions are mapped to the date-free id.
+    const valid = new Set([...checklistGroups(), ...shoppingGroups()].flatMap((g) => g.entries.map((e) => e.id)))
+    const ticks = await db.checkStates.toArray()
+    await db.checkStates.clear()
+    for (const t of ticks) {
+      const key = valid.has(t.key) ? t.key : legacyListKey(t.key)
+      if (valid.has(key)) await db.checkStates.put({ ...t, key })
+    }
     const stale = (await db.meta.toArray()).filter((m) => m.key.startsWith('rule-dismissed:') || m.key === 'mondayWorkoutC')
     await db.meta.bulkDelete(stale.map((m) => m.key))
     await setMeta('seedHash', seed.sourceHash)

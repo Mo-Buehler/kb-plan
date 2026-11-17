@@ -84,25 +84,25 @@ describe('dashboard data', () => {
   const w = (date: string, value: number): Measurement => ({ date, kind: 'weight', value })
 
   it('weight tile compares the 7-day average with the corridor of the week', () => {
-    expect(weightTile([], '2026-12-09').status).toBe('none')
+    expect(weightTile([], '2026-12-23').status).toBe('none')
     // week 1 corridor is 96.9 to 98.1
-    expect(weightTile([w('2026-12-08', 97.5), w('2026-12-09', 97.7)], '2026-12-09')).toMatchObject({ value: 97.6, status: 'within' })
-    expect(weightTile([w('2026-12-09', 99)], '2026-12-09').status).toBe('above')
-    expect(weightTile([w('2026-12-09', 95)], '2026-12-09').status).toBe('below')
+    expect(weightTile([w('2026-12-22', 97.5), w('2026-12-23', 97.7)], '2026-12-23')).toMatchObject({ value: 97.6, status: 'within' })
+    expect(weightTile([w('2026-12-23', 99)], '2026-12-23').status).toBe('above')
+    expect(weightTile([w('2026-12-23', 95)], '2026-12-23').status).toBe('below')
   })
 
   it('finds the next session and skips rest days', () => {
-    const n = nextSession('2026-12-10', [], {})!
-    expect(n.date).toBe('2026-12-12') // Friday is rest day, Saturday is KB B
+    const n = nextSession('2026-12-24', [], {})!
+    expect(n.date).toBe('2026-12-26') // Friday is rest day, Saturday is KB B
     expect(n.item.kind).toBe('kb-b')
     // week tier "minimum" hides the Thursday ride, so the next session after Wednesday is Saturday
-    const m = nextSession('2027-01-06', [], { 5: 'minimum' })!
+    const m = nextSession('2027-01-20', [], { 5: 'minimum' })!
     expect(m.item.kind).toBe('kb-b')
   })
 
   it('builds a 7-day strip following moves', () => {
     const week = seed.weeks[1]
-    const moves = [{ fromDate: '2026-12-12', kind: 'kb-b', toDate: '2026-12-11' }]
+    const moves = [{ fromDate: '2026-12-26', kind: 'kb-b', toDate: '2026-12-25' }]
     const strip = weekStrip(week, moves, {})
     expect(strip).toHaveLength(7)
     expect(strip[4].item?.kind).toBe('kb-b') // Friday now shows the moved session
@@ -111,10 +111,10 @@ describe('dashboard data', () => {
 
   it('quota counts this week and reports last weeks percentage', () => {
     const logs: SessionLog[] = [
-      { date: '2026-12-09', sessionKey: '2026-12-09:kb-a', status: 'done' },
-      { date: '2026-12-15', sessionKey: '2026-12-15:knee', status: 'done' },
+      { date: '2026-12-23', sessionKey: '2026-12-23:kb-a', status: 'done' },
+      { date: '2026-12-29', sessionKey: '2026-12-29:knee', status: 'done' },
     ]
-    const q = weekQuota(logs, [], {}, '2026-12-16', 2)
+    const q = weekQuota(logs, [], {}, '2026-12-30', 2)
     expect(q.current?.planned).toBeGreaterThan(0)
     expect(q.previousPct).toBe(Math.round((1 / 6) * 100))
   })

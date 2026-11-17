@@ -46,8 +46,8 @@ describe('plan-seed.json', () => {
       expect(w.days).toHaveLength(7)
       if (i > 0) expect(w.start).toBe(new Date(Date.parse(seed.weeks[i - 1].start) + 7 * 86400000).toISOString().slice(0, 10))
     })
-    expect(seed.planStart).toBe('2026-12-07')
-    expect(seed.planEnd).toBe('2027-03-28')
+    expect(seed.planStart).toBe('2026-12-21')
+    expect(seed.planEnd).toBe('2027-04-11')
   })
 
   it('marks deload weeks 4, 8, 12, 16', () => {
@@ -74,7 +74,7 @@ describe('plan-seed.json', () => {
 
 describe('locate()', () => {
   it('finds the plan day for a date', () => {
-    const pos = locate('2026-12-09')
+    const pos = locate('2026-12-23')
     expect(pos.state).toBe('running')
     if (pos.state === 'running') {
       expect(pos.week.week).toBe(1)
@@ -83,7 +83,7 @@ describe('locate()', () => {
     }
   })
   it('handles dates before and after the plan', () => {
-    expect(locate('2026-11-01').state).toBe('before')
-    expect(locate('2027-04-01').state).toBe('after')
+    expect(locate('2026-11-15').state).toBe('before')
+    expect(locate('2027-04-15').state).toBe('after')
   })
 })

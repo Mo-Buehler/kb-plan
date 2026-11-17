@@ -11,17 +11,17 @@ const ov = (o: Partial<PlanOverride> & Pick<PlanOverride, 'exerciseId' | 'fromWe
 
 describe('moves and tiers', () => {
   it('plan day without changes shows its own session', () => {
-    const { items, movedAway } = itemsForDate('2026-12-09', [], {})
+    const { items, movedAway } = itemsForDate('2026-12-23', [], {})
     expect(items.map((i) => i.kind)).toEqual(['kb-a'])
     expect(movedAway).toHaveLength(0)
   })
 
   it('a moved session disappears from its day and appears on the new day', () => {
-    const moves = [{ fromDate: '2026-12-09', kind: 'kb-a', toDate: '2026-12-11' }]
-    expect(itemsForDate('2026-12-09', moves, {}).items).toHaveLength(0)
-    expect(itemsForDate('2026-12-09', moves, {}).movedAway[0].toDate).toBe('2026-12-11')
-    const target = itemsForDate('2026-12-11', moves, {}).items.find((i) => i.kind === 'kb-a')
-    expect(target).toMatchObject({ moved: true, originDate: '2026-12-09' })
+    const moves = [{ fromDate: '2026-12-23', kind: 'kb-a', toDate: '2026-12-25' }]
+    expect(itemsForDate('2026-12-23', moves, {}).items).toHaveLength(0)
+    expect(itemsForDate('2026-12-23', moves, {}).movedAway[0].toDate).toBe('2026-12-25')
+    const target = itemsForDate('2026-12-25', moves, {}).items.find((i) => i.kind === 'kb-a')
+    expect(target).toMatchObject({ moved: true, originDate: '2026-12-23' })
   })
 
   it('Kompakt drops the Tuesday knee programme, Minimum also Thursday bike', () => {
@@ -34,15 +34,15 @@ describe('moves and tiers', () => {
   })
 
   it('tier of the week hides sessions in the calendar items', () => {
-    const items = itemsForDate('2026-12-08', [], { 1: 'compact' }).items
+    const items = itemsForDate('2026-12-22', [], { 1: 'compact' }).items
     expect(items[0]).toMatchObject({ kind: 'knee' })
     expect(items[0].hiddenReason).toBeTruthy()
   })
 
   it('warns for less than 24 h between kettlebell sessions and 48 h after football', () => {
-    expect(moveWarnings('kb-a', '2026-12-09', '2026-12-11', [], {}).length).toBeGreaterThan(0) // next to Saturday B
-    expect(moveWarnings('kb-a', '2026-12-09', '2026-12-08', [], {})).toHaveLength(1) // day after football
-    expect(moveWarnings('knee', '2026-12-08', '2026-12-11', [], {})).toHaveLength(0)
+    expect(moveWarnings('kb-a', '2026-12-23', '2026-12-25', [], {}).length).toBeGreaterThan(0) // next to Saturday B
+    expect(moveWarnings('kb-a', '2026-12-23', '2026-12-22', [], {})).toHaveLength(1) // day after football
+    expect(moveWarnings('knee', '2026-12-22', '2026-12-25', [], {})).toHaveLength(0)
   })
 })
 

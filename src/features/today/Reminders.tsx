@@ -22,7 +22,7 @@ export function Reminders() {
       {info?.newPlan && (
         <div className="notice stack">
           <p>
-            <strong>Neuer Trainingsplan erkannt.</strong> Deine Ergebnisse bleiben erhalten. Eigene Plan-Änderungen, Verschiebungen, Wochenstufen und Haken in den Listen gehören zum alten Plan und werden zurückgesetzt.
+            <strong>Neuer Trainingsplan erkannt.</strong> Deine Ergebnisse und die Haken in den Listen bleiben erhalten. Eigene Plan-Änderungen, Verschiebungen und Wochenstufen gehören zum alten Plan und werden zurückgesetzt.
           </p>
           <button className="primary" onClick={() => void adoptNewPlan()}>
             Neuen Plan übernehmen

@@ -169,7 +169,12 @@ const phases = []
       name: r[1],
       weekFrom: a,
       weekTo: b,
-      start: dmyToIso(d1),
+      // the first date of a range may lack the year ("18.01.–14.02.2027"): take it from the end date
+      start: dmyToIso(d1) ?? (() => {
+        const e = dmyToIso(d2)
+        const m = d1.match(/(\d{2})\.(\d{2})\./)
+        return e && m ? `${Number(e.slice(5, 7)) < Number(m[2]) ? Number(e.slice(0, 4)) - 1 : e.slice(0, 4)}-${m[2]}-${m[1]}` : null
+      })(),
       end: dmyToIso(d2),
       kbFocus: r[4],
       bikeFocus: r[5],
@@ -185,7 +190,13 @@ const deloadWeeks = (() => {
 const phaseOfWeek = (w) => phases.find((p) => w >= p.weekFrom && w <= p.weekTo)?.id ?? null
 
 // ---------- calendar (section 4) ----------
-const PLAN_START = '2026-12-07'
+// The plan start is read from the source (section 1, row "Planstart (Woche 1)"), so moving the start is an edit of trainingsplan.md only.
+const startRow = tablesIn(section(/^## 1./))[0].rows.find((r) => r[0].startsWith('Planstart'))
+const PLAN_START = dmyToIso(startRow?.[1] ?? '') ?? fail('Planstart (Woche 1) not found in section 1')
+if (new Date(PLAN_START + 'T12:00:00Z').getUTCDay() !== 1) fail(`Planstart ${PLAN_START} is not a Monday`)
+const PREP_START = addDays(PLAN_START, -7)
+// dates without a year: months 7-12 belong to the plan's first year, 1-6 to the next one
+const yearFor = (month) => Number(PLAN_START.slice(0, 4)) + (Number(month) < 7 && Number(PLAN_START.slice(5, 7)) >= 7 ? 1 : 0)
 const weekStart = (w) => addDays(PLAN_START, 7 * (w - 1))
 const DOW = ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so']
 
@@ -239,7 +250,7 @@ const weeks = []
   const t = tablesIn(section(/^## 4\./))[0]
   for (const r of t.rows) {
     const w = parseInt(r[0], 10)
-    const start = w === 0 ? '2026-11-30' : weekStart(w)
+    const start = w === 0 ? PREP_START : weekStart(w)
     const [dmStart] = r[1].split('–')
     const [dd, mm] = dmStart.split('.')
     if (start.slice(5) !== `${mm}-${dd}`) fail(`Week ${w}: period "${r[1]}" does not match computed start ${start}`)
@@ -425,7 +436,8 @@ const shopping = []
   for (const r of t.rows) {
     const wm = r[4].match(/^W(\d+)/)
     shopping.push({
-      id: slug(r[0]) + '-' + slug(r[4]),
+      // no date in the id, so ticks survive when the plan is moved
+      id: `${slug(r[0])}-w${wm[1]}`,
       item: r[0],
       quantity: r[1],
       priority: r[2],
@@ -445,9 +457,9 @@ const checklists = []
     if (h) {
       const due = h[1].match(/bis (\d{2})\.(\d{2})\.\)/)
       group = {
-        id: slug(h[1]),
+        id: slug(h[1].replace(/\s*\(.*\)$/, '')),
         title: h[1].replace(/\s*\(.*\)$/, ''),
-        ...(due ? { dueDate: isoFromDmy(due[1], due[2], '2026') } : {}),
+        ...(due ? { dueDate: isoFromDmy(due[1], due[2], yearFor(due[2])) } : {}),
         items: [],
       }
       checklists.push(group)
@@ -471,7 +483,7 @@ const seed = {
   schemaVersion: 1,
   sourceHash: crypto.createHash('sha256').update(text).digest('hex').slice(0, 16),
   planStart: PLAN_START,
-  prepStart: '2026-11-30',
+  prepStart: PREP_START,
   planEnd: weeks.at(-1).end,
   phases,
   weeks,
