@@ -13,7 +13,7 @@ Die Website ist öffentlich: https://mo-buehler.github.io/kb-plan/
 - **Kalender:** Wochen 0 bis 16 mit Status (geplant, erledigt, ausgelassen, verschoben), Einheiten verschieben oder auslassen, Wochenstufe Voll/Kompakt/Minimum.
 - **Plan bearbeiten:** Sätze, Wiederholungen, Zeit und Gewicht ändern (nur diese Woche oder alle folgenden), Ersatzübung bei Schmerzen. Der Originalplan bleibt unverändert.
 - **Fortschritt:** Körpergewicht mit Zielkorridor und Kontrollpunkten, Taille, FTP, Swing-Test, Workout-C-Runden, Kettlebell-Gewicht und -Volumen, Erfüllungsquote. Regel-Hinweise sind nur Vorschläge und brauchen deine Bestätigung.
-- **Mehr:** Checklisten, Einkaufsliste mit Bestellterminen, Backup und Import, Einstellungen.
+- **Mehr:** Checklisten, Einkaufsliste mit Bestellterminen, Übungsbilder, Backup und Import, Einstellungen.
 
 ## Installation auf iPhone und iPad
 
@@ -35,6 +35,18 @@ Mehr, **Backup und Import**:
 - **Sichern:** „Jetzt sichern" öffnet das iOS-Teilen-Menü. Wähle „In Dateien sichern" und einen Ordner in iCloud Drive. Nach 7 Tagen ohne Sicherung erinnert dich „Heute".
 - **Importieren:** Sicherungsdatei wählen, Vorschau prüfen, bestätigen. Der Import **ersetzt alle Daten** auf dem Gerät.
 - **iPhone zu iPad:** auf dem einen Gerät sichern, auf dem anderen importieren. Die Daten werden nicht automatisch synchronisiert. Importiere immer den neuesten Stand und arbeite danach auf einem Gerät weiter.
+
+## Übungsbilder (privat)
+
+Mehr, **Übungsbilder**: Hier kannst du Fotos zu den Übungen hinterlegen. Sie erscheinen in der Einheit (kleines Bild neben dem Übungsnamen, Tipp darauf zeigt es groß) und in der Übersicht vor dem Start.
+
+- **Die Bilder bleiben nur auf deinem Gerät.** Sie sind nicht Teil des Codes und stehen nicht im öffentlichen Repository oder auf der öffentlichen Seite. Deshalb dürfen dort auch private Bilder liegen.
+- **Import:** Wähle mehrere Dateien auf einmal. Die App ordnet sie über den Dateinamen zu, zum Beispiel `goblet-squat.jpg`. Für zwei Bilder (Start und Ende): `goblet-squat-start.jpg` und `goblet-squat-ende.jpg`. Die Namen aller Übungen stehen auf der Seite. Einzelne Bilder kannst du auch direkt aufnehmen oder austauschen.
+- **Beim Import** wird jedes Bild verkleinert (höchstens 900 Pixel) und neu gespeichert. Dabei gehen eingebettete Daten wie der Aufnahmeort verloren.
+- **Backup:** Beim Sichern lassen sich die Bilder mitnehmen (größere Datei). So kommen sie vom iPhone aufs iPad. Ein Import einer Sicherung **ohne** Bilder lässt die vorhandenen Bilder unberührt.
+- **Löschen:** pro Übung oder alle auf einmal; „Alle Daten löschen" in den Einstellungen entfernt sie ebenfalls.
+
+Mit Bildern, die du nicht selbst aufgenommen hast, gelten deren Urheberrechte. Deshalb liefert die App bewusst keine Bilder mit.
 
 ## Lokal starten (für Änderungen am Code)
 

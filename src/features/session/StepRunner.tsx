@@ -4,7 +4,9 @@ import { db, type SetLog } from '../../db/db'
 import { deleteMeta, deleteSetLog, finishSession, getMeta, saveSetLog, setMeta } from '../../db/sessions'
 import { Icon } from '../../components/Icon'
 import { stepTone, TONE_ICON } from '../../domain/colors'
+import { imageSlugsFor } from '../../domain/exerciseImages'
 import { plannedText, type Step } from '../../domain/steps'
+import { useExerciseImages } from '../../hooks/useExerciseImages'
 import { unlockAudio } from '../../hooks/audio'
 import { Stopwatch } from './Stopwatch'
 import { useWakeLock } from '../../hooks/useWakeLock'
@@ -37,6 +39,7 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
   const rest = useLiveQuery(() => getMeta<{ sessionKey: string; endsAt: number }>('rest'), [])
   const [showHint, setShowHint] = useState(false)
   useWakeLock(true)
+  const { forSlugs } = useExerciseImages()
 
   if (!logs) return null
   const done = new Map(logs.filter((l) => l.done).map((l) => [`${l.exerciseId}#${l.setIndex}`, l]))
@@ -69,6 +72,7 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
 
   const next = steps[steps.indexOf(current) + 1]
   const lib = current.libraryId ? seed.library.find((l) => l.id === current.libraryId) : undefined
+  const imgs = forSlugs(imageSlugsFor(current))
 
   return (
     <main className={`page toned tone-${stepTone(current)}`}>
@@ -93,7 +97,21 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
           </span>
           {current.kind !== 'check' && `Satz ${current.setIndex + 1} von ${current.setCount}`}
         </p>
-        <h2>{current.title}</h2>
+        <div className="exhead">
+          <h2>{current.title}</h2>
+          {imgs.length > 0 && (
+            <button className="thumbbtn" onClick={() => setShowHint(!showHint)} aria-label={`Foto zu ${current.title} ${showHint ? 'ausblenden' : 'anzeigen'}`}>
+              <img src={imgs[0].url} alt="" />
+            </button>
+          )}
+        </div>
+        {showHint && imgs.length > 0 && (
+          <div className="photos">
+            {imgs.map((i) => (
+              <img key={i.n} src={i.url} alt={`Foto: ${current.title}${imgs.length > 1 ? (i.n === 1 ? ', Start' : ', Ende') : ''}`} />
+            ))}
+          </div>
+        )}
         {current.kind === 'check' ? (
           <>
             <p>{current.info}</p>
@@ -120,19 +138,23 @@ export function StepRunner({ sessionKey, date, title, steps, onClose }: Props) {
         {current.alternative && (
           <p className="muted">Nur schmerzfrei. Sonst: {current.alternative} statt {current.title}.</p>
         )}
-        {lib && (
+        {(lib || imgs.length > 0) && (
           <>
             <button className="link" onClick={() => setShowHint(!showHint)} aria-expanded={showHint}>
               {showHint ? 'Technik ausblenden' : 'Technik anzeigen'}
             </button>
             {showHint && (
-              <ul className="hints">
-                <li>Start: {lib.start}</li>
-                <li>Ende: {lib.end}</li>
-                {lib.hints.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
+              <>
+                {lib && (
+                  <ul className="hints">
+                    <li>Start: {lib.start}</li>
+                    <li>Ende: {lib.end}</li>
+                    {lib.hints.map((h) => (
+                      <li key={h}>{h}</li>
+                    ))}
+                  </ul>
+                )}
+              </>
             )}
           </>
         )}

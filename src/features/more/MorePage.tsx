@@ -5,6 +5,7 @@ const ITEMS = [
   { to: '/kalender', label: 'Wochenstufe und Verschieben', note: 'Im Kalender: Woche öffnen oder Tag antippen' },
   { to: '/mehr/checklisten', label: 'Checklisten', note: 'Vor dem Start, während des Plans, Saisonstart' },
   { to: '/mehr/einkauf', label: 'Einkaufsliste', note: 'Mit Bestellterminen' },
+  { to: '/mehr/bilder', label: 'Übungsbilder', note: 'Eigene Fotos zu den Übungen, nur auf diesem Gerät' },
   { to: '/mehr/backup', label: 'Backup und Import', note: 'Daten sichern und auf ein anderes Gerät übertragen' },
   { to: '/mehr/einstellungen', label: 'Einstellungen', note: 'Persönliche Angaben, Daten löschen' },
 ]

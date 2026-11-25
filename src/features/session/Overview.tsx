@@ -1,5 +1,7 @@
 import { Icon } from '../../components/Icon'
 import { TONE_ICON, type Tone } from '../../domain/colors'
+import { imageSlugsFor } from '../../domain/exerciseImages'
+import { useExerciseImages } from '../../hooks/useExerciseImages'
 import { exerciseCount, overviewSections, setCount } from '../../domain/overview'
 import type { Step } from '../../domain/steps'
 
@@ -15,6 +17,7 @@ interface Props {
 /** Coloured overview of a session before the first set: blocks, supersets, sets and weights. */
 export function Overview({ title, subtitle, tone, steps, onStart, onBack }: Props) {
   const sections = overviewSections(steps)
+  const { forSlugs } = useExerciseImages()
   return (
     <main className={`page toned tone-${tone}`}>
       <header className="runhead">
@@ -35,15 +38,19 @@ export function Overview({ title, subtitle, tone, steps, onStart, onBack }: Prop
           </div>
           <div className="bandbody soft">
             {s.info && <p className="orow">{s.info}</p>}
-            {s.rows.map((r) => (
-              <div key={r.id} className="orow">
-                <span>
-                  {r.title}
-                  {r.alternative && <span className="muted block">Schmerzfrei nicht möglich: {r.alternative}</span>}
-                </span>
-                <span className="sum">{r.summary}</span>
-              </div>
-            ))}
+            {s.rows.map((r) => {
+              const img = forSlugs(imageSlugsFor({ libraryId: r.libraryId, exerciseKey: r.id, title: r.title }))[0]
+              return (
+                <div key={r.id} className="orow">
+                  {img && <img className="rowthumb" src={img.url} alt="" loading="lazy" />}
+                  <span className="rowtext">
+                    {r.title}
+                    {r.alternative && <span className="muted block">Schmerzfrei nicht möglich: {r.alternative}</span>}
+                  </span>
+                  <span className="sum">{r.summary}</span>
+                </div>
+              )
+            })}
           </div>
         </section>
       ))}

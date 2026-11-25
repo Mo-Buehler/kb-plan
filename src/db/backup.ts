@@ -5,7 +5,7 @@ import { getMeta, setMeta } from './sessions'
 
 export const BACKUP_FORMAT = 1
 
-const TABLES = ['profile', 'meta', 'measurements', 'sessionLogs', 'setLogs', 'overrides', 'moves', 'weekTiers', 'checkStates'] as const
+const TABLES = ['profile', 'meta', 'measurements', 'sessionLogs', 'setLogs', 'overrides', 'moves', 'weekTiers', 'checkStates', 'exerciseImages'] as const
 type TableName = (typeof TABLES)[number]
 
 export interface BackupFile {
@@ -26,14 +26,38 @@ const LABELS: Record<TableName, string> = {
   moves: 'Verschiebungen',
   weekTiers: 'Wochenstufen',
   checkStates: 'Haken in Listen',
+  exerciseImages: 'Übungsbilder',
 }
 
 /** Short-lived timer state is not worth saving. */
 const isTransient = (key: string) => key === 'rest' || key.startsWith('stopwatch:')
 
-export async function buildBackup(): Promise<BackupFile> {
+function toBase64(buf: ArrayBuffer): string {
+  const bytes = new Uint8Array(buf)
+  let s = ''
+  for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode(...bytes.subarray(i, i + 0x8000))
+  return btoa(s)
+}
+
+function fromBase64(b64: string): ArrayBuffer {
+  const s = atob(b64)
+  const out = new Uint8Array(s.length)
+  for (let i = 0; i < s.length; i++) out[i] = s.charCodeAt(i)
+  return out.buffer
+}
+
+/** Photos are binary; in the JSON file they travel as base64 text. */
+const encodeImage = (r: Record<string, unknown>) => ({ ...r, data: toBase64(r.data as ArrayBuffer) })
+const decodeImage = (r: Record<string, unknown>) => ({ ...r, data: fromBase64(String(r.data)) })
+
+export async function buildBackup(options: { images?: boolean } = {}): Promise<BackupFile> {
+  const withImages = options.images ?? true
   const tables = {} as BackupFile['tables']
   for (const t of TABLES) {
+    if (t === 'exerciseImages') {
+      tables[t] = withImages ? ((await db.exerciseImages.toArray()) as unknown as Record<string, unknown>[]).map(encodeImage) : []
+      continue
+    }
     const rows = (await db.table(t).toArray()) as Record<string, unknown>[]
     tables[t] = t === 'meta' ? rows.filter((r) => !isTransient(String(r.key))) : rows
   }
@@ -71,6 +95,15 @@ export const summarize = (file: BackupFile) =>
 export async function restoreBackup(file: BackupFile): Promise<void> {
   await db.transaction('rw', db.tables, async () => {
     for (const t of TABLES) {
+      if (t === 'exerciseImages') {
+        // A backup without photos must not delete the photos already on this device.
+        const rows = file.tables[t].filter((r) => typeof r.data === 'string')
+        if (rows.length) {
+          await db.exerciseImages.clear()
+          await db.exerciseImages.bulkAdd(rows.map(decodeImage) as unknown as Parameters<typeof db.exerciseImages.bulkAdd>[0])
+        }
+        continue
+      }
       await db.table(t).clear()
       const rows = t === 'meta' ? file.tables[t].filter((r) => !isTransient(String(r.key))) : file.tables[t]
       if (rows.length) await db.table(t).bulkAdd(rows)

@@ -81,7 +81,23 @@ export interface CheckState {
   at: string
 }
 
+/**
+ * Private exercise photo, stored only on this device. `key` is `<slug>:<n>` (n = 1 start or single, 2 end).
+ * The bytes are an already resized, metadata-free JPEG.
+ */
+export interface ExerciseImage {
+  key: string
+  slug: string
+  n: 1 | 2
+  type: string
+  width: number
+  height: number
+  data: ArrayBuffer
+  updatedAt: string
+}
+
 export class KbDb extends Dexie {
+  exerciseImages!: EntityTable<ExerciseImage, 'key'>
   checkStates!: EntityTable<CheckState, 'key'>
   overrides!: EntityTable<PlanOverride, 'id'>
   moves!: EntityTable<MoveEntry, 'id'>
@@ -114,6 +130,10 @@ export class KbDb extends Dexie {
     // v4: checklist and shopping list state
     this.version(4).stores({
       checkStates: 'key',
+    })
+    // v5: private exercise photos
+    this.version(5).stores({
+      exerciseImages: 'key, slug',
     })
   }
 }

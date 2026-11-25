@@ -7,6 +7,7 @@ export interface OverviewRow {
   title: string
   summary: string
   alternative?: string
+  libraryId?: string | null
 }
 
 export interface OverviewSection {
@@ -71,6 +72,7 @@ export function overviewSections(steps: Step[]): OverviewSection[] {
         title: step.title,
         summary: step.block === 'knee' && step.planned.note ? step.planned.note : rowSummary(own),
         alternative: step.alternative,
+        libraryId: step.libraryId,
       })
     }
   }

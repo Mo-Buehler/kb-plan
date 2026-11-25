@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useState } from 'react'
+import { db } from '../../db/db'
 import { useNavigate } from 'react-router-dom'
 import { backupFileName, buildBackup, getLastBackup, markBackupDone, parseBackup, restoreBackup, summarize, type BackupFile } from '../../db/backup'
 import { seed } from '../../domain/plan'
@@ -17,10 +18,12 @@ function download(json: string, name: string) {
 export function BackupPage() {
   const navigate = useNavigate()
   // Built ahead of the tap: the share sheet must open directly inside the tap handler.
+  const [withImages, setWithImages] = useState(true)
+  const imageCount = useLiveQuery(() => db.exerciseImages.count(), []) ?? 0
   const prepared = useLiveQuery(async () => {
-    const file = await buildBackup()
+    const file = await buildBackup({ images: withImages })
     return { json: JSON.stringify(file), name: backupFileName(file.exportedAt), counts: summarize(file) }
-  }, [])
+  }, [withImages])
   const last = useLiveQuery(async () => (await getLastBackup()) ?? null, [])
   const [message, setMessage] = useState('')
   const [pending, setPending] = useState<BackupFile>()
@@ -68,6 +71,11 @@ export function BackupPage() {
           <p className="muted">
             Letzte Sicherung: {last ? new Date(last).toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' }) : 'noch keine'}
           </p>
+          {imageCount > 0 && (
+            <label className="radio">
+              <input type="checkbox" checked={withImages} onChange={(e) => setWithImages(e.target.checked)} /> Übungsbilder mitsichern ({imageCount}, größere Datei)
+            </label>
+          )}
           <button className="primary" disabled={!prepared} onClick={() => void share()}>
             Jetzt sichern (Teilen-Menü)
           </button>

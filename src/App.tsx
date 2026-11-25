@@ -5,6 +5,7 @@ import { HashRouter, NavLink, Route, Routes, useMatch } from 'react-router-dom'
 import { CalendarPage } from './features/calendar/CalendarPage'
 import { DayPage } from './features/calendar/DayPage'
 import { BackupPage } from './features/backup/BackupPage'
+import { ImagesPage } from './features/images/ImagesPage'
 import { ChecklistPage, ShoppingPage } from './features/lists/ListPage'
 import { MorePage } from './features/more/MorePage'
 import { SettingsPage } from './features/settings/SettingsPage'
@@ -52,6 +53,7 @@ function Shell({ name }: { name: string }) {
         <Route path="/mehr/checklisten" element={<ChecklistPage />} />
         <Route path="/mehr/einkauf" element={<ShoppingPage />} />
         <Route path="/mehr/backup" element={<BackupPage />} />
+        <Route path="/mehr/bilder" element={<ImagesPage />} />
         <Route path="/mehr/einstellungen" element={<SettingsPage />} />
       </Routes>
     </div>
