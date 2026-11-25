@@ -4,7 +4,7 @@ import { makeSessionKey } from '../../db/sessions'
 import { toneOfKind } from '../../domain/colors'
 import { sessionTitle } from '../../domain/labels'
 import { locate } from '../../domain/plan'
-import { buildKbSteps, buildKneeSteps } from '../../domain/steps'
+import { buildKbSteps } from '../../domain/steps'
 import { useSchedule } from '../../hooks/useSchedule'
 import { AmrapSession } from './AmrapSession'
 import { BikeSession } from './BikeSession'
@@ -28,10 +28,9 @@ export function SessionPage() {
   const kind = override ?? session.kind
   const sessionKey = makeSessionKey(date, kind)
 
-  if (kind === 'kb-a' || kind === 'kb-b' || kind === 'knee') {
-    const steps =
-      kind === 'knee' ? buildKneeSteps(week.phase!, 'tue') : buildKbSteps(week.week, kind === 'kb-a' ? 'A' : 'B', schedule.overrides)
-    const title = kind === 'knee' ? 'Knie-Programm' : sessionTitle(session)
+  if (kind === 'kb-a' || kind === 'kb-b') {
+    const steps = buildKbSteps(week.week, kind === 'kb-a' ? 'A' : 'B', schedule.overrides)
+    const title = sessionTitle(session)
     // The overview comes first; once a set is logged (or the user pressed start) the runner takes over.
     const underway = schedule.setLogs.some((l) => l.sessionKey === sessionKey) || params.get('los') === '1'
     if (!underway)

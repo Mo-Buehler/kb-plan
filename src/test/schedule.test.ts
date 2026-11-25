@@ -24,25 +24,29 @@ describe('moves and tiers', () => {
     expect(target).toMatchObject({ moved: true, originDate: '2026-12-23' })
   })
 
-  it('Kompakt drops the Tuesday knee programme, Minimum also Thursday bike', () => {
-    expect(tierEffect('compact', 'knee', 'di').hidden).toBeTruthy()
+  it('Kompakt shortens Thursday, Minimum drops it; the Tuesday knee check always stays', () => {
+    expect(tierEffect('compact', 'knee-check', 'di')).toEqual({})
+    expect(tierEffect('minimum', 'knee-check', 'di')).toEqual({})
     expect(tierEffect('compact', 'bike', 'do').hidden).toBeUndefined()
     expect(tierEffect('compact', 'bike', 'do').hint).toMatch(/45 min/)
     expect(tierEffect('minimum', 'bike', 'do').hidden).toBeTruthy()
     expect(tierEffect('minimum', 'bike', 'so').hint).toBeTruthy()
-    expect(tierEffect('full', 'knee', 'di')).toEqual({})
+    expect(tierEffect('full', 'bike', 'do')).toEqual({})
   })
 
   it('tier of the week hides sessions in the calendar items', () => {
-    const items = itemsForDate('2026-12-22', [], { 1: 'compact' }).items
-    expect(items[0]).toMatchObject({ kind: 'knee' })
-    expect(items[0].hiddenReason).toBeTruthy()
+    const thursday = itemsForDate('2027-01-21', [], { 5: 'minimum' }).items // SweetSpot ride of week 5
+    expect(thursday[0]).toMatchObject({ kind: 'bike' })
+    expect(thursday[0].hiddenReason).toBeTruthy()
+    const tuesday = itemsForDate('2027-01-19', [], { 5: 'minimum' }).items
+    expect(tuesday[0]).toMatchObject({ kind: 'knee-check' })
+    expect(tuesday[0].hiddenReason).toBeUndefined()
   })
 
   it('warns for less than 24 h between kettlebell sessions and 48 h after football', () => {
     expect(moveWarnings('kb-a', '2026-12-23', '2026-12-25', [], {}).length).toBeGreaterThan(0) // next to Saturday B
     expect(moveWarnings('kb-a', '2026-12-23', '2026-12-22', [], {})).toHaveLength(1) // day after football
-    expect(moveWarnings('knee', '2026-12-22', '2026-12-25', [], {})).toHaveLength(0)
+    expect(moveWarnings('bike', '2026-12-22', '2026-12-25', [], {})).toHaveLength(0)
   })
 })
 

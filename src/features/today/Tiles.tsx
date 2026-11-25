@@ -8,19 +8,19 @@ import { exerciseCount, setCount } from '../../domain/overview'
 import { seed, type Week } from '../../domain/plan'
 import { statusOf, type ScheduleData } from '../../hooks/useSchedule'
 import type { ScheduledItem } from '../../domain/schedule'
-import { buildKbSteps, buildKneeSteps } from '../../domain/steps'
+import { buildKbSteps } from '../../domain/steps'
 import { bikeDetails, nextSession, weekStrip, weightTile, weekQuota } from '../../domain/dashboard'
 import { makeSessionKey } from '../../domain/keys'
 
-const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
+const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee-check', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
 
 /** One-line description of a session for the tiles. */
 export function sessionMeta(item: ScheduledItem, week: Week, data: ScheduleData): string {
   if (item.kind === 'kb-a' || item.kind === 'kb-b') {
     const steps = buildKbSteps(week.week, item.kind === 'kb-a' ? 'A' : 'B', data.overrides)
-    return `${exerciseCount(steps)} Übungen · ${setCount(steps)} Sätze · 55–60 min`
+    return `${exerciseCount(steps)} Übungen · ${setCount(steps)} Sätze · ${item.kind === 'kb-a' ? '58–63' : '61–66'} min`
   }
-  if (item.kind === 'knee' && week.phase) return `${new Set(buildKneeSteps(week.phase, 'tue').map((s) => s.exerciseKey)).size} Übungen · 15 min`
+  if (item.kind === 'knee-check') return 'Knieschmerz 0–10 · 1 min'
   if (item.kind === 'bike') {
     const plan = bikeDetails(String((item.session as { workout?: string }).workout ?? ''))
     return plan ? `${plan.content} · ${plan.duration}` : item.session.label
@@ -66,7 +66,7 @@ export function HeroTile({ item, week, data, started, workoutCLink, label }: Her
       {status === 'skipped' && <p className="big">Ausgelassen</p>}
       {status === 'planned' && item.kind !== 'rest' && RUNNABLE.has(item.kind) && (
         <Link className="tilebtn" to={`/einheit/${item.originDate}/${item.kind}`}>
-          {started ? 'Einheit fortsetzen' : 'Einheit starten'}
+          {item.kind === 'knee-check' ? 'Knieschmerz eintragen' : started ? 'Einheit fortsetzen' : 'Einheit starten'}
         </Link>
       )}
       {status === 'planned' && workoutCLink && (

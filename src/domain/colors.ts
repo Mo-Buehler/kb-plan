@@ -15,6 +15,7 @@ export function toneOfKind(kind: string): Tone {
     case 'outdoor-ride':
       return 'bike'
     case 'knee':
+    case 'knee-check':
       return 'knee'
     case 'football':
       return 'ball'
@@ -62,6 +63,7 @@ export const SHORT_LABEL: Record<string, string> = {
   'ftp-test': 'FTP',
   'outdoor-ride': 'Rad',
   knee: 'Knie',
+  'knee-check': 'Check',
   football: 'Kick',
   rest: 'Ruhe',
   measurement: 'Messung',

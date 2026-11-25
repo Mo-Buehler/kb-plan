@@ -1,6 +1,6 @@
 # KB Plan
 
-Trainings-App für einen 16-Wochen-Plan mit Kettlebell, Rad und Knie-Programm. Sie läuft als Web-App (PWA) auf iPhone und iPad, speichert alle Eingaben nur auf dem Gerät und funktioniert ohne Internet.
+Trainings-App für einen 16-Wochen-Plan mit Kettlebell, Rad und Knie-Training. Sie läuft als Web-App (PWA) auf iPhone und iPad, speichert alle Eingaben nur auf dem Gerät und funktioniert ohne Internet.
 
 Die Website ist öffentlich: https://mo-buehler.github.io/kb-plan/
 
@@ -9,7 +9,7 @@ Die Website ist öffentlich: https://mo-buehler.github.io/kb-plan/
 ## Was die App kann
 
 - **Heute:** die Einheit des Tages, Hinweise zu Deload-Wochen und Phasenbeginn, Erinnerungen (Backup, überfällige Einträge).
-- **Einheiten durchführen:** Kettlebell A und B (Warm-up, Knie-Block, Supersätze, Arm-Finisher, Cool-down) mit einem Tipp pro Satz, Pausentimer mit Ton, Technikhinweisen und RPE/Knieschmerz am Ende. Außerdem Rad (MyWhoosh-Workout und Ergebnis), Knie-Programm, Workout C (AMRAP-Timer), FTP- und Swing-Test.
+- **Einheiten durchführen:** Kettlebell A und B (Warm-up, Knie-Block, Supersätze, Arm-Finisher, Cool-down) mit einem Tipp pro Satz, Pausentimer mit Ton, Technikhinweisen und RPE/Knieschmerz am Ende. Außerdem Rad (MyWhoosh-Workout und Ergebnis), Knie-Check am Dienstag, Workout C (AMRAP-Timer), FTP- und Swing-Test.
 - **Kalender:** Wochen 0 bis 16 mit Status (geplant, erledigt, ausgelassen, verschoben), Einheiten verschieben oder auslassen, Wochenstufe Voll/Kompakt/Minimum.
 - **Plan bearbeiten:** Sätze, Wiederholungen, Zeit und Gewicht ändern (nur diese Woche oder alle folgenden), Ersatzübung bei Schmerzen. Der Originalplan bleibt unverändert.
 - **Fortschritt:** Körpergewicht mit Zielkorridor und Kontrollpunkten, Taille, FTP, Swing-Test, Workout-C-Runden, Kettlebell-Gewicht und -Volumen, Erfüllungsquote. Regel-Hinweise sind nur Vorschläge und brauchen deine Bestätigung.

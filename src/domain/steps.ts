@@ -66,7 +66,8 @@ const KNEE = seed.knee.exercises as unknown as KneeEx[]
 
 interface KneeEx {
   id: string
-  day: 'wed' | 'sat'
+  days: ('wed' | 'sat')[]
+  libraryId: string | null
   name: string
   phases: Record<string, { raw: string; sets: number; reps?: number; seconds?: number; perSide: boolean; weights?: number[] } | null>
 }
@@ -200,14 +201,13 @@ function kneeTitle(name: string, raw: string): string {
   return /Seitstütz/.test(raw) ? m[2].charAt(0).toUpperCase() + m[2].slice(1) : m[1]
 }
 
-export function buildKneeSteps(phase: string, part: 'wed' | 'sat' | 'tue'): Step[] {
+export function buildKneeSteps(phase: string, part: 'wed' | 'sat'): Step[] {
   const out: Step[] = []
   for (const ex of KNEE) {
-    if (part !== 'tue' && ex.day !== part) continue
+    if (!ex.days.includes(part)) continue
     const p = ex.phases[phase]
     if (!p) continue
-    // Tuesday: one set fewer per exercise (plan section 8)
-    const count = part === 'tue' ? Math.max(1, p.sets - 1) : p.sets
+    const count = p.sets
     for (let i = 0; i < count; i++)
       out.push({
         id: `knee:${ex.id}#${i}`,
@@ -217,6 +217,7 @@ export function buildKneeSteps(phase: string, part: 'wed' | 'sat' | 'tue'): Step
         block: 'knee',
         kind: 'set',
         title: kneeTitle(ex.name, p.raw),
+        libraryId: ex.libraryId,
         planned: { reps: p.reps, seconds: p.seconds, perSide: p.perSide, weights: p.weights ?? [], note: p.raw },
         restAfter: null,
       })

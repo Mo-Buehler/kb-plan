@@ -38,7 +38,7 @@ describe('compliance and history', () => {
     const c = compliance(logs, [], {}, '2026-12-27')
     const w1 = c.find((x) => x.week === 1)!
     expect(w1.done).toBe(1)
-    expect(w1.planned).toBe(6) // football, knee, A, FTP test, B, Sunday ride (rest day excluded)
+    expect(w1.planned).toBe(6) // football, knee check, A, FTP test, B, Sunday ride (rest day excluded)
     expect(c.find((x) => x.week === 2)).toBeUndefined()
   })
 
@@ -81,7 +81,7 @@ describe('rule hints', () => {
   })
 
   it('suggests lighter legs after Tuesday knee pain of 4 or more', () => {
-    const tue = (pain: number): SessionLog[] => [{ date: '2026-12-29', sessionKey: '2026-12-29:knee', status: 'done', kneePain: pain }]
+    const tue = (pain: number): SessionLog[] => [{ date: '2026-12-29', sessionKey: '2026-12-29:knee-check', status: 'done', kneePain: pain }]
     expect(kneeSuggestions(2, tue(3), [])).toHaveLength(0)
     const s = kneeSuggestions(2, tue(5), [])
     expect(s).toHaveLength(1)

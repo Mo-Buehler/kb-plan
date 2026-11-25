@@ -31,7 +31,6 @@ export function addDays(iso: string, n: number): string {
 
 /** Plan section 11: Kompakt drops the Tuesday knee programme, Minimum also moves Thursday's intervals to Sunday. */
 export function tierEffect(tier: Tier, kind: string, dow: string): { hidden?: string; hint?: string } {
-  if (tier !== 'full' && kind === 'knee') return { hidden: `${TIER_LABEL[tier]}: Knie-Programm am Dienstag entfällt` }
   if (tier === 'compact' && dow === 'do' && kind === 'bike') return { hint: 'Kompakt: Donnerstag nur 45 min' }
   if (tier === 'minimum' && dow === 'do' && kind === 'bike')
     return { hidden: 'Minimum: Donnerstag-Intervalle gehen in die Sonntagsfahrt' }

@@ -20,6 +20,7 @@ export function OtherSession({ sessionKey, date, session, onClose }: Props) {
   const [swingSeconds, setSwingSeconds] = useState<number>()
   const isMeasure = session.kind === 'measurement' || session.kind === 'swing-test'
   const isSwing = session.kind === 'swing-test'
+  const isCheck = session.kind === 'knee-check'
   const note = (session as { note?: string }).note
 
   async function save(d: FinishData) {
@@ -38,7 +39,7 @@ export function OtherSession({ sessionKey, date, session, onClose }: Props) {
       </header>
       <section className="card stack">
         <h1>{sessionTitle(session)}</h1>
-        <p>{session.label}</p>
+        {isCheck ? <p>Wie fühlt sich dein Knie heute Morgen an? Trage den Schmerz von 0 bis 10 ein. Ab 4 gibt es einen Hinweis für Mittwoch.</p> : <p>{session.label}</p>}
         {note && <p className="muted">{note}</p>}
         {isSwing && (
           <>
@@ -52,7 +53,7 @@ export function OtherSession({ sessionKey, date, session, onClose }: Props) {
             <NumberField label="Gewicht (7-Tage-Schnitt)" unit="kg" value={weight} onChange={setWeight} step={0.1} />
           </div>
         )}
-        <FinishForm title="Abschluss" withRpe={session.kind === 'football' || isSwing} onSave={save} />
+        <FinishForm title={isCheck ? 'Knieschmerz' : 'Abschluss'} withRpe={session.kind === 'football' || isSwing} submitLabel={isCheck ? 'Speichern' : undefined} onSave={save} />
       </section>
     </main>
   )

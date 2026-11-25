@@ -13,6 +13,7 @@ describe('colours', () => {
     expect(toneOfKind('kb-a')).toBe('kb')
     expect(toneOfKind('bike')).toBe('bike')
     expect(toneOfKind('knee')).toBe('knee')
+    expect(toneOfKind('knee-check')).toBe('knee')
     expect(toneOfKind('football')).toBe('ball')
     expect(toneOfKind('rest')).toBe('rest')
   })
@@ -69,9 +70,10 @@ describe('session overview', () => {
   })
 
   it('knee-only session has just the knee block', () => {
-    const s = overviewSections(buildKneeSteps('P2', 'tue'))
+    const s = overviewSections(buildKneeSteps('P2', 'wed'))
     expect(s).toHaveLength(1)
     expect(s[0].title).toBe('Knie-Block')
+    expect(s[0].rows.map((r) => r.id)).toEqual(['knee:K1', 'knee:K2', 'knee:K3', 'knee:K7'])
   })
 
   it('row summary handles weightless sets', () => {
@@ -112,7 +114,7 @@ describe('dashboard data', () => {
   it('quota counts this week and reports last weeks percentage', () => {
     const logs: SessionLog[] = [
       { date: '2026-12-23', sessionKey: '2026-12-23:kb-a', status: 'done' },
-      { date: '2026-12-29', sessionKey: '2026-12-29:knee', status: 'done' },
+      { date: '2026-12-29', sessionKey: '2026-12-29:knee-check', status: 'done' },
     ]
     const q = weekQuota(logs, [], {}, '2026-12-30', 2)
     expect(q.current?.planned).toBeGreaterThan(0)
@@ -137,5 +139,21 @@ describe('knee exercise names', () => {
     expect(buildKneeSteps('P1', 'wed')[0].title).toBe('Clamshell mit Miniband')
     expect(buildKneeSteps('P3', 'wed')[0].title).toBe('Seitstütz mit Abheben des oberen Beins')
     expect(buildKneeSteps('P4', 'wed')[0].title).toBe('Seitstütz mit Abheben des oberen Beins')
+  })
+})
+
+describe('Tuesday knee check', () => {
+  it('replaces the Tuesday knee programme from week 1; weeks 3 and 4 keep their Tuesday rides', () => {
+    const tuesday = (w: number) => seed.weeks[w].days[1].session
+    expect(tuesday(1).kind).toBe('knee-check')
+    expect(tuesday(16).kind).toBe('knee-check')
+    expect(tuesday(3).kind).toBe('bike')
+    expect(tuesday(4).kind).toBe('bike')
+    expect(seed.weeks.flatMap((w) => w.days).some((d) => d.session.kind === 'knee')).toBe(false)
+  })
+
+  it('the session flow names the new knee block and the week structure reflects the new times', () => {
+    expect(seed.sessionFlow.parts.find((p) => p.part === 'Knie-Block')?.content).toMatch(/K7/)
+    expect(seed.rules.tiers.map((t) => t.hoursPerWeek)).toEqual(['ca. 4,2 h', 'ca. 3,7 h', 'ca. 2,6 h'])
   })
 })

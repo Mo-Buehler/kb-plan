@@ -144,16 +144,18 @@ const libRules = [
   [/Horn Curl/, 'Horn Curl'],
   [/Trizepsdrücken/, 'Trizepsdrücken über Kopf'],
   [/Trizepsstrecken/, 'Trizepsstrecken liegend'],
+  [/Wadenheben, gestreckt/, 'Wadenheben, gestrecktes Knie'],
+  [/Wadenheben, gebeugt/, 'Wadenheben, gebeugtes Knie'],
 ]
 const unmatched = []
-function libraryIdFor(name) {
+function libraryIdFor(name, quiet = false) {
   for (const [re, libName] of libRules)
     if (re.test(name)) {
       const id = libByName[libName]
       if (!id) fail(`Library entry missing: ${libName}`)
       return id
     }
-  unmatched.push(name)
+  if (!quiet) unmatched.push(name)
   return null
 }
 
@@ -214,7 +216,7 @@ function classify(raw) {
     out.alternative = 'workout-c'
     if (m[1]) out.amrapMinutes = Number(m[1])
   } else if (s === 'Fußball') out.kind = 'football'
-  else if (s === 'Knie') out.kind = 'knee'
+  else if (s === 'Knie-Check') out.kind = 'knee-check'
   else if (s === 'Ruhe') out.kind = 'rest'
   else if ((m = s.match(/^KB ([AB])( Deload)?(?: \(P(\d)\))?(?:, (.+))?$/))) {
     out.kind = m[1] === 'A' ? 'kb-a' : 'kb-b'
@@ -355,7 +357,7 @@ const knee = { phases: ['P1', 'P2', 'P3', 'P4'], exercises: [], notes: [] }
   for (const r of t.rows) {
     const perPhase = {}
     ;['P1', 'P2', 'P3', 'P4'].forEach((p, i) => {
-      const raw = r[3 + i]
+      const raw = r[4 + i]
       if (raw === '–') {
         perPhase[p] = null
         return
@@ -372,12 +374,14 @@ const knee = { phases: ['P1', 'P2', 'P3', 'P4'], exercises: [], notes: [] }
       }
     })
     const id = r[0]
+    const dayNames = { Mi: 'wed', Sa: 'sat' }
+    const days = r[3].split(',').map((d) => dayNames[d.trim()] ?? fail(`Unknown day "${d}" for ${id}`))
     knee.exercises.push({
       id,
-      day: Number(id.slice(1)) <= 3 ? 'wed' : 'sat',
+      days,
       name: r[1],
       goal: r[2],
-      libraryId: null,
+      libraryId: /^Wadenheben/.test(r[1]) ? libraryIdFor(r[1], true) : null,
       phases: perPhase,
     })
   }

@@ -78,7 +78,7 @@ export function kneeSuggestions(week: number, sessionLogs: SessionLog[], overrid
   if (week < 2) return []
   const tue = seed.weeks.find((w) => w.week === week)?.days.find((d) => d.dow === 'di')
   if (!tue) return []
-  const log = sessionLogs.find((l) => l.sessionKey === makeSessionKey(tue.date, 'knee') && l.status === 'done')
+  const log = sessionLogs.find((l) => l.sessionKey === makeSessionKey(tue.date, 'knee-check') && l.status === 'done')
   if (!log || (log.kneePain ?? 0) < 4) return []
   const now = kbExercises(week, 'A', overrides)
   const prev = kbExercises(week - 1, 'A', overrides)

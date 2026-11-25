@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "sourceHash": "7ce7bd92406f6b54",
+ "sourceHash": "231f5ad773315df6",
  "planStart": "2026-12-21",
  "prepStart": "2026-12-14",
  "planEnd": "2027-04-11",
@@ -137,8 +137,8 @@
      "date": "2026-12-22",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -206,8 +206,8 @@
      "date": "2026-12-29",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -415,8 +415,8 @@
      "date": "2027-01-19",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -485,8 +485,8 @@
      "date": "2027-01-26",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -553,8 +553,8 @@
      "date": "2027-02-02",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -621,8 +621,8 @@
      "date": "2027-02-09",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -690,8 +690,8 @@
      "date": "2027-02-16",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -760,8 +760,8 @@
      "date": "2027-02-23",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -828,8 +828,8 @@
      "date": "2027-03-02",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -896,8 +896,8 @@
      "date": "2027-03-09",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -967,8 +967,8 @@
      "date": "2027-03-16",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -1037,8 +1037,8 @@
      "date": "2027-03-23",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -1106,8 +1106,8 @@
      "date": "2027-03-30",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -1174,8 +1174,8 @@
      "date": "2027-04-06",
      "dow": "di",
      "session": {
-      "label": "Knie",
-      "kind": "knee"
+      "label": "Knie-Check",
+      "kind": "knee-check"
      }
     },
     {
@@ -1406,6 +1406,26 @@
    "hints": [
     "Oberarme senkrecht",
     "Kontrolliert"
+   ]
+  },
+  {
+   "id": "wadenheben-gestrecktes-knie",
+   "name": "Wadenheben, gestrecktes Knie",
+   "start": "Stehend auf einer Stufe, Fersen frei, an der Wand abgestützt",
+   "end": "Auf den Zehenspitzen, oben kurz halten",
+   "hints": [
+    "Langsam absenken, Ferse bis unter die Stufe",
+    "Kettlebell in der Hand, Knie bleibt gestreckt"
+   ]
+  },
+  {
+   "id": "wadenheben-gebeugtes-knie",
+   "name": "Wadenheben, gebeugtes Knie",
+   "start": "Sitzend auf einem Stuhl, Kettlebell auf dem Oberschenkel, Füße flach",
+   "end": "Fersen hoch, Zehenspitzen bleiben am Boden",
+   "hints": [
+    "Kettlebell mit der Hand festhalten",
+    "Langsam absenken, volle Bewegung"
    ]
   }
  ],
@@ -4496,8 +4516,8 @@
    },
    {
     "part": "Knie-Block",
-    "content": "Mittwoch Übungen 1–3 des Knie-Programms, Samstag Übungen 4–6",
-    "duration": "10 min"
+    "content": "Mittwoch K1–K3 und K7, Samstag K2, K4–K6 und K8",
+    "duration": "13 min"
    },
    {
     "part": "Hauptteil",
@@ -4532,7 +4552,9 @@
   "exercises": [
    {
     "id": "K1",
-    "day": "wed",
+    "days": [
+     "wed"
+    ],
     "name": "Clamshell mit Miniband (P3–4: Seitstütz mit Abheben des oberen Beins)",
     "goal": "Hüft-Außenrotatoren, seitlicher Gesäßmuskel",
     "libraryId": null,
@@ -4565,7 +4587,10 @@
    },
    {
     "id": "K2",
-    "day": "wed",
+    "days": [
+     "wed",
+     "sat"
+    ],
     "name": "Seitliches Gehen mit Miniband",
     "goal": "Seitlicher Gesäßmuskel",
     "libraryId": null,
@@ -4598,15 +4623,17 @@
    },
    {
     "id": "K3",
-    "day": "wed",
+    "days": [
+     "wed"
+    ],
     "name": "Hamstring Curl am Boden (Füße auf Handtuch)",
     "goal": "Äußere Oberschenkel-Rückseite",
     "libraryId": null,
     "phases": {
      "P1": {
-      "raw": "3 × 8",
+      "raw": "3 × 10",
       "sets": 3,
-      "reps": 8,
+      "reps": 10,
       "perSide": false
      },
      "P2": {
@@ -4631,7 +4658,9 @@
    },
    {
     "id": "K4",
-    "day": "sat",
+    "days": [
+     "sat"
+    ],
     "name": "Einbeinige Glute Bridge",
     "goal": "Gesäß",
     "libraryId": null,
@@ -4670,7 +4699,9 @@
    },
    {
     "id": "K5",
-    "day": "sat",
+    "days": [
+     "sat"
+    ],
     "name": "Wandsitzen",
     "goal": "Oberschenkel-Vorderseite",
     "libraryId": null,
@@ -4703,7 +4734,9 @@
    },
    {
     "id": "K6",
-    "day": "sat",
+    "days": [
+     "sat"
+    ],
     "name": "Step-down von einer Stufe, 3 s absenken",
     "goal": "Kniekontrolle",
     "libraryId": null,
@@ -4728,11 +4761,100 @@
       "perSide": true
      }
     }
+   },
+   {
+    "id": "K7",
+    "days": [
+     "wed"
+    ],
+    "name": "Wadenheben, gestrecktes Knie (stehend auf einer Stufe)",
+    "goal": "Wade, Gastrocnemius",
+    "libraryId": "wadenheben-gestrecktes-knie",
+    "phases": {
+     "P1": {
+      "raw": "3 × 12",
+      "sets": 3,
+      "reps": 12,
+      "perSide": false
+     },
+     "P2": {
+      "raw": "3 × 15",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false
+     },
+     "P3": {
+      "raw": "3 × 15 @ 12 kg in der Hand",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false,
+      "weights": [
+       12
+      ]
+     },
+     "P4": {
+      "raw": "3 × 15 @ 16 kg in der Hand",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false,
+      "weights": [
+       16
+      ]
+     }
+    }
+   },
+   {
+    "id": "K8",
+    "days": [
+     "sat"
+    ],
+    "name": "Wadenheben, gebeugtes Knie (sitzend)",
+    "goal": "Wade, Soleus",
+    "libraryId": "wadenheben-gebeugtes-knie",
+    "phases": {
+     "P1": {
+      "raw": "3 × 12 @ 12 kg auf dem Oberschenkel",
+      "sets": 3,
+      "reps": 12,
+      "perSide": false,
+      "weights": [
+       12
+      ]
+     },
+     "P2": {
+      "raw": "3 × 15 @ 16 kg auf dem Oberschenkel",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false,
+      "weights": [
+       16
+      ]
+     },
+     "P3": {
+      "raw": "3 × 15 @ 24 kg auf dem Oberschenkel",
+      "sets": 3,
+      "reps": 15,
+      "perSide": false,
+      "weights": [
+       24
+      ]
+     },
+     "P4": {
+      "raw": "3 × 20 @ 24 kg auf dem Oberschenkel",
+      "sets": 3,
+      "reps": 20,
+      "perSide": false,
+      "weights": [
+       24
+      ]
+     }
+    }
    }
   ],
   "notes": [
-   "Mittwoch Übungen 1–3, Samstag 4–6 (je im Knie-Block). Dienstag alle Übungen mit je einem Satz weniger.",
+   "Die Spalte „Tage“ sagt, in welchem Knie-Block eine Übung steht (Mi = Mittwoch, Sa = Samstag). Dienstag gibt es kein Knie-Programm, nur den Knie-Check am Morgen.",
    "**Schmerz-Ampel:** 0–3 von 10 während der Übung = grün. Bis 5 von 10 kurzzeitig = gelb. Am nächsten Morgen muss der Schmerz wieder auf Ausgangsniveau sein, sonst Belastung reduzieren (rot). Knieschmerz am Dienstag ab 4 von 10 → Beinübungen am Mittwoch mit dem Gewicht der Vorwoche.",
+   "**Knie-Check:** Am Dienstagmorgen den Knieschmerz von 0 bis 10 eintragen (ein Tipp, keine Einheit). Ab 4 von 10 gilt die Regel für Mittwoch.",
    "**Knieschonende Anpassungen:** Goblet Squat nur so tief wie schmerzfrei (auf Box). Reverse Lunge nur schmerzfrei, sonst Split Squat. Faszienrolle auf Gesäß und seitliche Hüfte, nicht auf die Außenseite des Oberschenkels."
   ]
  },
@@ -4999,23 +5121,23 @@
     "name": "Voll",
     "when": "Normale Woche",
     "content": "Alle Einheiten laut Kalender",
-    "hoursPerWeek": "ca. 4,3 h"
+    "hoursPerWeek": "ca. 4,2 h"
    },
    {
     "name": "Kompakt",
     "when": "Volle Familienwoche",
-    "content": "Knie-Programm am Dienstag entfällt, Donnerstag 45 min",
-    "hoursPerWeek": "ca. 3,5 h"
+    "content": "Donnerstag 45 min",
+    "hoursPerWeek": "ca. 3,7 h"
    },
    {
     "name": "Minimum",
     "when": "Ausnahmewoche, max. 2 am Stück",
     "content": "Nur KB A, KB B und Sonntag; Donnerstag-Intervalle in die Sonntagsfahrt",
-    "hoursPerWeek": "ca. 2,5 h"
+    "hoursPerWeek": "ca. 2,6 h"
    }
   ],
   "notes": [
-   "**Streichreihenfolge:** 1. Knie-Programm Dienstag, 2. Rad Donnerstag, 3. Sonntag auf 45 min kürzen, 4. niemals beide Kettlebell-Einheiten einer Woche.",
+   "**Streichreihenfolge:** 1. Rad Donnerstag, 2. Sonntag auf 45 min kürzen, 3. niemals beide Kettlebell-Einheiten einer Woche.",
    "**Nachholen:** Ausgefallene KB-Einheit am nächsten freien Tag, wenn ≥ 24 h Abstand zur nächsten KB-Einheit bleiben. Zwischen Fußball und Workout A immer ≥ 48 h.",
    "**Krankheit:** Nur Symptome oberhalb des Halses → lockeres Zone 2 erlaubt. Fieber oder Brustbereich → Pause, danach 2 Tage locker.",
    "**Überlastung:** Ruhepuls 2 Tage hintereinander ≥ 7 Schläge erhöht oder deutlich schlechterer Schlaf → Donnerstag auslassen."

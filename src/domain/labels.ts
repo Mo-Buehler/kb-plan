@@ -3,6 +3,7 @@ import type { SessionItem } from './plan'
 const TITLES: Record<string, string> = {
   football: 'Fußball',
   knee: 'Knie-Programm und Mobility',
+  'knee-check': 'Knie-Check',
   rest: 'Ruhetag',
   'kb-a': 'Kettlebell Workout A',
   'kb-b': 'Kettlebell Workout B',

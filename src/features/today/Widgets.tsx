@@ -131,7 +131,7 @@ export function BadgeCard({ data, today }: { data: ScheduleData; today: string }
   )
 }
 
-const REL_KINDS = ['football', 'knee', 'kb-a', 'bike', 'rest', 'kb-b', 'bike']
+const REL_KINDS = ['football', 'knee-check', 'kb-a', 'bike', 'rest', 'kb-b', 'bike']
 
 /** Landing content before the plan starts: countdown, preparation progress and the weekly rhythm. */
 export function PreStart({ days }: { days: number }) {

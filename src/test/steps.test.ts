@@ -65,17 +65,36 @@ describe('buildKbSteps', () => {
 })
 
 describe('buildKneeSteps', () => {
-  it('Wednesday uses K1-K3, Saturday K4-K6', () => {
-    const wed = new Set(buildKneeSteps('P1', 'wed').map((s) => s.exerciseKey))
-    expect([...wed]).toEqual(['knee:K1', 'knee:K2', 'knee:K3'])
-    const sat = new Set(buildKneeSteps('P2', 'sat').map((s) => s.exerciseKey))
-    expect([...sat]).toEqual(['knee:K4', 'knee:K5', 'knee:K6'])
+  const keys = (phase: string, part: 'wed' | 'sat') => [...new Set(buildKneeSteps(phase, part).map((s) => s.exerciseKey))]
+
+  it('Wednesday: K1-K3 and calf raise K7; Saturday: lateral walking K2, K4-K6 and calf raise K8', () => {
+    expect(keys('P1', 'wed')).toEqual(['knee:K1', 'knee:K2', 'knee:K3', 'knee:K7'])
+    expect(keys('P2', 'sat')).toEqual(['knee:K2', 'knee:K4', 'knee:K5', 'knee:K6', 'knee:K8'])
   })
 
-  it('Tuesday has one set less per exercise and skips K6 in phase 1', () => {
-    const tue = buildKneeSteps('P1', 'tue')
-    expect(tue.filter((s) => s.exerciseKey === 'knee:K1')).toHaveLength(2)
-    expect(tue.some((s) => s.exerciseKey === 'knee:K6')).toBe(false)
+  it('step-down (K6) starts in phase 2', () => {
+    expect(keys('P1', 'sat')).toEqual(['knee:K2', 'knee:K4', 'knee:K5', 'knee:K8'])
+  })
+
+  it('there is no Tuesday knee programme any more', () => {
+    // @ts-expect-error 'tue' is not a valid part
+    expect(buildKneeSteps('P1', 'tue')).toEqual([])
+  })
+
+  it('calf raises: 3 sets per phase with the planned reps and weights', () => {
+    const sets = (phase: string, part: 'wed' | 'sat', key: string) => buildKneeSteps(phase, part).filter((s) => s.exerciseKey === key)
+    expect(sets('P1', 'wed', 'knee:K7')).toHaveLength(3)
+    expect(sets('P1', 'wed', 'knee:K7')[0].planned).toMatchObject({ reps: 12, weights: [] })
+    expect(sets('P4', 'wed', 'knee:K7')[0].planned).toMatchObject({ reps: 15, weights: [16] })
+    expect(sets('P2', 'sat', 'knee:K8')[0].planned).toMatchObject({ reps: 15, weights: [16] })
+    expect(sets('P4', 'sat', 'knee:K8')[0].planned).toMatchObject({ reps: 20, weights: [24] })
+    expect(sets('P1', 'wed', 'knee:K7')[0].libraryId).toBe('wadenheben-gestrecktes-knie')
+  })
+
+  it('hamstring curl in phase 1 is 3 x 10', () => {
+    const k3 = buildKneeSteps('P1', 'wed').filter((s) => s.exerciseKey === 'knee:K3')
+    expect(k3).toHaveLength(3)
+    expect(k3[0].planned.reps).toBe(10)
   })
 })
 

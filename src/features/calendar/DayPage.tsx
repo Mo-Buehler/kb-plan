@@ -8,7 +8,7 @@ import { sessionTitle } from '../../domain/labels'
 import { addDays, isInPlan, itemsForDate, moveWarnings, type ScheduledItem } from '../../domain/schedule'
 import { STATUS_LABEL, statusOf, useSchedule, type ScheduleData } from '../../hooks/useSchedule'
 
-const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
+const RUNNABLE = new Set(['kb-a', 'kb-b', 'knee-check', 'bike', 'ftp-test', 'outdoor-ride', 'measurement', 'swing-test', 'hinge-drill', 'task', 'football'])
 
 export function DayPage() {
   const { date = '' } = useParams()

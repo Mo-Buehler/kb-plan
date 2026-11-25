@@ -11,11 +11,12 @@ const painClass = (n: number) => (n <= 3 ? 'pain-green' : n <= 5 ? 'pain-yellow'
 interface Props {
   title: string
   withRpe?: boolean
+  submitLabel?: string
   onSave: (d: FinishData) => void | Promise<void>
 }
 
 /** End of a session: RPE 1-10 and knee pain 0-10 with traffic-light colours. */
-export function FinishForm({ title, withRpe = true, onSave }: Props) {
+export function FinishForm({ title, withRpe = true, submitLabel = 'Einheit abschließen', onSave }: Props) {
   const [rpe, setRpe] = useState<number>()
   const [pain, setPain] = useState<number>()
   const [note, setNote] = useState('')
@@ -55,7 +56,7 @@ export function FinishForm({ title, withRpe = true, onSave }: Props) {
         <input value={note} onChange={(e) => setNote(e.target.value)} />
       </label>
       <button className="primary" onClick={() => onSave({ rpe, kneePain: pain, note: note.trim() || undefined })}>
-        Einheit abschließen
+        {submitLabel}
       </button>
     </div>
   )
